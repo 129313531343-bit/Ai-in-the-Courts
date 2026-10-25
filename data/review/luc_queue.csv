@@ -1,0 +1,52 @@
+charlotin_row,verification_status,reason,in_random_spot_check,priority,task,est_minutes
+241,auto_verified,,True,1,random spot-check: check every field,12
+311,auto_verified,,True,1,random spot-check: check every field,12
+637,flagged_for_review,characterisation_has_textual_cue;party_type_agrees_with_charlotin,True,1,random spot-check: check every field,12
+687,auto_verified,,True,1,random spot-check: check every field,12
+699,auto_verified,,True,1,random spot-check: check every field,12
+950,auto_verified,,True,1,random spot-check: check every field,12
+1138,flagged_for_review,characterisation_has_textual_cue,True,1,random spot-check: check every field,12
+1406,auto_verified,,True,1,random spot-check: check every field,12
+1578,auto_verified,,True,1,random spot-check: check every field,12
+2206,auto_verified,,True,1,random spot-check: check every field,12
+159,flagged_for_review,party_type_agrees_with_charlotin,False,2,flagged: check the flagged fields,8
+212,flagged_for_review,impugned_by_the_court_itself,False,2,flagged: check the flagged fields,8
+238,flagged_for_review,quotes_have_paragraph_numbers,False,2,flagged: check the flagged fields,8
+377,flagged_for_review,impugned_citation_copied_exactly,False,2,flagged: check the flagged fields,8
+565,flagged_for_review,party_type_agrees_with_charlotin,False,2,flagged: check the flagged fields,8
+745,flagged_for_review,mnc_matches_document_header;title_found_in_judgment,False,2,flagged: check the flagged fields,8
+786,flagged_for_review,characterisation_has_textual_cue;party_type_agrees_with_charlotin,False,2,flagged: check the flagged fields,8
+1107,flagged_for_review,impugned_citation_copied_exactly,False,2,flagged: check the flagged fields,8
+1291,flagged_for_review,party_type_agrees_with_charlotin,False,2,flagged: check the flagged fields,8
+1383,flagged_for_review,characterisation_has_textual_cue;party_type_agrees_with_charlotin,False,2,flagged: check the flagged fields,8
+1568,flagged_for_review,impugned_by_the_court_itself,False,2,flagged: check the flagged fields,8
+1847,flagged_for_review,party_type_agrees_with_charlotin,False,2,flagged: check the flagged fields,8
+1948,flagged_for_review,quotes_have_paragraph_numbers;referral_agrees_with_charlotin;title_found_in_judgment,False,2,flagged: check the flagged fields,8
+1959,flagged_for_review,characterisation_has_textual_cue;mnc_matches_document_header;quotes_have_paragraph_numbers;title_found_in_judgment,False,2,flagged: check the flagged fields,8
+1996,flagged_for_review,characterisation_has_textual_cue;mnc_matches_document_header,False,2,flagged: check the flagged fields,8
+2069,flagged_for_review,mnc_matches_document_header;party_type_agrees_with_charlotin,False,2,flagged: check the flagged fields,8
+2112,flagged_for_review,referral_agrees_with_charlotin,False,2,flagged: check the flagged fields,8
+2113,flagged_for_review,party_type_agrees_with_charlotin,False,2,flagged: check the flagged fields,8
+2115,flagged_for_review,official_copy,False,2,flagged: check the flagged fields,8
+2164,flagged_for_review,paragraph_count_matches_court_certificate;quotes_have_paragraph_numbers,False,2,flagged: check the flagged fields,8
+598,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+649,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+914,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1057,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1073,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1126,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1230,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1298,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1306,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1500,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1543,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1770,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1783,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1819,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+1821,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+2121,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+2186,flagged_for_review,characterisation_has_textual_cue,False,3,quick: confirm the flagged characterisation(s) only,3
+975,not_auto_verifiable,scanned PDF: needs OCR or reading by hand,False,4,read the judgment by hand (no automatic checks possible),15
+1975,not_auto_verifiable,no cached judgment (official_nsw_caselaw): read by hand,False,4,read the judgment by hand (no automatic checks possible),15
+2005,not_auto_verifiable,no cached judgment (austlii_manual_only): read by hand,False,4,read the judgment by hand (no automatic checks possible),15
+2124,not_auto_verifiable,no cached judgment (austlii_manual_only): read by hand,False,4,read the judgment by hand (no automatic checks possible),15

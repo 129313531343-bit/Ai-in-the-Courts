@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tracker Review</title>
+<style>
+  :root { --bg:#fbfaf7; --fg:#1d1d1b; --muted:#6b6b66; --line:#e2dfd6; --ok:#2f6f3e; --bad:#a3392b; --card:#fff; --accent:#2c4f7c; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161614; --fg:#ecebe6; --muted:#a19f97; --line:#34332f; --ok:#7fc28f; --bad:#e58b7d; --card:#1f1f1c; --accent:#8fb1de; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--fg); }
+  header { padding:16px 20px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:2; }
+  header h1 { font-size:18px; margin:0 0 4px; }
+  .muted { color:var(--muted); }
+  main { display:grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 70px); }
+  nav { border-right:1px solid var(--line); overflow:auto; max-height: calc(100vh - 70px); position:sticky; top:70px; }
+  nav button { display:block; width:100%; text-align:left; padding:10px 14px; border:0; border-bottom:1px solid var(--line); background:none; color:inherit; cursor:pointer; font:inherit; }
+  nav button.active { background:var(--card); font-weight:600; }
+  .tag { display:inline-block; font-size:12px; padding:1px 7px; border-radius:10px; border:1px solid var(--line); margin-right:4px; }
+  .tag.rand { border-color:var(--accent); color:var(--accent); }
+  .tag.flag { border-color:var(--bad); color:var(--bad); }
+  .tag.done { border-color:var(--ok); color:var(--ok); }
+  section { padding:20px; max-width: 1000px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin-bottom:12px; }
+  .field h3 { margin:0 0 6px; font-size:14px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+  .value { font-weight:600; margin-bottom:8px; white-space:pre-wrap; }
+  blockquote { margin:6px 0; padding:6px 10px; border-left:3px solid var(--line); color:var(--fg); }
+  blockquote .loc { font-size:12px; color:var(--muted); display:block; }
+  .verdict { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:8px; }
+  .verdict input[type=text] { flex:1; min-width:200px; padding:5px 8px; border:1px solid var(--line); border-radius:5px; background:var(--bg); color:var(--fg); }
+  .checks li.bad { color:var(--bad); } .checks li.ok { color:var(--ok); }
+  textarea { width:100%; min-height:70px; padding:8px; border:1px solid var(--line); border-radius:5px; background:var(--bg); color:var(--fg); font:inherit; }
+  .save { padding:8px 16px; border-radius:6px; border:1px solid var(--accent); background:var(--accent); color:#fff; font:inherit; cursor:pointer; }
+  a { color:var(--accent); }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } nav { position:static; max-height:none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Tracker review</h1>
+  <div class="muted">Open the judgment from the official source, read the cited passage, then mark each field. Only verified quotes are shown here.</div>
+</header>
+<main>
+  <nav id="list"></nav>
+  <section id="detail"><p class="muted">Loading…</p></section>
+</main>
+<script>
+const FIELD_ORDER = ["mnc","title_as_published","court","date","party_type","ai_use","ai_tool_if_stated","error_types",
+  "impugned_citations","consequence","regulator_referred","practice_note_cited","family_law_matter"];
+let rows = [], current = null;
+
+function esc(s){ return String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function fieldValue(f){
+  if (Array.isArray(f)) return f.map(i => `${i.citation_verbatim}  [${i.characterisation}; asserted by ${i.asserted_by}]`).join("\n");
+  if (!f) return "";
+  return Array.isArray(f.values) ? f.values.join("; ") : (f.value ?? "");
+}
+function quoteIds(f){ return Array.isArray(f) ? f.flatMap(i => i.quote_ids) : (f?.quote_ids || []); }
+
+async function load(){
+  rows = await (await fetch("/api/queue")).json();
+  renderList();
+  if (rows.length) show(rows[0].row); else document.getElementById("detail").innerHTML = "<p>The queue is empty.</p>";
+}
+function renderList(){
+  document.getElementById("list").innerHTML = rows.map(r => `
+    <button data-row="${r.row}" class="${current===r.row?"active":""}">
+      <div>${esc(r.id || "row " + r.row)} · ${esc(r.mnc || "(no MNC)")}</div>
+      <div class="muted" style="font-size:12px">${esc(r.task)}</div>
+      <div>${r.random_spot_check ? '<span class="tag rand">random</span>' : ''}${r.status==="flagged_for_review" ? '<span class="tag flag">flagged</span>' : ''}${r.status==="not_auto_verifiable" ? '<span class="tag flag">manual</span>' : ''}${r.decision ? '<span class="tag done">done</span>' : ''}</div>
+    </button>`).join("");
+  document.querySelectorAll("nav button").forEach(b => b.onclick = () => show(b.dataset.row));
+}
+function show(row){
+  current = row; renderList();
+  const r = rows.find(x => x.row === row);
+  const d = r.decision?.fields || {};
+  const linkHtml = Object.entries(r.links).map(([k,v]) => `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(k)}</a>`).join(" · ");
+  const bad = r.checks.filter(c => !c.passed), good = r.checks.filter(c => c.passed);
+  const checks = r.checks.length
+    ? `${bad.length ? `<ul class="checks">${bad.map(c => `<li class="bad">✗ ${esc(c.check.replaceAll("_", " "))}${c.detail ? " — " + esc(c.detail) : ""}</li>`).join("")}</ul>` : ""}
+       <details><summary class="muted">${good.length} check${good.length === 1 ? "" : "s"} passed</summary>
+       <ul class="checks">${good.map(c => `<li class="ok">✓ ${esc(c.check.replaceAll("_", " "))}</li>`).join("")}</ul></details>`
+    : `<p class="muted">${esc(r.reason || "No automatic checks ran.")}</p>`;
+  const fields = FIELD_ORDER.filter(k => k in r.fields).map(k => {
+    const f = r.fields[k], ids = quoteIds(f), dv = d[k] || {};
+    const qs = ids.map(id => r.quotes[id] ? `<blockquote>${esc(r.quotes[id].text)}<span class="loc">${esc(id)} · page ${esc(r.quotes[id].page)}${r.quotes[id].paragraph ? " · para [" + esc(r.quotes[id].paragraph) + "]" : ""}</span></blockquote>` : `<blockquote class="muted">${esc(id)}: quote not verified</blockquote>`).join("");
+    return `<div class="card field" data-field="${k}">
+      <h3>${esc(k)}</h3>
+      <div class="value">${esc(fieldValue(f)) || '<span class="muted">(blank)</span>'}</div>
+      ${qs || '<div class="muted">No supporting quote.</div>'}
+      <div class="verdict">
+        ${["correct","corrected","unsure"].map(v => `<label><input type="radio" name="v_${k}" value="${v}" ${dv.verdict===v?"checked":""}> ${v}</label>`).join("")}
+        <input type="text" placeholder="Correct value (if corrected)" value="${esc(dv.value ?? "")}">
+      </div>
+    </div>`;
+  }).join("");
+  document.getElementById("detail").innerHTML = `
+    <div class="card">
+      <div><strong>${esc(r.id)}</strong> · ${esc(r.mnc)} · ${esc(r.court)} · ${esc(r.date)}</div>
+      <div class="muted">Charlotin: ${esc(r.charlotin.case_name)} · party ${esc(r.charlotin.party)} · outcome ${esc(r.charlotin.outcome || "—")}</div>
+      <div class="muted">Copy we checked against: ${esc(r.copy || "none detected")} · Status: ${esc(r.status)}${r.random_spot_check ? " · in the random spot-check" : ""}</div>
+      <div><strong>Your task:</strong> ${esc(r.task)}${r.reason && !r.random_spot_check ? " (" + esc(r.reason.replaceAll("_", " ").replaceAll(";", "; ")) + ")" : ""}</div>
+      <div>${linkHtml || '<span class="muted">No link generated</span>'} ${r.source_kind !== "charlotin_document" ? ` · <a href="${esc(r.source_url)}" target="_blank" rel="noopener">source listed by Charlotin</a>` : ""}</div>
+    </div>
+    <div class="card"><h3 class="muted" style="margin:0 0 6px;font-size:14px">AUTOMATIC CHECKS</h3>${checks}
+      ${r.dropped.length ? `<p class="muted">Values dropped for lack of support: ${esc(r.dropped.join(", "))}</p>` : ""}</div>
+    ${fields || '<div class="card muted">No extracted fields: review this row from the judgment directly and record your findings in the note.</div>'}
+    <div class="card"><h3 class="muted" style="margin:0 0 6px;font-size:14px">NOTE</h3><textarea id="note">${esc(r.decision?.note || "")}</textarea></div>
+    <div class="card"><h3 class="muted" style="margin:0 0 6px;font-size:14px">CORRECTION FOR CHARLOTIN (OPTIONAL)</h3><textarea id="corr" placeholder="e.g. Party is listed as Lawyer, but the decision says the material was filed by the self-represented applicant (at [12]).">${esc(r.decision?.charlotin_correction || "")}</textarea></div>
+    <button class="save" id="save">Save decision</button> <span id="saved" class="muted"></span>`;
+  document.getElementById("save").onclick = () => save(r);
+}
+async function save(r){
+  const fields = {};
+  document.querySelectorAll(".field").forEach(el => {
+    const k = el.dataset.field, v = el.querySelector("input[type=radio]:checked")?.value;
+    if (v) fields[k] = { verdict: v, value: el.querySelector("input[type=text]").value || null };
+  });
+  const body = { fields, note: document.getElementById("note").value, random_spot_check: r.random_spot_check,
+                 charlotin_correction: document.getElementById("corr").value };
+  const res = await fetch(`/api/decision/${r.row}`, { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body) });
+  if (res.ok) { r.decision = body; document.getElementById("saved").textContent = "Saved."; renderList(); }
+}
+load();
+</script>
+</body>
+</html>

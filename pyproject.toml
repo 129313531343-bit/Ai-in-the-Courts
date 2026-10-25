@@ -1,0 +1,20 @@
+[project]
+name = "aic"
+version = "0.1.0"
+description = "AI in Australian Courts: data pipeline"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/14_build_checklist.py" = ["E501"]  # embedded HTML/CSS template
+"scripts/15_build_site.py" = ["E501"]  # embedded HTML/CSS/JS templates

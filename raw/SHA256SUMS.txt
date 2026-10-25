@@ -1,0 +1,5 @@
+# SHA-256 of Charlotin's AI Hallucination Cases CSV as downloaded, and its Australian subset.
+# Source: https://www.damiencharlotin.com/hallucinations/hallucinations/download.csv (CC BY 4.0).
+# The files are not committed (they name self-represented litigants; see PRIVACY.md, decision C1).
+3b5bca3babfaba231cb1191a975abccf117e042c9dd41a820205449815a3774b  charlotin_au_2026-10-25.csv
+f4000591e4bfcdd1ccebc4113f70ee294599562cae39ef1861cb80dac17cc767  charlotin_download_2026-10-25.csv

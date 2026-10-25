@@ -1,0 +1,29 @@
+.env
+.env.*
+cache/
+*.pyc
+__pycache__/
+.DS_Store
+node_modules/
+dist/
+indexes/
+review/decisions_local/
+cache_download.log
+*.log
+private/
+
+# Judgment excerpts (quotes) are never committed (D020)
+data/interim/pass_a/*.json
+data/interim/quote_checks.csv
+data/interim/verification_checks.csv
+.claude/
+
+# Privacy decision C1 (26 Oct 2026): files containing party names stay on this Mac only.
+# The repo publishes their SHA-256 hashes instead (raw/SHA256SUMS.txt, data/interim/doc_hashes.csv).
+raw/*.csv
+data/interim/au_cases.csv
+data/interim/doc_manifest.csv
+data/interim/pass_b/*.json
+data/interim/tracker_full.csv
+data/review/charlotin_corrections.md
+data/review/decisions/

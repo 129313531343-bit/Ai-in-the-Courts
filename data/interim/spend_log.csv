@@ -1,0 +1,5 @@
+batch_id,script,model,requests,input_tokens,output_tokens,cost_usd
+msgbatch_01D5NLVU9qJhKvTYcad9cb82,04_pass_a,claude-opus-5-5,10,278526,19703,0.7541
+msgbatch_01E6JcZf5X4tNgJ9DyRvUawb,06_pass_b,claude-opus-5-5,10,63982,8292,0.2109
+msgbatch_01T39xEuM7pstS3ZMR16HtHJ,04_pass_a,claude-opus-5-5,94,2480422,193603,6.8969
+msgbatch_01V2bChxsFqyJXtrf95WWb9s,06_pass_b,claude-opus-5-5,94,570430,88149,2.0223

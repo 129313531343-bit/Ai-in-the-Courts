@@ -1,0 +1,16 @@
+{
+  "cases_in_tracker": 112,
+  "by_verification_status": {
+    "auto_verified": 65,
+    "flagged_for_review": 39,
+    "not_auto_verifiable": 4,
+    "no_public_source": 4
+  },
+  "rows_publishing_extracted_fields": 65,
+  "share_misrepresentation_or_false_quote": {
+    "numerator": 32,
+    "denominator": 63,
+    "percent": 50.8,
+    "definition": "rows publishing extracted fields whose error types include misdescribed_authority or false_quote, over rows publishing extracted fields with any error type"
+  }
+}

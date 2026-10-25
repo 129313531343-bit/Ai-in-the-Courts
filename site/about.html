@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About: AI in Australian Courts</title><meta name="description" content="Method, AI use, privacy and corrections.">
+<link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="site"><div class="in"><a class="brand" href="/">AI in Australian Courts</a>
+<nav><a href="/tracker.html">Tracker</a><a href="/rules.html">Court rules</a><a href="/checklist.html">Checklist</a><a href="/about.html">About</a></nav></div></header>
+<main>
+<h1>About</h1>
+<h2 id="method">How the tracker is built and checked</h2>
+<p>The starting point is the Australian rows of Damien Charlotin's AI Hallucination Cases database. Each judgment's text is
+extracted locally, with publisher headers and footers removed. Claude (Anthropic) is asked to quote the passages on the AI error,
+the impugned citations, consequences, referrals and practice notes cited, and every quote is then checked by script against the
+judgment text, character for character, with its paragraph number. A second step proposes field values from those verified quotes
+only, and any value without a supporting quote is discarded.</p>
+<p>Every row then goes through automatic checks: the citation matches the judgment's header, titles and impugned citations are copied
+exactly, characterisations have textual support, paragraph counts match the court's own certificate, and the row is compared with
+Charlotin's coding. These checks prove that each value rests on real text at the stated paragraph. They cannot prove the text was
+read correctly, so rows that pass are labelled <em>auto-verified</em>. A random sample of rows, fixed before any extraction, plus every
+flagged row, is checked by hand against the official judgment and labelled <em>spot-checked</em>.</p>
+<h2>Contributions and AI use</h2>
+<p>This project was built with Claude Code (Anthropic), an AI coding assistant, and this is disclosed in full. Claude wrote the
+pipeline, the site and first drafts of the rules summaries and checklist, and Claude models perform the first-pass extraction. Luc
+Taya designed the project, made the judgement calls recorded in the repository's decisions log, reviews the spot-check sample and
+flagged rows, checks the rules matrix and edits the checklist. No figure is typed by hand: each is produced by a committed script
+from the data.</p>
+<h2>Privacy</h2>
+<p>The tracker records only what each judgment says. Self-represented parties can be filtered but not searched by name, and their case
+titles are not shown on the tracker page. Family law matters use only the court's anonymised title (Family Law Act 1975 (Cth) s 114Q).</p>
+<h2 id="corrections">Corrections and takedown</h2>
+<p>[Contact method to be set before release.] Requests are answered within 7 days, and every change is logged in the changelog.</p>
+<h2>Licence and credits</h2>
+<p>Data CC BY 4.0. Built on Damien Charlotin's AI Hallucination Cases database (CC BY 4.0). Court instruments are linked to their
+official sources.</p>
+<p>Luc Taya, Economics (Honours) graduate, University of Western Australia.</p>
+</main>
+<footer class="site"><div class="in">Not legal advice and not an official record: always check the official source.
+Data CC BY 4.0, building on Damien Charlotin's AI Hallucination Cases database (CC BY 4.0).
+<a href="/about.html#corrections">Corrections and takedown</a>. Luc Taya, Economics (Honours) graduate, University of Western Australia.</div></footer>
+</body></html>

@@ -1,0 +1,6 @@
+/data/*
+  X-Robots-Tag: noindex
+/downloads/*
+  X-Robots-Tag: noindex
+/tracker.html
+  X-Robots-Tag: noindex

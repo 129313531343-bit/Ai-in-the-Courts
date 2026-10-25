@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracker: AI in Australian Courts</title><meta name="description" content="Australian decisions involving AI-generated false citations."><meta name="robots" content="noindex">
+<link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="site"><div class="in"><a class="brand" href="/">AI in Australian Courts</a>
+<nav><a href="/tracker.html">Tracker</a><a href="/rules.html">Court rules</a><a href="/checklist.html">Checklist</a><a href="/about.html">About</a></nav></div></header>
+<main>
+<h1>Tracker</h1>
+<p class="lede">Australian decisions in which AI-generated false or inaccurate material reached a court or tribunal.
+Filter by court, year, party type or consequence. There is deliberately no name search.</p>
+<div class="filters">
+  <label>Court<select id="f-court"><option value="">All</option><option>ACT Civil and Administrative Tribunal</option><option>Administrative Review Tribunal</option><option>Australian Trade Marks Office</option><option>Building Appeals Board (Victoria)</option><option>County Court of Victoria</option><option>District Court of New South Wales</option><option>Fair Work Commission</option><option>Fair Work Commission (Full Bench)</option><option>Federal Circuit and Family Court of Australia (Division 1) Appellate</option><option>Federal Circuit and Family Court of Australia (Division 2) Family Law</option><option>Federal Circuit and Family Court of Australia (Division 2) General Federal Law</option><option>Federal Court of Australia</option><option>Industrial Relations Commission of New South Wales</option><option>Land and Environment Court of New South Wales</option><option>NSW Civil and Administrative Tribunal (Administrative and Equal Opportunity Division)</option><option>NSW Civil and Administrative Tribunal (Appeal Panel)</option><option>NSW Civil and Administrative Tribunal (Occupational Division)</option><option>New South Wales Court of Appeal</option><option>Personal Injury Commission of New South Wales (Presidential Decision)</option><option>Queensland Body Corporate and Community Management Commissioner</option><option>Queensland Civil and Administrative Tribunal</option><option>Queensland Civil and Administrative Tribunal (Appeal)</option><option>Queensland Industrial Relations Commission</option><option>Queensland Information Commissioner</option><option>Supreme Court of New South Wales</option><option>Supreme Court of Queensland</option><option>Supreme Court of Tasmania</option><option>Supreme Court of Victoria</option><option>Supreme Court of Victoria (Court of Appeal)</option><option>Supreme Court of Western Australia (Court of Appeal)</option><option>Supreme Court of the Australian Capital Territory</option><option>Victorian Civil and Administrative Tribunal</option></select></label>
+  <label>Year<select id="f-year"><option value="">All</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option></select></label>
+  <label>Party type<select id="f-party"><option value="">All</option><option value="lawyer">Lawyer</option><option value="self_represented">Self-represented</option><option value="expert">Expert</option><option value="other">Other</option></select></label>
+  <label>Consequence<select id="f-cons"><option value="">All</option><option>personal_costs_order</option><option>adverse_costs_order</option><option>regulator_referral</option><option>submissions_disregarded</option><option>warning_or_admonishment</option><option>application_or_appeal_dismissed</option><option>leave_refused</option><option>no_consequence_stated</option></select></label>
+  <label>Checked<select id="f-status"><option value="">All</option><option value="luc_spot_checked">Spot-checked by Luc</option><option value="auto_verified">Auto-verified</option><option value="flagged_for_review">Awaiting review</option><option value="not_auto_verifiable">Not yet verified</option><option value="no_public_source">No public source</option></select></label>
+</div>
+<p class="muted" id="count"></p>
+<div class="tablewrap"><table><thead><tr><th>ID</th><th>Decision</th><th>Court</th><th>Date</th><th>Party</th><th>Error types</th><th>Consequence</th><th>Checked</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="muted">Self-represented parties' case titles are withheld here; each decision's medium neutral citation identifies
+it on the court's or publisher's site. "Auto-verified": every value rests on a quote found in the judgment text at the stated
+paragraph; it has not been reviewed by a person. <a href="/about.html#method">How rows are checked</a>.</p>
+<script>
+const PARTY = {"Pro Se Litigant":"self_represented","Lawyer":"lawyer","Expert":"expert","Judge":"other"};
+const LABEL = {luc_spot_checked:"Spot-checked", auto_verified:"Auto-verified", flagged_for_review:"Awaiting review",
+  not_auto_verifiable:"Not yet verified", no_public_source:"No public source"};
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let data = [];
+fetch("/downloads/tracker.json").then(r => r.json()).then(d => { data = d; draw(); });
+document.querySelectorAll("select").forEach(s => s.onchange = draw);
+function draw() {
+  const v = id => document.getElementById(id).value;
+  const rows = data.filter(r => (!v("f-court") || r.court === v("f-court")) && (!v("f-year") || r.year === v("f-year"))
+    && (!v("f-party") || (r.party_type || PARTY[r.charlotin_party_type] || "") === v("f-party"))
+    && (!v("f-cons") || (r.consequence || "").split("; ").includes(v("f-cons")))
+    && (!v("f-status") || r.verification_status === v("f-status")));
+  document.getElementById("count").textContent = rows.length + " of " + data.length + " decisions";
+  document.getElementById("rows").innerHTML = rows.map(r => `<tr>
+    <td>${esc(r.id)}</td>
+    <td>${r.title ? esc(r.title) + "<br>" : ""}<span class="small">${esc(r.mnc)}</span>${r.pinpoints ? `<br><span class="small">at ${esc(r.pinpoints)}</span>` : ""}</td>
+    <td class="small">${esc(r.court)}</td><td class="small">${esc(r.date)}</td>
+    <td>${esc((r.party_type || "").replace("_", " ")) || `<span class="small">${esc(r.charlotin_party_type)} (Charlotin)</span>`}</td>
+    <td class="small">${esc((r.error_types || "").replaceAll("_", " "))}</td>
+    <td class="small">${esc((r.consequence || "").replaceAll("_", " ")) || (r.charlotin_outcome ? esc(r.charlotin_outcome) + " (Charlotin)" : "")}</td>
+    <td><span class="pill">${LABEL[r.verification_status] || esc(r.verification_status)}</span></td></tr>`).join("");
+}
+</script>
+</main>
+<footer class="site"><div class="in">Not legal advice and not an official record: always check the official source.
+Data CC BY 4.0, building on Damien Charlotin's AI Hallucination Cases database (CC BY 4.0).
+<a href="/about.html#corrections">Corrections and takedown</a>. Luc Taya, Economics (Honours) graduate, University of Western Australia.</div></footer>
+</body></html>

@@ -1,0 +1,35 @@
+{
+  "download_file": "charlotin_download_2026-10-25.csv",
+  "rows_in_download": 2208,
+  "australian_rows": 112,
+  "party_type_charlotin": {
+    "Pro Se Litigant": 86,
+    "Lawyer": 22,
+    "(blank)": 2,
+    "Judge": 1,
+    "Expert": 1
+  },
+  "source_kind": {
+    "charlotin_document": 105,
+    "secondary_media_or_blog": 2,
+    "austlii_manual_only": 2,
+    "paywalled_westlaw": 2,
+    "official_nsw_caselaw": 1
+  },
+  "court_code_basis": {
+    "mnc_in_charlotin_name_filename_or_url": 58,
+    "charlotin_court_label": 38,
+    "unresolved": 16
+  },
+  "court_level_proposed": {
+    "tribunal": 44,
+    "superior": 33,
+    "(unresolved)": 16,
+    "intermediate": 14,
+    "other": 5
+  },
+  "decision_dates": [
+    "2023-05-08",
+    "2026-09-15"
+  ]
+}

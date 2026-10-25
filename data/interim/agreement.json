@@ -1,0 +1,8 @@
+{
+  "party_type": {
+    "n": 97,
+    "percent_agree": 90.7,
+    "cohen_kappa": 0.743,
+    "raters": "Pass B extraction vs Charlotin (Luc's spot-check agreement is computed after review)"
+  }
+}
