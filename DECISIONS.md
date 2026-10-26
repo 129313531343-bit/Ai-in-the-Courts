@@ -217,3 +217,53 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
   - The FWC's unnumbered boxes, on false or misleading information being an offence, are not cited, because a paragraph number would misplace them.
 - **VCAT correction (Luc, Rules tab):** Luc's note asked to add "including whether the tool was open loop or closed loop" after "the GenAI tool used". This was applied through `rules_overrides.json`, with a supporting quote from paragraph 23(a). The note's last part ("Banned or cautioned uses. Fair. …") is his comment on the next cell, which he marked fair, so it is not cell text.
 - **Status:** Luc checked FCFCOA, ART, VCAT, the County Court, the FCA and the FWC (all 12 instruments in the Rules tab; FCA and FWC marked fair throughout).
+
+## Release 2: CiteCheck AU
+
+### D029: Release 2 plan, sources re-checked and toolchain (26 Oct 2026)
+- **Dates (brief's day numbers):**
+  - R2 due day 18, Wed 11 Nov 2026.
+  - Stretch gate day 14, Sat 7 Nov.
+  - R1 went live on day 2, so R2 starts on day 2 rather than day 8.
+- **Sources re-checked 26 Oct 2026:**
+  - **Open Australian Legal Corpus:**
+    - Version: v7.1.0. Hugging Face revision `ef45e3fec41a960919a31149eee6dab9aa39f725`, last modified 7 Mar 2026.
+    - File: `corpus.jsonl`, 9,401,179,433 bytes, SHA-256 `5abc64a3ad35a44eca65706babd63d1095c29ebebf3f5c588beb56612097b758`.
+    - Contents: 232,560 documents, current to 10 March 2025. Decisions: HCA 8,096, Federal Court 63,749, NSW Caselaw 117,371. As the brief says, there is no Vic, Qld, WA, SA or Tas case law.
+    - Handling: downloaded at that pinned revision into `cache/corpus/` (gitignored) and streamed line by line. No judgment text is committed.
+  - **Corpus licence (LICENCE.md):**
+    - The collection is CC BY 4.0.
+    - HCA material may be reproduced in unaltered form for personal or non-commercial use.
+    - FCA judgments may be reproduced unaltered, with acknowledgement.
+    - NSW Caselaw use must be accurate, not presented as official, consistent with the current official version, compliant with suppression orders, and must exclude external robots from indexing.
+    - Consequence: the site's `/data/` gets robots Disallow plus an `X-Robots-Tag: noindex` header, the brief's "Not an official version" banner, and an "as at 10 March 2025" date on every record. Names in the index are decision E1 below.
+  - **Federal Register of Legislation API:**
+    - Titles query `/v1/titles?$filter=collection eq 'Act' and name eq '…'` works.
+    - Former names are in the `nameHistory` field. For example, C2004A00109 lists Trade Practices Act 1974, then Competition and Consumer Act 2010 from 1 Jan 2011.
+    - The API returns `Access-Control-Allow-Origin` for the site's origin, so the browser can call it directly.
+- **Toolchain** (exact versions, each published at least two weeks before use):
+  - TypeScript 6.0.3 (typescript-eslint 8.71.1 supports TypeScript below 6.1, so not 7.x);
+  - Vite 8.3.4, Vitest 5.0.3, pdfjs-dist 6.4.299, mammoth 1.13.0;
+  - ESLint 10.12.0 with @eslint/js 10.0.1, Playwright 1.64.0, @types/node 24.19.2;
+  - Node 24.22.1.
+  - Python stays 3.14 in `~/.venvs/ai-in-courts` (the brief says 3.12). R1 already runs on 3.14 and none of the packages need 3.12. Logged here so the difference is visible.
+- **Layout:**
+  - `citecheck/`: the TypeScript package. `src/core/` holds the parser and matcher, imported by both the site and the Node evaluation harness.
+  - `scripts/2x_*.py`: the data build (corpus scan, indexes, evaluation items).
+  - `aic/corrupt.py`: the synthetic corruption generator, committed before any matcher code.
+  - `eval/`: the frozen evaluation set (citation strings, labels and source MNC only).
+- **Evaluation independence:** the real citations in the evaluation set are found in the eval-source judgments with a separate, deliberately broad Python pattern set, not with the shipped TypeScript parser. Citations the parser cannot read then count against it, instead of never entering the set.
+- **Status:** Claude.
+
+### D030: Corruption generator fixed before the matcher (26 Oct 2026)
+- **What:** `aic/corrupt.py` with tests in `tests/test_corrupt.py`. It is committed before any CiteCheck parser or matcher code, as the brief requires. The commit's timestamp is the record.
+- **Corruption types** (one change per item):
+  - MNC: wrong number (another recorded case), in-range gap, number above the court-year maximum, year ±1–3, other court.
+  - Reports: page moved, volume moved.
+  - Both: one party replaced, all parties from another real case.
+- **Labels come from the ground truth (the indexes), not from the matcher:**
+  - `exists_same_parties`, `exists_other_parties`, `no_record_in_range`, `outside_coverage`, `not_in_report_index`;
+  - they are relative to the corpus as at 10 March 2025.
+- **Rejected alternative:** labelling items by the four states the tool should return. That would build the tool's own thresholds (such as the gap-rate cut-off, which is tuned on dev) into the ground truth. Instead, the mapping from labels to expected states is applied at scoring time and reported.
+- **Party comparison for labels:** an order-free set of identifying words, ignoring case, "Pty Ltd" and similar. It is deliberately simple and independent of the matcher's own name matching.
+- **Status:** Claude.
