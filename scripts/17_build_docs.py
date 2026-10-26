@@ -230,7 +230,8 @@ def factpack(f: dict) -> str:
         "",
         "For Luc's own writing. Every figure is computed by `scripts/17_build_docs.py`.",
         f"**Provisional:** figures marked [auto] come from the {n} rows that passed the automatic checks. That is not a random "
-        "sample (flagged rows are excluded), and Luc's spot-check is not finished. **Do not publish any [auto] figure while "
+        f"sample (flagged rows are excluded){'' if f['spot_done'] >= f['spot_n'] else ', and Luc' + chr(39) + 's spot-check is not finished'}. "
+        "**Do not publish any [auto] figure while "
         "D007 is open:** they come from AI processing of AustLII-printed copies. The Charlotin-coding and rules figures are fine. "
         "Re-run the script before quoting any number.",
         "",
@@ -263,6 +264,9 @@ def factpack(f: dict) -> str:
     ]
     rules = pd.read_csv(ROOT / "data/rules.csv", dtype=str, keep_default_na=False)
     for _, r in rules[rules.instrument != ""].iterrows():
+        if r.instrument == "No specific AI guidance found":
+            lines.append(f"- **{r.court}**: no specific AI guidance found (searched: {r.quotes_checked.removeprefix('searched: ')}).")
+            continue
         lines.append(f"- **{r.instrument}** ({r.paragraph_refs}). Consequences: {r.consequences}")
     lines += ["", "## Method facts you can cite",
               f"- {f['quotes']:,} quotations extracted, all matched character for character in the judgment text.",

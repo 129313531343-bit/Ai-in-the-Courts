@@ -242,7 +242,8 @@ official sources.</p>
     # Downloads hold court-published titles: keep them out of search indexes (PRIVACY.md rule 2).
     (SITE / "robots.txt").write_text("User-agent: *\nDisallow: /data/\nDisallow: /downloads/\n")
     (SITE / "_headers").write_text("/data/*\n  X-Robots-Tag: noindex\n/downloads/*\n  X-Robots-Tag: noindex\n"
-                                   "/tracker.html\n  X-Robots-Tag: noindex\n")
+                                   "/tracker.html\n  X-Robots-Tag: noindex\n"
+                                   "/tracker\n  X-Robots-Tag: noindex\n")  # Pages serves /tracker.html at /tracker
     print(f"site built: {n_rows} tracker rows ({n_pub} with extracted fields), {n_rules} instruments")
 
 
