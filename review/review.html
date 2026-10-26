@@ -50,12 +50,13 @@
 <body>
 <header>
   <h1>Tracker review</h1>
-  <div class="tabs"><button id="t-review" class="on">Spot-check</button> <button id="t-rules">Rules</button> <button id="t-questions">Questions</button></div>
+  <div class="tabs"><button id="t-review" class="on">Spot-check</button> <button id="t-rules">Rules</button> <button id="t-questions">Questions</button> <button id="t-fakes">Fake citations</button></div>
   <span id="progress" class="muted"></span>
 </header>
 <div id="v-review"><main><nav id="list"></nav><section id="detail"><p class="muted">Loading…</p></section></main></div>
 <div id="v-rules" class="hidden"><section id="rulesview"></section></div>
 <div id="v-questions" class="hidden"><section class="qform" id="qform"></section></div>
+<div id="v-fakes" class="hidden"><section id="fakesview"></section></div>
 <script>
 const HEADER = ["mnc","title_as_published","court","date","family_law_matter"];
 const JUDGE = ["party_type","ai_use","ai_tool_if_stated","error_types","impugned_citations","consequence","regulator_referred","practice_note_cited"];
@@ -76,9 +77,11 @@ const val = f => Array.isArray(f) ? f.map(i => `${i.citation_verbatim}   [${i.ch
   : (!f ? "" : Array.isArray(f.values) ? f.values.join("; ") : (f.value ?? ""));
 const qids = f => Array.isArray(f) ? f.flatMap(i => i.quote_ids) : (f?.quote_ids || []);
 
-for (const t of ["review", "rules", "questions"]) document.getElementById("t-" + t).onclick = () => tab(t);
+const TABS = ["review", "rules", "questions", "fakes"];
+for (const t of TABS) document.getElementById("t-" + t).onclick = () => tab(t);
 function tab(t){
-  for (const x of ["review", "rules", "questions"]) {
+  if (t === "fakes") renderFakes();
+  for (const x of TABS) {
     document.getElementById("v-" + x).classList.toggle("hidden", t !== x);
     document.getElementById("t-" + x).classList.toggle("on", t === x);
   }
@@ -287,8 +290,65 @@ async function renderQuestions(){
     document.getElementById("qsaved").textContent = res.ok ? "Saved." : "Save failed.";
   };
 }
+const LABELS = {
+  non_existent: "the court says the case or source does not exist",
+  not_located: "the court could not find it",
+  exists_but_misdescribed: "real, but it does not say what it was cited for",
+  false_quote: "the quoted words are not in the source",
+  wrong_pinpoint: "real, but the page or paragraph is wrong",
+  not_stated: "the judgment does not say which kind",
+};
+async function renderFakes(){
+  const list = await (await fetch("/api/impugned")).json();
+  const done = list.filter(c => c.decision).length;
+  list.sort((a, b) => !!a.decision - !!b.decision);
+  document.getElementById("fakesview").innerHTML = `<h2 style="margin-top:0">Check the fake citations</h2>
+    <p class="muted">${done} of ${list.length} cases saved (${list.reduce((n, c) => n + c.citations.length, 0)} citations).
+    Unchecked cases are at the top. For each citation, the grey box shows the judgment's own words, already matched exactly to the judgment text.
+    Ask two things: <strong>(1) is the citation copied exactly as the judgment gives it?</strong> and
+    <strong>(2) does the label match what the court said?</strong> Open the judgment if the words are not enough.
+    At the bottom of each case, note any fake citation the court lists that is missing here. About 1 hour.</p>` +
+    list.map(c => `<div class="card fake" data-row="${esc(c.row)}">
+      <h3>${esc(c.id)} · ${esc(c.mnc || "(no citation)")} · ${esc(c.court)} · ${esc(c.date)}</h3>
+      <div class="muted">${esc(c.title)}</div>
+      <p style="margin:6px 0 10px">${Object.entries(c.links).map(([k, u]) => `<a class="big" href="${esc(u)}" target="_blank" rel="noopener">Open the judgment (${esc(k)}) ↗</a>`).join(" ")}
+        ${c.decision ? '<span class="tag done">saved</span>' : ''}</p>
+      ${c.citations.map((x, i) => { const dv = c.decision?.citations?.[i] || {};
+        return `<div class="card field" data-i="${i}" data-verdict="${esc(dv.verdict || "")}" style="margin-bottom:8px">
+        <div class="value" style="font-family:ui-monospace,monospace">${esc(x.citation)}</div>
+        <div>Label: <strong>${esc(x.label)}</strong> <span class="muted">(${esc(LABELS[x.label] || "")})</span>${x.asserted_by && x.asserted_by !== "court" ? ` · <span class="tag flag">said by ${esc(x.asserted_by)}, not the court</span>` : ""}</div>
+        ${x.quotes.map(q => `<blockquote>${esc(q.text)}<span class="loc">page ${esc(q.page)}${q.paragraph ? ", paragraph " + esc(q.paragraph) : ""}</span></blockquote>`).join("")}
+        <div class="btns"><button data-v="correct">✓ Right</button><button data-v="corrected">✗ Needs fixing</button><button data-v="unsure">? Unsure</button></div>
+        <div class="extra hidden" style="margin-top:8px"><input type="text" value="${esc(dv.value ?? "")}"></div></div>`; }).join("")}
+      <label class="muted" style="display:block;margin:6px 0 4px">Fake citations the court lists that are missing above (copy them exactly), or leave blank:</label>
+      <textarea class="missing">${esc(c.decision?.missing || "")}</textarea>
+      <div class="btns"><button class="primary fall">All right, save</button> <button class="secondary fsave">Save</button> <span class="muted fsaved"></span></div>
+    </div>`).join("");
+  document.querySelectorAll(".fake .field").forEach(el => {
+    const mark = v => { el.dataset.verdict = v; el.querySelectorAll(".btns button").forEach(b => b.className = b.dataset.v === v ? "sel-" + v : "");
+      const ex = el.querySelector(".extra"); ex.classList.toggle("hidden", v === "correct" || !v);
+      ex.querySelector("input").placeholder = v === "unsure" ? "Why unsure?" : "The correct citation or label"; };
+    el.querySelectorAll(".btns button").forEach(b => b.onclick = () => mark(b.dataset.v));
+    if (el.dataset.verdict) mark(el.dataset.verdict);
+  });
+  document.querySelectorAll(".fake").forEach(card => {
+    const save = async allOk => {
+      const citations = [], missing = [];
+      card.querySelectorAll(".field").forEach(el => { let v = el.dataset.verdict; if (!v && allOk) v = "correct";
+        if (!v) { missing.push(Number(el.dataset.i) + 1); return; }
+        citations[Number(el.dataset.i)] = { verdict: v, value: v === "correct" ? null : (el.querySelector(".extra input").value.trim() || null) }; });
+      if (missing.length) { card.querySelector(".fsaved").textContent = "Not saved. Still to mark: citation " + missing.join(", "); return; }
+      const res = await fetch("/api/impugned_decision", { method: "POST", headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ row: card.dataset.row, citations, missing: card.querySelector(".missing").value.trim() }) });
+      if (res.ok) renderFakes(); else card.querySelector(".fsaved").textContent = "Save failed.";
+    };
+    card.querySelector(".fall").onclick = () => save(true);
+    card.querySelector(".fsave").onclick = () => save(false);
+  });
+}
 load();
 if (location.hash === "#rules") tab("rules");  // http://127.0.0.1:8765/#rules opens straight on the Rules tab
+if (location.hash === "#fakes") tab("fakes");
 </script>
 </body>
 </html>

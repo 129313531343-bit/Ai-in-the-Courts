@@ -6,6 +6,9 @@ Serves review/review.html and these endpoints:
   GET/POST /api/answers     Luc's answers to the open questions (data/review/luc_answers.json, local only)
   GET  /api/rules           rules-matrix cells with their supporting quotes and paragraphs
   POST /api/rules_decision  saves Luc's check of the rules cells (data/review/rules_decisions.json)
+  GET  /api/impugned        the fake or wrong citations in rows whose details are held back (D024), with
+                            the verified quotes behind each, for Luc's own reading (D031 E2)
+  POST /api/impugned_decision  saves Luc's check of one case's citations (data/review/impugned_checks.json)
 
 Bound to 127.0.0.1 only: nothing is reachable from other machines. Judgment
 text never leaves this machine; the page shows only the verified quotes.
@@ -30,6 +33,7 @@ PORT = 8765
 DECISIONS = ROOT / "data/review/decisions"
 ANSWERS = ROOT / "data/review/luc_answers.json"
 RULES_DECISIONS = ROOT / "data/review/rules_decisions.json"
+IMPUGNED = ROOT / "data/review/impugned_checks.json"  # local only: the strings may contain names
 RULE_COLUMNS = ["who_is_bound", "disclosure_duty", "banned_or_cautioned_uses", "verification_duty", "consequences"]
 JUR = {"Cth": "cth", "NSW": "nsw", "Vic": "vic", "Qld": "qld", "WA": "wa", "SA": "sa", "Tas": "tas", "ACT": "act",
        "NT": "nt"}
@@ -37,13 +41,13 @@ MNC = re.compile(r"\[(\d{4})\] (\S+) (\d+)")
 
 
 def links(mnc: str) -> dict:
-    """Links for a person to click. Formats are for Luc to confirm (brief); nothing here is fetched."""
+    """Links for a person to click (format confirmed by Luc, 26 Oct 2026); nothing here is fetched."""
     m = MNC.match(mnc or "")
     if not m or m.group(2) not in courts():
         return {}
     year, code, num = m.groups()
     jur = JUR.get(courts()[code].jurisdiction, "")
-    return {"AustLII (unconfirmed format)": f"https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/{jur}/{code}/{year}/{num}.html"}
+    return {"AustLII": f"https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/{jur}/{code}/{year}/{num}.html"}
 
 
 def rules() -> list[dict]:
@@ -61,6 +65,26 @@ def rules() -> list[dict]:
                                if e["source_key"] == d["evidence_from"] and e["column"] == c]} for c in RULE_COLUMNS]
         out.append({"key": d["key"], "court": d["court"], "instrument": d["instrument"], "url": d["url"],
                     "issued": d["issued"], "same_as": same_as, "cells": cells, "decision": decided.get(d["key"])})
+    return out
+
+
+def impugned() -> list[dict]:
+    """Impugned citations from the rows whose AI-extracted details are held back, with their quotes."""
+    t = pd.read_csv(ROOT / "data/interim/tracker_full.csv", dtype=str, keep_default_na=False)
+    qc = pd.read_csv(ROOT / "data/interim/quote_checks.csv", dtype=str, keep_default_na=False)
+    decided = json.loads(IMPUGNED.read_text()) if IMPUGNED.exists() else {}
+    out = []
+    for _, r in t[(t.details_withheld != "") & (t.impugned_citations != "")].iterrows():
+        pb = json.loads((ROOT / f"data/interim/pass_b/{r.charlotin_row}.json").read_text())
+        q = qc[qc.charlotin_row == r.charlotin_row].set_index("quote_id")
+        cites = [{"citation": c["citation_verbatim"], "label": c["characterisation"],
+                  "asserted_by": c.get("asserted_by", ""),
+                  "quotes": [{"text": q.loc[i, "cited_text"], "page": q.loc[i, "page"],
+                              "paragraph": q.loc[i, "paragraph"]} for i in c["quote_ids"] if i in q.index]}
+                 for c in pb["fields"]["impugned_citations"]]
+        out.append({"row": r.charlotin_row, "id": r.id, "mnc": r.mnc, "court": r.court, "date": r.date,
+                    "title": r.title_as_published, "links": links(r.mnc), "citations": cites,
+                    "decision": decided.get(r.charlotin_row)})
     return out
 
 
@@ -121,6 +145,8 @@ class Handler(BaseHTTPRequestHandler):
             self._send(200, json.dumps(rules()).encode(), "application/json")
         elif self.path == "/api/answers":
             self._send(200, ANSWERS.read_bytes() if ANSWERS.exists() else b"{}", "application/json")
+        elif self.path == "/api/impugned":
+            self._send(200, json.dumps(impugned()).encode(), "application/json")
         else:
             self._send(404, b"not found", "text/plain")
 
@@ -137,6 +163,13 @@ class Handler(BaseHTTPRequestHandler):
             decided[body["key"]] = {"cells": body["cells"], "reviewed_on": date.today().isoformat()}
             RULES_DECISIONS.parent.mkdir(parents=True, exist_ok=True)
             RULES_DECISIONS.write_text(json.dumps(decided, indent=2, ensure_ascii=False) + "\n")
+            return self._send(200, b'{"saved": true}', "application/json")
+        if self.path == "/api/impugned_decision":
+            body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
+            decided = json.loads(IMPUGNED.read_text()) if IMPUGNED.exists() else {}
+            decided[body["row"]] = {"citations": body["citations"], "missing": body.get("missing", ""),
+                                    "reviewed_on": date.today().isoformat()}
+            IMPUGNED.write_text(json.dumps(decided, indent=2, ensure_ascii=False) + "\n")
             return self._send(200, b'{"saved": true}', "application/json")
         m = re.fullmatch(r"/api/decision/(\d+)", self.path)
         if not m:
