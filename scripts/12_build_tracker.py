@@ -29,6 +29,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from aic import ROOT  # noqa: E402
+from aic.impugned import checked as luc_checked_impugned  # noqa: E402
 from aic.verify import CHARLOTIN_PARTY  # noqa: E402
 
 PUBLISH_EXTRACTED = {"luc_spot_checked", "auto_verified"}
@@ -36,6 +37,8 @@ PUBLISH_EXTRACTED = {"luc_spot_checked", "auto_verified"}
 # published. Rows Luc has checked against the judgment himself are published (human-verified).
 WITHHOLD_AI_FIELDS_FROM_COPIES = ("AustLII",)
 WITHHELD_NOTE = "details withheld pending AustLII's reply (DECISIONS.md D007)"
+# D035: in held-back rows, the impugned citations Luc read himself are published (aic/impugned.py).
+CHECKED_NOTE = "; impugned citations checked by Luc against the judgment"
 ANALYTICAL = ["title_as_published", "party_type", "ai_use", "ai_tool_if_stated", "error_types", "impugned_citations",
               "consequence", "regulator_referred", "practice_note_cited", "pinpoints", "charlotin_discrepancy"]
 FIELDS = ["id", "mnc", "court", "court_level", "date", "title_as_published", "party_type", "ai_use",
@@ -145,6 +148,10 @@ def main() -> None:
             if st == "auto_verified" and m is not None and any(
                     src in m["copy_source_markers"] for src in WITHHOLD_AI_FIELDS_FROM_COPIES):
                 rec["details_withheld"] = WITHHELD_NOTE
+                luc = luc_checked_impugned(row)
+                if luc is not None:
+                    rec["impugned_citations"] = " | ".join(f"{i['citation']} [{i['label']}]" for i in luc)
+                    rec["details_withheld"] += CHECKED_NOTE
             ch = CHARLOTIN_PARTY.get(c["Party(ies)"], "")
             if ch and rec["party_type"] and ch != rec["party_type"]:
                 rec["charlotin_discrepancy"] = (f"party type: Charlotin {c['Party(ies)']!r}, "
@@ -157,7 +164,10 @@ def main() -> None:
     # self-represented party, judged protectively from either our extraction or Charlotin's coding.
     srl = (df.party_type == "self_represented") | (df.charlotin_party_type == "Pro Se Litigant")
     public = df.copy()
-    public.loc[public.details_withheld != "", ANALYTICAL] = ""
+    held = public.details_withheld != ""
+    luc_read = public.details_withheld.str.endswith(CHECKED_NOTE)
+    public.loc[held & ~luc_read, ANALYTICAL] = ""
+    public.loc[held & luc_read, [c for c in ANALYTICAL if c != "impugned_citations"]] = ""
     public.loc[srl, "title_as_published"] = ""
     public.insert(public.columns.get_loc("title_as_published") + 1, "title_withheld",
                   srl.map({True: "self-represented party (privacy)", False: ""}))

@@ -58,8 +58,7 @@ F056,heldout,report,exists_but_misdescribed,exists,"Re JRL; Ex parte CJL [1986] 
 F057,heldout,report,non_existent,not_in_report_index,"R v Smith (1983) 1 VR 665, 668 (Marks J)",[2025] VSCA 112,Checked by Luc (D031 E2).
 F058,heldout,report,exists_but_misdescribed,exists,Ariss and Another v Express Interiors Pty Ltd (In liquidation) [1996] 2 VR 507,[2026] ACTSC 103,Checked by Luc (D031 E2).
 F059,heldout,report,non_existent,not_in_report_index,Checked Nominees Pty Ltd v ANZ Banking Group Ltd [1986] 4 ACLC 196,[2026] ACTSC 103,Checked by Luc (D031 E2).
-F060,heldout,report,exists_but_misdescribed,exists,"Briginshaw v Briginshaw [1938]
-HCA 34; (1938) 60 CLR 336",[2026] VCAT 530,Checked by Luc (D031 E2).
+F060,heldout,report,exists_but_misdescribed,exists,Briginshaw v Briginshaw [1938] HCA 34; (1938) 60 CLR 336,[2026] VCAT 530,Checked by Luc (D031 E2).
 F061,heldout,statute,exists_but_misdescribed,statute,section 214(2) of the QCAT Act,[2025] QCAT 222,Checked by Luc (D031 E2).
 F062,heldout,statute,exists_but_misdescribed,statute,section 220(3) of the Queensland Civil and Administrative Tribunal Act 2009 (Qld),[2025] QCAT 222,Checked by Luc (D031 E2).
 F063,heldout,statute,not_stated,statute,Civil Procedure Act 2010 (Vic),[2026] VCAT 530,Luc: missing from the extraction.

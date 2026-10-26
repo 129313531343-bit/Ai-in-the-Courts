@@ -342,3 +342,9 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
 - **Publication:** these strings come from rows whose AI-extracted details are otherwise held back (D024). They are published here because Luc read each one himself, which is the carve-out D024 makes.
 - **Privacy:** no item shares a personal name with its own case's title. The broad scan's hits were common words (Queensland, Smith, Citizenship).
 - **Status:** Luc (checks); Claude (translation).
+
+### D035: Luc-checked fake citations published in held-back tracker rows (26 Oct 2026)
+- **Luc's choice:** yes. In the 20 rows whose AI-extracted details wait for AustLII (D024), the impugned citations Luc read himself are now published (tracker.csv/json "impugned_citations"). The row's `details_withheld` note ends "impugned citations checked by Luc against the judgment", and the site's label reads "Details held back; fake citations checked by Luc".
+- Every other AI-extracted field in those rows stays blank until AustLII replies. This applies D024's own carve-out (human-verified values are published) to one field rather than a whole row.
+- **Single source:** `aic/impugned.py` holds Luc's corrections, so the tracker and the CiteCheck evaluation items (D034) publish the same values. It raises an error if one of Luc's notes has no fixed value, so a raw note can never be published.
+- **Status:** Luc (choice); Claude (build).

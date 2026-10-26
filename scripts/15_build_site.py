@@ -170,7 +170,7 @@ function draw() {{
     <td>${{esc((r.party_type || "").replace("_", " ")) || `<span class="small">${{esc(r.charlotin_party_type)}} (Charlotin)</span>`}}</td>
     <td class="small">${{esc((r.error_types || "").replaceAll("_", " "))}}</td>
     <td class="small">${{esc((r.consequence || "").replaceAll("_", " ")) || (r.charlotin_outcome ? esc(r.charlotin_outcome) + " (Charlotin)" : "")}}</td>
-    <td><span class="pill">${{r.details_withheld ? "Details held back" : (LABEL[r.verification_status] || esc(r.verification_status))}}</span></td></tr>`).join("");
+    <td><span class="pill">${{r.details_withheld ? (r.impugned_citations ? "Details held back; fake citations checked by Luc" : "Details held back") : (LABEL[r.verification_status] || esc(r.verification_status))}}</span></td></tr>`).join("");
 }}
 </script>
 """

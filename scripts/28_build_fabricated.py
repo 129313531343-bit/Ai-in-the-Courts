@@ -5,8 +5,8 @@ tracker, labelled with the court's characterisation". Two sources, both read by 
   - the 10 spot-checked rows: impugned citations as published in the tracker (D025);
   - the 20 rows whose AI-extracted details are held back (D024): Luc checked their 47
     citations in the review page (data/review/impugned_checks.json, local; D031 E2).
-His prose corrections are turned into fixed values in CORRECTIONS and ADDED below, each with
-his note (DECISIONS.md D034). Citations the court itself redacted ("[Redacted (Second
+His prose corrections are fixed values in aic/impugned.py, each with his note (DECISIONS.md
+D034). Citations the court itself redacted ("[Redacted (Second
 Case)]") cannot be checked by any tool and are left out, and counted.
 
 Output (committed): eval/items_fabricated.csv
@@ -27,6 +27,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from aic import ROOT  # noqa: E402
+from aic.impugned import checked  # noqa: E402
 
 SEED = 20261026
 _spec = importlib.util.spec_from_file_location("build_eval", ROOT / "scripts/27_build_eval.py")
@@ -36,29 +37,6 @@ _spec = importlib.util.spec_from_file_location("review", ROOT / "scripts/13_revi
 review = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(review)
 
-# (tracker id, citation number from 1): fixed values from Luc's notes of 26 Oct 2026.
-CORRECTIONS = {
-    ("AIC-0033", 1): {"label": "not_located",
-                      "note": "Luc: the court describes a false case name but qualifies its finding about "
-                              "genuineness ([36]-[37]); recorded as not located, not as an unqualified finding."},
-    ("AIC-0033", 2): {"label": "not_located",
-                      "note": "Luc marked this for fixing without text; his note on citation 1 covers the same "
-                              "discussion ([35]-[37]), so the same label is used."},
-    ("AIC-0036", 1): {"citation": "[Redacted (Second Case)]", "note": "Luc: footnote marker removed."},
-    ("AIC-0036", 2): {"citation": "[Redacted (Third Case)]", "note": "Luc: footnote marker removed."},
-    ("AIC-0104", 1): {"label": "wrong_pinpoint",
-                      "note": "Luc: the court's criticism concerns paragraph [7] specifically."},
-}
-# Citations the court lists that the extraction missed (Luc's notes). The court's own
-# characterisation was not given, so they are not_stated until his freeze inspection.
-ADDED = [
-    ("AIC-0036", "Section 85(3) of the Industrial Relations Act 1996 (NSW)", "not_stated",
-     "Luc: missing from the extraction."),
-    ("AIC-0038", "FWC Rule XXXX", "not_stated",
-     "Luc: paragraph [15] describes an incomplete citation (a placeholder), not a finding that it does not exist."),
-    ("AIC-0098", "Domestic Building Contract Act 1995 (Vic)", "not_stated", "Luc: missing from the extraction."),
-    ("AIC-0098", "Civil Procedure Act 2010 (Vic)", "not_stated", "Luc: missing from the extraction."),
-]
 ACT = re.compile(r"\b[A-Z][\w'()\- ]*\bAct\b(?:\s+\d{4})?")
 
 
@@ -70,7 +48,6 @@ def kind_of(citation: str) -> tuple[str, dict | None]:
 
 
 def main() -> None:
-    checks = json.loads((ROOT / "data/review/impugned_checks.json").read_text())
     t = list(csv.DictReader((ROOT / "data/interim/tracker_full.csv").open()))
     rows = []  # (tracker id, mnc, citation, label, note)
     for r in t:
@@ -80,19 +57,10 @@ def main() -> None:
                 if m:
                     rows.append((r["id"], r["mnc"], m.group(1), m.group(2), "Luc's spot-check (D025)."))
     for case in review.impugned():
-        decided = checks.get(case["row"])
-        if not decided:
+        luc = checked(case["row"])
+        if luc is None:
             sys.exit(f"{case['id']} has no saved check")
-        for i, (cite, verdict) in enumerate(zip(case["citations"], decided["citations"], strict=True), 1):
-            fix = CORRECTIONS.get((case["id"], i), {})
-            if verdict["verdict"] == "unsure":
-                sys.exit(f"{case['id']} citation {i} is marked unsure: {verdict['value']}")
-            if verdict["verdict"] == "corrected" and not fix:
-                sys.exit(f"{case['id']} citation {i}: correction not yet translated: {verdict['value']}")
-            rows.append((case["id"], case["mnc"], fix.get("citation", cite["citation"]),
-                         fix.get("label", cite["label"]), fix.get("note", "Checked by Luc (D031 E2).")))
-    mnc_of = {r["id"]: r["mnc"] for r in t}
-    rows += [(tid, mnc_of[tid], cite, label, note) for tid, cite, label, note in ADDED]
+        rows += [(case["id"], case["mnc"], i["citation"], i["label"], i["note"]) for i in luc]
 
     g = build_eval.Ground()
     ids = sorted({r[0] for r in rows})
