@@ -76,7 +76,8 @@ class Ground(Protocol):
     def mnc_max(self, court: str, year: int) -> int | None:  # None: court-year not in the corpus
         ...
 
-    def report_parties(self, series: str, volume: int, page: int) -> list[str] | None:  # None: never cited
+    def report_parties(self, series: str, year: int, volume: int, page: int) -> list[str] | None:
+        """None: never cited. year matters only for series whose volumes run within a year ([1990] 1 Qd R 5)."""
         ...
 
     def report_series(self) -> set[str]: ...
@@ -115,7 +116,7 @@ def label_for(c: CaseCite, ground: Ground) -> str:
         return "exists_same_parties" if same_parties(c.parties, recorded) else "exists_other_parties"
     if c.series not in ground.report_series():
         return "outside_coverage"
-    seen = ground.report_parties(c.series, c.volume, c.page)
+    seen = ground.report_parties(c.series, c.year, c.volume, c.page)
     if not seen:
         return "not_in_report_index"
     return "exists_same_parties" if any(same_parties(c.parties, s) for s in seen) else "exists_other_parties"

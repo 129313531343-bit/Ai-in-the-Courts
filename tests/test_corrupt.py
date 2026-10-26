@@ -10,7 +10,7 @@ class FakeGround:
         self.mnc = {("NSWSC", 2019, n): f"Party{n} v Other{n}" for n in range(1, 11) if n != 4}
         self.mnc[("NSWSC", 2019, 7)] = "Smith v Jones"
         self.mnc[("NSWCA", 2019, 7)] = "Brown v Green"
-        self.reports = {("CLR", 175, 1): ["Mabo v Queensland (No 2)"]}
+        self.reports = {("CLR", 175, 1): ["Mabo v Queensland (No 2)"]}  # round series: year not part of the key
 
     def mnc_parties(self, court, year, number):
         return self.mnc.get((court, year, number))
@@ -19,7 +19,7 @@ class FakeGround:
         nums = [n for (c, y, n) in self.mnc if c == court and y == year]
         return max(nums) if nums else None
 
-    def report_parties(self, series, volume, page):
+    def report_parties(self, series, year, volume, page):
         return self.reports.get((series, volume, page))
 
     def report_series(self):
