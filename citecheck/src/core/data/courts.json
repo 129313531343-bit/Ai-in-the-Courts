@@ -376,5 +376,131 @@
   "name": "Court of Criminal Appeal of the Northern Territory",
   "jurisdiction": "NT",
   "level": "superior"
+ },
+ {
+  "code": "ACompT",
+  "name": "Australian Competition Tribunal",
+  "jurisdiction": "Cth",
+  "level": "tribunal"
+ },
+ {
+  "code": "ACopyT",
+  "name": "Copyright Tribunal",
+  "jurisdiction": "Cth",
+  "level": "tribunal"
+ },
+ {
+  "code": "ADFDAT",
+  "name": "Defence Force Discipline Appeal Tribunal",
+  "jurisdiction": "Cth",
+  "level": "tribunal"
+ },
+ {
+  "code": "AFPDT",
+  "name": "Federal Police Disciplinary Tribunal",
+  "jurisdiction": "Cth",
+  "level": "tribunal"
+ },
+ {
+  "code": "ATPT",
+  "name": "Trade Practices Tribunal",
+  "jurisdiction": "Cth",
+  "level": "tribunal"
+ },
+ {
+  "code": "IRCA",
+  "name": "Industrial Relations Court of Australia",
+  "jurisdiction": "Cth",
+  "level": "superior"
+ },
+ {
+  "code": "NFSC",
+  "name": "Supreme Court of Norfolk Island",
+  "jurisdiction": "NI",
+  "level": "superior"
+ },
+ {
+  "code": "UKPCHCA",
+  "name": "Privy Council (appeals from the High Court of Australia)",
+  "jurisdiction": "UK",
+  "level": "apex"
+ },
+ {
+  "code": "NSWADT",
+  "name": "Administrative Decisions Tribunal (NSW)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWADTAP",
+  "name": "Administrative Decisions Tribunal Appeal Panel (NSW)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWCATEN",
+  "name": "NSW Civil and Administrative Tribunal (division coded EN)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWCC",
+  "name": "Compensation Court of NSW",
+  "jurisdiction": "NSW",
+  "level": "other"
+ },
+ {
+  "code": "NSWChC",
+  "name": "Children's Court of NSW",
+  "jurisdiction": "NSW",
+  "level": "other"
+ },
+ {
+  "code": "NSWDDT",
+  "name": "Dust Diseases Tribunal of NSW",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWDRGC",
+  "name": "Drug Court of NSW",
+  "jurisdiction": "NSW",
+  "level": "other"
+ },
+ {
+  "code": "NSWFTT",
+  "name": "Fair Trading Tribunal of NSW",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWIC",
+  "name": "NSW industrial court or commission (coded NSWIC)",
+  "jurisdiction": "NSW",
+  "level": "other"
+ },
+ {
+  "code": "NSWLC",
+  "name": "Local Court of NSW",
+  "jurisdiction": "NSW",
+  "level": "lower"
+ },
+ {
+  "code": "NSWLST",
+  "name": "Legal Services Tribunal (NSW)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWMT",
+  "name": "Medical Tribunal of NSW",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWTAB",
+  "name": "Transport Appeal Boards (NSW)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
  }
 ]

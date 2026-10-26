@@ -25,6 +25,7 @@
     "src",
     "tests",
     "eval",
+    "scripts",
     "vite.config.ts"
   ]
 }

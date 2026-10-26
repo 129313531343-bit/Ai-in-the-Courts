@@ -296,3 +296,28 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
   - About 30 decisions use miscased or garbled codes (e.g. "FCa", "ACOPYT", "FCA1"). They are left out of the index rather than guessed into a court.
 - **Evaluation sources** (`scripts/22_reserve_eval.py`, `eval/eval_sources.csv`): 3,750 of the 187,476 (2%), by simple random sample with seed 20261026. This was committed before any index was mined. Index (b) will exclude these documents.
 - **Status:** Claude.
+
+### D033: The three indexes and the evaluation's case items (26 Oct 2026)
+- **Fingerprints (E1):** `aic/fingerprint.py` and its TypeScript twin `citecheck/src/core/fingerprint.ts`.
+  - Each identifying word of a party name becomes the first 3 bytes of its SHA-256, in base64url.
+  - Shared test vectors (`citecheck/tests/fingerprint_vectors.json`) pin both implementations to the same output; the miner checks itself against them too.
+- **Index (a)** (`scripts/23_build_index_a.py`):
+  - 187,443 decisions in 776 court-year files, 4.2 MiB gzipped;
+  - each record holds number → date, official URL and party fingerprints;
+  - the 33 decisions with garbled court codes are left out;
+  - 21 court codes from the corpus were added to `data/reference/court_codes.csv`, with names taken from the corpus README. Two names are marked unconfirmed (NSWCATEN, NSWIC).
+- **Index (b)** (`citecheck/scripts/mine_reports.ts`, then `scripts/25_build_index_b.py`):
+  - The shipped parser read 185,466 judgments, all but the 3,750 evaluation sources: 1,783,547 report citations, 93,006 distinct.
+  - The 58,912 cited by at least 2 judgments are kept, in 34 series, 1.2 MiB. Each keeps up to three party fingerprint variants and the year most often written.
+  - Using the shipped parser here means the index keys are exactly what the site looks up. The evaluation's real citations are found independently (below), so this does not leak the parser into the ground truth.
+- **Index (c)** (`scripts/24_build_index_c.py`): 9,059 Act titles in force at the snapshot (Cth 4,661, NSW 1,418, Tas 862, WA 816, Qld 573, SA 572, Norfolk Island 157), 0.15 MiB. State Acts are checked against it; Commonwealth Acts are checked live, with these titles as the offline fallback.
+- **Budget:** 5.48 MiB of the brief's 10 MB gzipped. Checksums are in `data/interim/citecheck_index_manifest.csv`.
+- **Evaluation case items** (`scripts/27_build_eval.py`, `eval/items_cases.csv`): 949 items, dev 611 and held-out 338.
+  - **Real citations, as written:** 600 citations (300 MNC, 300 report) from the reserved judgments, at most one of each kind per judgment.
+    - They were found with independent Python patterns (tested in `tests/test_eval_extract.py`), not the shipped parser.
+    - Labels record existence only: 481 exist in the corpus, 64 are outside coverage, 8 MNCs fall in a gap, and 16 report citations are not in index (b).
+  - **Synthetic items:** 396 corruptions from `aic/corrupt.py`, made only from real citations that name their parties and that the corpus holds.
+  - **Split:** 60/40 by source judgment, seed 20261026. 13 authorities ended up in both splits, so their 47 items were dropped from both.
+  - **Privacy:** the strings are case names as published in judgments. A scan against the tracker's self-represented parties found no tracker case; the only hits were common surnames in unrelated authorities.
+- **Still to add before the freeze:** the tracker's fabricated citations (after Luc's check, E2), at least 100 statute items with labels Luc confirms, and Luc's 30 adversarial items. Then Luc inspects 60 random items plus every fabricated one and approves the freeze.
+- **Status:** Claude.

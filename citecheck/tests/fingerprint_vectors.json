@@ -1,0 +1,294 @@
+[
+ {
+  "title": "Mabo v Queensland (No 2)",
+  "words": [
+   "mabo",
+   "queensland"
+  ],
+  "sides": [
+   [
+    "mabo"
+   ],
+   [
+    "queensland"
+   ]
+  ],
+  "encoded": "kRws|v4Tq"
+ },
+ {
+  "title": "Commissioner of Taxation v Hart",
+  "words": [
+   "commissioner",
+   "taxation",
+   "hart"
+  ],
+  "sides": [
+   [
+    "commissioner",
+    "taxation"
+   ],
+   [
+    "hart"
+   ]
+  ],
+  "encoded": "ZXFP 2IBu|3WsH"
+ },
+ {
+  "title": "Re Wakim; Ex parte McNally",
+  "words": [
+   "wakim",
+   "mcnally"
+  ],
+  "sides": [
+   [
+    "wakim"
+   ],
+   [
+    "mcnally"
+   ]
+  ],
+  "encoded": "k_SO|JjX2"
+ },
+ {
+  "title": "O'Brien v Smith",
+  "words": [
+   "brien",
+   "smith"
+  ],
+  "sides": [
+   [
+    "brien"
+   ],
+   [
+    "smith"
+   ]
+  ],
+  "encoded": "hcVn|ZieD"
+ },
+ {
+  "title": "O’Brien v Smith",
+  "words": [
+   "brien",
+   "smith"
+  ],
+  "sides": [
+   [
+    "brien"
+   ],
+   [
+    "smith"
+   ]
+  ],
+  "encoded": "hcVn|ZieD"
+ },
+ {
+  "title": "Société Générale v Müller & Co Pty Ltd",
+  "words": [
+   "societe",
+   "generale",
+   "muller"
+  ],
+  "sides": [
+   [
+    "societe",
+    "generale"
+   ],
+   [
+    "muller"
+   ]
+  ],
+  "encoded": "a-jF WXlh|qLH8"
+ },
+ {
+  "title": "R v Smith",
+  "words": [
+   "smith"
+  ],
+  "sides": [
+   [
+    "smith"
+   ]
+  ],
+  "encoded": "ZieD"
+ },
+ {
+  "title": "The Queen v Smith",
+  "words": [
+   "queen",
+   "smith"
+  ],
+  "sides": [
+   [
+    "queen"
+   ],
+   [
+    "smith"
+   ]
+  ],
+  "encoded": "qcPB|ZieD"
+ },
+ {
+  "title": "Plaintiff M70/2011 v Minister for Immigration and Citizenship",
+  "words": [
+   "plaintiff",
+   "m70",
+   "minister",
+   "immigration",
+   "citizenship"
+  ],
+  "sides": [
+   [
+    "plaintiff",
+    "m70"
+   ],
+   [
+    "minister",
+    "immigration",
+    "citizenship"
+   ]
+  ],
+  "encoded": "pjWH XJev|gwto ns_G F1fS"
+ },
+ {
+  "title": "ABC Pty Ltd v XYZ Limited",
+  "words": [
+   "abc",
+   "xyz"
+  ],
+  "sides": [
+   [
+    "abc"
+   ],
+   [
+    "xyz"
+   ]
+  ],
+  "encoded": "ungW|Ngi8"
+ },
+ {
+  "title": "Smith v. Jones",
+  "words": [
+   "smith",
+   "jones"
+  ],
+  "sides": [
+   [
+    "smith"
+   ],
+   [
+    "jones"
+   ]
+  ],
+  "encoded": "ZieD|lwaY"
+ },
+ {
+  "title": "SMITH V JONES",
+  "words": [
+   "smith",
+   "jones"
+  ],
+  "sides": [
+   [
+    "smith"
+   ],
+   [
+    "jones"
+   ]
+  ],
+  "encoded": "ZieD|lwaY"
+ },
+ {
+  "title": "In the Marriage of Smith",
+  "words": [
+   "marriage",
+   "smith"
+  ],
+  "sides": [
+   [
+    "marriage",
+    "smith"
+   ]
+  ],
+  "encoded": "z5Kd ZieD"
+ },
+ {
+  "title": "Attorney-General (NSW) v Quin",
+  "words": [
+   "attorney",
+   "general",
+   "nsw",
+   "quin"
+  ],
+  "sides": [
+   [
+    "attorney",
+    "general",
+    "nsw"
+   ],
+   [
+    "quin"
+   ]
+  ],
+  "encoded": "VWG6 D-rh 0-88|JMU7"
+ },
+ {
+  "title": "Smith v Jones (No 2)",
+  "words": [
+   "smith",
+   "jones"
+  ],
+  "sides": [
+   [
+    "smith"
+   ],
+   [
+    "jones"
+   ]
+  ],
+  "encoded": "ZieD|lwaY"
+ },
+ {
+  "title": "De L v Director-General, NSW Department of Community Services",
+  "words": [
+   "director",
+   "general",
+   "nsw",
+   "department",
+   "community",
+   "services"
+  ],
+  "sides": [
+   [
+    "director",
+    "general",
+    "nsw",
+    "department",
+    "community",
+    "services"
+   ]
+  ],
+  "encoded": "7310 D-rh 0-88 KtKf 81Tu 7xxL"
+ },
+ {
+  "title": "",
+  "words": [],
+  "sides": [],
+  "encoded": ""
+ },
+ {
+  "title": "v",
+  "words": [],
+  "sides": [],
+  "encoded": ""
+ },
+ {
+  "title": "2019 123",
+  "words": [],
+  "sides": [],
+  "encoded": ""
+ },
+ {
+  "word": "smith",
+  "fp": "ZieD"
+ }
+]

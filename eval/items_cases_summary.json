@@ -1,0 +1,39 @@
+{
+ "candidate_judgments_with_mnc": 2361,
+ "candidate_judgments_with_report": 2506,
+ "real": 600,
+ "synthetic": 396,
+ "authorities_in_both_splits_dropped": 13,
+ "items_dropped_with_them": 47,
+ "items": 949,
+ "by_split_origin": {
+  "dev/real": 362,
+  "dev/synthetic": 249,
+  "heldout/real": 207,
+  "heldout/synthetic": 131
+ },
+ "real_labels": {
+  "mnc:outside_coverage": 36,
+  "mnc:exists": 250,
+  "mnc:no_record_in_range": 8,
+  "report:exists": 231,
+  "report:outside_coverage": 28,
+  "report:not_in_report_index": 16
+ },
+ "synthetic_labels": {
+  "number_in_range:no_record_in_range": 35,
+  "number_out_of_range:outside_coverage": 35,
+  "other_case_parties:exists_other_parties": 69,
+  "wrong_court:exists_other_parties": 11,
+  "wrong_court:outside_coverage": 25,
+  "wrong_number:exists_other_parties": 35,
+  "wrong_party:exists_other_parties": 67,
+  "wrong_year:exists_other_parties": 31,
+  "wrong_year:outside_coverage": 3,
+  "wrong_year:no_record_in_range": 2,
+  "wrong_page:not_in_report_index": 30,
+  "wrong_page:exists_other_parties": 4,
+  "wrong_volume:not_in_report_index": 30,
+  "wrong_volume:exists_other_parties": 3
+ }
+}

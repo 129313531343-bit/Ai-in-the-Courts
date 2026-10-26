@@ -62,3 +62,24 @@ SAET,South Australian Employment Tribunal,SA,tribunal,
 NTSC,Supreme Court of the Northern Territory,NT,superior,
 NTCA,Court of Appeal of the Northern Territory,NT,superior,
 NTCCA,Court of Criminal Appeal of the Northern Territory,NT,superior,
+ACompT,Australian Competition Tribunal,Cth,tribunal,R2: listed in the corpus README (Federal Court source)
+ACopyT,Copyright Tribunal,Cth,tribunal,R2: listed in the corpus README (Federal Court source)
+ADFDAT,Defence Force Discipline Appeal Tribunal,Cth,tribunal,R2: listed in the corpus README (Federal Court source)
+AFPDT,Federal Police Disciplinary Tribunal,Cth,tribunal,R2: listed in the corpus README (Federal Court source)
+ATPT,Trade Practices Tribunal,Cth,tribunal,R2: listed in the corpus README (Federal Court source)
+IRCA,Industrial Relations Court of Australia,Cth,superior,R2: listed in the corpus README (Federal Court source)
+NFSC,Supreme Court of Norfolk Island,NI,superior,R2: listed in the corpus README (Federal Court source)
+UKPCHCA,Privy Council (appeals from the High Court of Australia),UK,apex,R2: code as used in the corpus (HCA source)
+NSWADT,Administrative Decisions Tribunal (NSW),NSW,tribunal,R2: listed in the corpus README (NSW Caselaw source)
+NSWADTAP,Administrative Decisions Tribunal Appeal Panel (NSW),NSW,tribunal,R2: listed in the corpus README (NSW Caselaw source)
+NSWCATEN,NSW Civil and Administrative Tribunal (division coded EN),NSW,tribunal,R2: code as used in the corpus; division name not confirmed
+NSWCC,Compensation Court of NSW,NSW,other,R2: listed in the corpus README (NSW Caselaw source)
+NSWChC,Children's Court of NSW,NSW,other,R2: listed in the corpus README (NSW Caselaw source)
+NSWDDT,Dust Diseases Tribunal of NSW,NSW,tribunal,R2: listed in the corpus README (NSW Caselaw source)
+NSWDRGC,Drug Court of NSW,NSW,other,R2: listed in the corpus README (NSW Caselaw source)
+NSWFTT,Fair Trading Tribunal of NSW,NSW,tribunal,R2: listed in the corpus README (NSW Caselaw source)
+NSWIC,NSW industrial court or commission (coded NSWIC),NSW,other,R2: code as used in the corpus; court name not confirmed
+NSWLC,Local Court of NSW,NSW,lower,R2: listed in the corpus README (NSW Caselaw source)
+NSWLST,Legal Services Tribunal (NSW),NSW,tribunal,R2: listed in the corpus README (NSW Caselaw source)
+NSWMT,Medical Tribunal of NSW,NSW,tribunal,R2: listed in the corpus README (NSW Caselaw source)
+NSWTAB,Transport Appeal Boards (NSW),NSW,tribunal,R2: listed in the corpus README (NSW Caselaw source)
