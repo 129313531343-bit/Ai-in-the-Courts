@@ -267,3 +267,32 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
 - **Rejected alternative:** labelling items by the four states the tool should return. That would build the tool's own thresholds (such as the gap-rate cut-off, which is tuned on dev) into the ground truth. Instead, the mapping from labels to expected states is applied at scoring time and reported.
 - **Party comparison for labels:** an order-free set of identifying words, ignoring case, "Pty Ltd" and similar. It is deliberately simple and independent of the matcher's own name matching.
 - **Status:** Claude.
+
+### D031: Open choices for Luc before the indexes and the evaluation set (26 Oct 2026)
+- **E1: party names in the public case index.** The site needs, for each citation, the parties recorded for it (index (a) from corpus metadata; index (b) from citing judgments). These files are public (noindexed, but downloadable).
+  - (A) Titles as the corpus records them, as LawCite or AustLII show them. Matching can tolerate spelling slips, and the tool can show the matched case name. But the files would be a readable list of names from about 189,000 decisions. Some NSW titles may have been anonymised since the March 2025 snapshot, and NSW Caselaw's terms require consistency with the current official version and with suppression orders.
+  - (B) Names stored only as one-way fingerprints (a hash of each normalised party word). The tool compares the words in a citation with the fingerprints, says whether the parties match, and links to the official record for the name. Nothing readable is published. Costs: a misspelt name ("Smyth" for "Smith") counts as a mismatch, measured as false alarms on dev. Fingerprints of common surnames can be guessed from a name list, so this is pseudonymisation, not anonymity.
+  - Recommendation: (B). It keeps the site from republishing names, which fits the privacy line taken in R1 (D022).
+- **E2: real fabricated citations for the evaluation.** The tracker holds 65 citations that courts said were fake or wrong.
+  - Luc has checked 18 of them (in his 10 spot-check rows).
+  - The other 47 come from AustLII-printed copies whose AI-extracted details are held back (D024). Using them needs Luc's own reading.
+  - About 13 of the 65 fall inside the corpus's coverage (HCA, Federal Court or NSW, decided before 10 March 2025); the rest should come back as "cannot check".
+  - (a) Luc checks the 47 against the judgments, about 1 hour. (b) Use only the 18, of which about 3 are within coverage: too few for a rate, so each would be described instead. (c) Wait for AustLII.
+  - Recommendation: (a).
+- **E3: AGLC edition.** The brief: "I'll confirm whether AGLC5 is out. Until then, use AGLC4." Not yet confirmed. The parser reads the AGLC4 forms, which differ little from earlier practice in what judges write.
+- **Luc's answers (26 Oct 2026):** E1 (B), fingerprints; E2 (a), he checks the 47 himself; E3: not sure, so AGLC4.
+- **Status:** decided by Luc.
+
+### D032: Corpus scanned; evaluation sources reserved before any mining (26 Oct 2026)
+- **Download verified:** `corpus.jsonl` matches the Hugging Face SHA-256 (D029).
+- **Scan** (`scripts/21_corpus_scan.py`, metadata only):
+  - 232,560 documents; 187,476 decisions carry a medium neutral citation in their title;
+  - 684 repeated citations skipped (first kept);
+  - 1,056 decisions have no citation in their title (HCA 777, FCA 177, NSW 102);
+  - per court-year counts, highest numbers and gap rates are in `data/interim/corpus_court_years.csv`.
+- **Gap rates differ by court.** Recent Federal Court and NSW Supreme Court years are under 4%, but the NSW Land and Environment Court is about 47% every year. A "no record" result is far weaker evidence there, as the brief anticipated ("a court whose gap rate is above a threshold set on dev").
+- **Court codes not in the R1 table:**
+  - Canonical codes of courts the corpus README lists: ACompT, ACopyT, ADFDAT, AFPDT, ATPT, IRCA, NFSC, NSWADT, NSWADTAP, NSWCC, NSWChC, NSWDDT, NSWDRGC, NSWFTT, NSWIC, NSWLC, NSWLST, NSWMT, NSWTAB, NSWCATEN and UKPCHCA. These go into the CiteCheck court table.
+  - About 30 decisions use miscased or garbled codes (e.g. "FCa", "ACOPYT", "FCA1"). They are left out of the index rather than guessed into a court.
+- **Evaluation sources** (`scripts/22_reserve_eval.py`, `eval/eval_sources.csv`): 3,750 of the 187,476 (2%), by simple random sample with seed 20261026. This was committed before any index was mined. Index (b) will exclude these documents.
+- **Status:** Claude.
