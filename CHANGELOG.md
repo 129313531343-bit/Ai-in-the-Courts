@@ -13,3 +13,4 @@ All changes to published data (tracker.csv, rules.csv) and the site are logged h
 - 2026-10-26: Luc checked the FCFCOA, ART, VCAT and County Court rows; his VCAT wording was added. Federal Court GPN-AI and Fair Work Commission Guidance Note rows drafted from copies Luc saved (D028). 233 supporting quotes, all verified.
 - 2026-10-26: Release 1 live at https://ai-in-australian-courts.pages.dev (Cloudflare Pages). CV_ENTRY.md written. /tracker (Pages' address for tracker.html) added to the noindex headers.
 - 2026-10-26: Tracker: in 20 rows whose other details are held back, the fake citations Luc checked against the judgment are now published (D035).
+- 2026-10-26: CiteCheck AU preview added at /citecheck/ (not yet evaluated; D038). About page and README corrected: only the 10 random rows were checked by hand, not every flagged row.

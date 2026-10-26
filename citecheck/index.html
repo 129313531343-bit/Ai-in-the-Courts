@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CiteCheck AU (preview)</title>
+<meta name="description" content="Triage the case and statute citations in a document against an open snapshot of Australian law, in your browser.">
+<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<header class="site"><div class="in">
+  <a class="brand" href="/">AI in Australian Courts</a>
+  <nav><a href="/tracker.html">Tracker</a><a href="/rules.html">Court rules</a><a href="/checklist.html">Checklist</a><a href="/citecheck/" aria-current="page">CiteCheck</a><a href="/about.html">About</a></nav>
+</div></header>
+<main>
+  <h1>CiteCheck AU <span class="pill preview">Preview: not yet evaluated</span></h1>
+  <p class="lede">Paste a document or open a file. CiteCheck finds the case and statute citations in it and checks each one
+    against an open snapshot of Australian law: does a record with this citation exist, and do the party names match?
+    It triages; it does not verify.</p>
+  <div class="banner"><strong>Case law as at 10 March 2025: High Court, Federal Court and NSW only.</strong>
+    No WA, Vic, Qld, SA or Tas case law. Not an official version: check the official source.</div>
+  <div class="banner warn"><strong>Preview.</strong> The accuracy of this tool has not yet been measured. Its evaluation on a
+    frozen test set is in progress; until then, treat every result as a lead to follow up, not a finding.</div>
+
+  <section class="input card">
+    <label for="text" class="lbl">Text to check</label>
+    <textarea id="text" rows="9" placeholder="Paste submissions, an affidavit or a judgment here"></textarea>
+    <div class="row">
+      <label class="file">Or open a file (PDF, Word .docx or text) <input id="file" type="file" accept=".pdf,.docx,.txt,.md"></label>
+      <button id="example" class="secondary" type="button">Try a made-up example</button>
+    </div>
+    <div class="row">
+      <label class="check"><input id="offline" type="checkbox"> Offline mode: send nothing anywhere</label>
+      <button id="run" class="primary" type="button">Check citations</button>
+    </div>
+    <p class="small muted">Your document stays in this browser: nothing is uploaded or stored. For Commonwealth Acts, only
+      the Act's register number and today's date go to the Federal Register of Legislation, to read the Act's current table
+      of contents. Offline mode sends nothing, and section numbers of Commonwealth Acts are then not checked.</p>
+  </section>
+
+  <p id="status" class="muted" role="status"></p>
+  <div id="summary" class="chips"></div>
+  <div id="results"></div>
+
+  <h2>What the results mean</h2>
+  <dl class="legend">
+    <dt><span class="pill s-FOUND">Found</span></dt><dd>A record with this citation, and these party names, exists in the sources.
+      This is not verification under Vic SC Gen 25 para 7 or NSW SC Gen 23 paras 16–17: open the source and read the cited passage.</dd>
+    <dt><span class="pill s-MISMATCH">Name–citation mismatch</span></dt><dd>A record exists at this citation, but under different
+      party names (or an Act of this name exists with another year). Often a typo; sometimes an invented case given a real citation.</dd>
+    <dt><span class="pill s-NO_RECORD">No record</span></dt><dd>Within what the sources cover, nothing matches. The decision may be
+      unpublished or restricted, so this is a reason to look harder, not proof that the case does not exist.</dd>
+    <dt><span class="pill s-CANNOT_CHECK">Cannot check</span></dt><dd>Outside coverage: another court, a decision after
+      10 March 2025, a report series or jurisdiction not covered, or a court-year with too many unpublished numbers.</dd>
+  </dl>
+
+  <h2>Coverage</h2>
+  <p class="muted small">Case law from the <a href="https://huggingface.co/datasets/isaacus/open-australian-legal-corpus">Open Australian
+    Legal Corpus</a> (v7.1.0, current to 10 March 2025). Report citations come from the reports that at least two judgments in that
+    corpus cite. Acts: the Commonwealth list from the Federal Register (downloaded 26 October 2026), and the NSW, Qld, WA, SA and Tas
+    Acts in force at 10 March 2025.</p>
+  <div id="coverage" class="tablewrap"></div>
+  <p class="small"><a href="./tools.html">How this compares with LawCite, JADE, PelAIkan, Lexis+ AI and Westlaw, and what it cannot do</a></p>
+</main>
+<footer class="site"><div class="in">Not legal advice and not an official version: always check the official source.
+  Case law: Open Australian Legal Corpus by Isaacus (CC BY 4.0). Legislation sourced from the Federal Register of Legislation;
+  for the latest information on Australian Government law please go to <a href="https://www.legislation.gov.au">legislation.gov.au</a>.
+  Built by Claude (Anthropic) under the direction of Luc Taya, Economics (Honours) graduate, University of Western Australia.
+  <a href="/about.html#corrections">Corrections</a>.</div></footer>
+<script type="module" src="./src/main.ts"></script>
+</body>
+</html>

@@ -31,3 +31,6 @@ data/review/luc_answers.json
 data/review/impugned_checks.json
 rules_inbox/
 data/review/decisions_backup_*/
+
+# CiteCheck build output (Vite), including the deployed index files: built locally, never committed (D038)
+site/citecheck/

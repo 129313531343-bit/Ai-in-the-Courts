@@ -36,7 +36,7 @@ header.site { border-bottom:1px solid var(--line); }
 header.site .in, main, footer.site .in { max-width:1100px; margin:0 auto; padding:0 16px; }
 header.site .in { display:flex; gap:20px; align-items:center; flex-wrap:wrap; padding-top:14px; padding-bottom:14px; }
 header.site .brand { font-weight:700; text-decoration:none; color:var(--fg); }
-header.site nav a { margin-right:14px; text-decoration:none; }
+header.site nav a { margin-right:14px; text-decoration:none; white-space:nowrap; display:inline-block; }
 main { padding-top:24px; padding-bottom:40px; }
 h1 { font-size:28px; line-height:1.2; margin:0 0 8px; } h2 { font-size:20px; margin:28px 0 8px; }
 .lede { color:var(--muted); max-width:760px; }
@@ -68,7 +68,7 @@ def page(title: str, body: str, *, noindex: bool = False, description: str = "")
 <link rel="stylesheet" href="/style.css"></head>
 <body>
 <header class="site"><div class="in"><a class="brand" href="/">AI in Australian Courts</a>
-<nav><a href="/tracker.html">Tracker</a><a href="/rules.html">Court rules</a><a href="/checklist.html">Checklist</a><a href="/about.html">About</a></nav></div></header>
+<nav><a href="/tracker.html">Tracker</a><a href="/rules.html">Court rules</a><a href="/checklist.html">Checklist</a><a href="/citecheck/">CiteCheck</a><a href="/about.html">About</a></nav></div></header>
 <main>{body}</main>
 <footer class="site"><div class="in">Not legal advice and not an official record: always check the official source.
 Data CC BY 4.0, building on Damien Charlotin's AI Hallucination Cases database (CC BY 4.0).
@@ -213,18 +213,20 @@ only, and any value without a supporting quote is discarded.</p>
 <p>Every row then goes through automatic checks: the citation matches the judgment's header, titles and impugned citations are copied
 exactly, characterisations have textual support, paragraph counts match the court's own certificate, and the row is compared with
 Charlotin's coding. These checks prove that each value rests on real text at the stated paragraph. They cannot prove the text was
-read correctly, so rows that pass are labelled <em>auto-verified</em>. A random sample of rows, fixed before any extraction, plus every
-flagged row, is checked by hand against the official judgment and labelled <em>spot-checked</em>.</p>
+read correctly, so rows that pass are labelled <em>auto-verified</em>. A random sample of 10 rows, fixed before any extraction, was
+checked by hand against the official judgment and labelled <em>spot-checked</em>. Rows the checks flag are labelled <em>awaiting
+review</em> until a person has read them.</p>
 <h2 id="sources">Sources and a pending question</h2>
 <p>Most judgment copies in Charlotin's database were printed from AustLII. Our code never accessed AustLII, but the text of those copies
 (with AustLII's headers removed) was processed by the AI model. We are asking AustLII whether this use is acceptable. Until it replies,
 the details the AI extracted from those copies are held back. Rows checked by hand against the judgment, facts read by script (citation,
-court, date) and Charlotin's own coding are shown.</p>
+court, date) and Charlotin's own coding are shown, as are the fake citations Luc read against the judgment in 20 of the held-back rows.</p>
 <h2>Contributions and AI use</h2>
 <p>This project was built with Claude Code (Anthropic), an AI coding assistant, and this is disclosed in full. Claude wrote the
-pipeline, the site and first drafts of the rules summaries and checklist, and Claude models perform the first-pass extraction. Luc
-Taya designed the project, made the judgement calls recorded in the repository's decisions log, reviews the spot-check sample and
-flagged rows, checks the rules matrix and edits the checklist. No figure is typed by hand: each is produced by a committed script
+pipeline, the site (including CiteCheck AU) and first drafts of the rules summaries and checklist, and Claude models perform the
+first-pass extraction. Luc Taya designed the project, made the judgement calls recorded in the repository's decisions log, checked
+the random spot-check sample and the fake citations in 20 held-back rows against the judgments, checked the rules matrix and edited
+the checklist. No figure is typed by hand: each is produced by a committed script
 from the data.</p>
 <h2>Privacy</h2>
 <p>The tracker records only what each judgment says. Self-represented parties can be filtered but not searched by name, and their case
@@ -240,8 +242,10 @@ official sources.</p>
                                           description="Method, AI use, privacy and corrections."))
 
     # Downloads hold court-published titles: keep them out of search indexes (PRIVACY.md rule 2).
-    (SITE / "robots.txt").write_text("User-agent: *\nDisallow: /data/\nDisallow: /downloads/\n")
+    # CiteCheck's index files (built into site/citecheck/ by Vite; D038) hold case metadata: no indexing.
+    (SITE / "robots.txt").write_text("User-agent: *\nDisallow: /data/\nDisallow: /downloads/\nDisallow: /citecheck/data/\n")
     (SITE / "_headers").write_text("/data/*\n  X-Robots-Tag: noindex\n/downloads/*\n  X-Robots-Tag: noindex\n"
+                                   "/citecheck/data/*\n  X-Robots-Tag: noindex\n"
                                    "/tracker.html\n  X-Robots-Tag: noindex\n"
                                    "/tracker\n  X-Robots-Tag: noindex\n")  # Pages serves /tracker.html at /tracker
     print(f"site built: {n_rows} tracker rows ({n_pub} with extracted fields), {n_rules} instruments")

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CiteCheck and other tools</title>
+<meta name="description" content="What other citation tools do, what CiteCheck AU does differently, and what it cannot do.">
+<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<header class="site"><div class="in">
+  <a class="brand" href="/">AI in Australian Courts</a>
+  <nav><a href="/tracker.html">Tracker</a><a href="/rules.html">Court rules</a><a href="/checklist.html">Checklist</a><a href="/citecheck/">CiteCheck</a><a href="/about.html">About</a></nav>
+</div></header>
+<main>
+  <h1>CiteCheck and other tools</h1>
+  <p class="lede">CiteCheck AU is a free triage step, not a replacement for a citator or a research platform.</p>
+
+  <h2>Other tools</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tool</th><th>What it is</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.austlii.edu.au/cgi-bin/LawCite">LawCite</a></td><td>AustLII's citator: an index of cases and the citations made to them.</td></tr>
+      <tr><td><a href="https://jade.io/">JADE</a></td><td>An Australian case law service from BarNet, linking cases to the cases that cite them.</td></tr>
+      <tr><td><a href="https://pelaikan-app.web.app/">PelAIkan</a></td><td>An automated reference checker built by Damien Charlotin, who maintains the AI Hallucination Cases database.</td></tr>
+      <tr><td>Lexis+ AI, Westlaw</td><td>Subscription legal research platforms with citators and AI features.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>What CiteCheck does differently</h2>
+  <ul>
+    <li>It checks every citation in a whole document at once, and says for each one why it reached its result.</li>
+    <li>It runs in your browser on an open snapshot: the document is never uploaded, and offline mode sends nothing at all.</li>
+    <li>It compares party names with the citation, which catches a real citation attached to the wrong case.</li>
+    <li>It says plainly when it cannot check something, instead of treating silence as a pass.</li>
+    <li>Its accuracy will be published with the size of the test set and error margins (evaluation in progress).</li>
+  </ul>
+
+  <h2>What it cannot do</h2>
+  <ul>
+    <li>Tell you whether a case says what it is cited for, or whether a quotation is accurate.</li>
+    <li>Tell you whether a case is still good law, or a provision still in force for the relevant date.</li>
+    <li>Check Victorian, Queensland, WA, SA, Tasmanian, ACT or NT case law, or anything decided after 10 March 2025.</li>
+    <li>Check the section numbers of state Acts (titles only), or legislation of Victoria, the ACT or the NT.</li>
+    <li>Read citations in forms it does not recognise. A citation it does not list was not checked.</li>
+  </ul>
+  <p class="muted">Every result is a lead for a person to follow up in the official source.</p>
+</main>
+<footer class="site"><div class="in">Not legal advice and not an official version: always check the official source.
+  Built by Claude (Anthropic) under the direction of Luc Taya, Economics (Honours) graduate, University of Western Australia.</div></footer>
+</body>
+</html>

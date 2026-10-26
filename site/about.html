@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/style.css"></head>
 <body>
 <header class="site"><div class="in"><a class="brand" href="/">AI in Australian Courts</a>
-<nav><a href="/tracker.html">Tracker</a><a href="/rules.html">Court rules</a><a href="/checklist.html">Checklist</a><a href="/about.html">About</a></nav></div></header>
+<nav><a href="/tracker.html">Tracker</a><a href="/rules.html">Court rules</a><a href="/checklist.html">Checklist</a><a href="/citecheck/">CiteCheck</a><a href="/about.html">About</a></nav></div></header>
 <main>
 <h1>About</h1>
 <h2 id="method">How the tracker is built and checked</h2>
@@ -16,18 +16,20 @@ only, and any value without a supporting quote is discarded.</p>
 <p>Every row then goes through automatic checks: the citation matches the judgment's header, titles and impugned citations are copied
 exactly, characterisations have textual support, paragraph counts match the court's own certificate, and the row is compared with
 Charlotin's coding. These checks prove that each value rests on real text at the stated paragraph. They cannot prove the text was
-read correctly, so rows that pass are labelled <em>auto-verified</em>. A random sample of rows, fixed before any extraction, plus every
-flagged row, is checked by hand against the official judgment and labelled <em>spot-checked</em>.</p>
+read correctly, so rows that pass are labelled <em>auto-verified</em>. A random sample of 10 rows, fixed before any extraction, was
+checked by hand against the official judgment and labelled <em>spot-checked</em>. Rows the checks flag are labelled <em>awaiting
+review</em> until a person has read them.</p>
 <h2 id="sources">Sources and a pending question</h2>
 <p>Most judgment copies in Charlotin's database were printed from AustLII. Our code never accessed AustLII, but the text of those copies
 (with AustLII's headers removed) was processed by the AI model. We are asking AustLII whether this use is acceptable. Until it replies,
 the details the AI extracted from those copies are held back. Rows checked by hand against the judgment, facts read by script (citation,
-court, date) and Charlotin's own coding are shown.</p>
+court, date) and Charlotin's own coding are shown, as are the fake citations Luc read against the judgment in 20 of the held-back rows.</p>
 <h2>Contributions and AI use</h2>
 <p>This project was built with Claude Code (Anthropic), an AI coding assistant, and this is disclosed in full. Claude wrote the
-pipeline, the site and first drafts of the rules summaries and checklist, and Claude models perform the first-pass extraction. Luc
-Taya designed the project, made the judgement calls recorded in the repository's decisions log, reviews the spot-check sample and
-flagged rows, checks the rules matrix and edits the checklist. No figure is typed by hand: each is produced by a committed script
+pipeline, the site (including CiteCheck AU) and first drafts of the rules summaries and checklist, and Claude models perform the
+first-pass extraction. Luc Taya designed the project, made the judgement calls recorded in the repository's decisions log, checked
+the random spot-check sample and the fake citations in 20 held-back rows against the judgments, checked the rules matrix and edited
+the checklist. No figure is typed by hand: each is produced by a committed script
 from the data.</p>
 <h2>Privacy</h2>
 <p>The tracker records only what each judgment says. Self-represented parties can be filtered but not searched by name, and their case

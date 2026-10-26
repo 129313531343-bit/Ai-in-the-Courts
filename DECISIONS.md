@@ -383,3 +383,24 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
 - **State Acts:** titles in force at the snapshot only (index (c)). Sections are not checked, and the page says so.
 - **Links:** the official copy (corpus URL), AustLII for MNCs (format confirmed by Luc), and the Federal Register. LawCite and JADE links wait for Luc to confirm their formats (brief).
 - **Status:** Claude; thresholds to tune on dev after Luc's freeze.
+
+### D038: CiteCheck AU preview page, and two corrections to public text (26 Oct 2026)
+- **Where:** https://ai-in-australian-courts.pages.dev/citecheck/, in the same Cloudflare Pages project as Release 1, so one site and one deploy command (`wrangler pages deploy site`) cover both. The brief imagined a separate `dist` deploy; one site keeps a single address for Luc's CV.
+  - Vite builds into `site/citecheck/` (gitignored), with the index files under `site/citecheck/data/`, which has robots Disallow and an `X-Robots-Tag: noindex` header.
+  - Release 1's pages gain a "CiteCheck" menu link.
+- **Page (`citecheck/index.html`, `tools.html`, `src/main.ts`):**
+  - paste box, file reading (PDF via pdf.js, Word via mammoth, both loaded only on use), an offline switch, and results with the state, the reason, notes and links;
+  - the brief's banner ("Case law as at 10 March 2025: High Court, Federal Court and NSW only. No WA, Vic, Qld, SA or Tas case law"), "Not an official version", a "Preview: not yet evaluated" label, and a coverage table built from the index;
+  - a page on other tools (LawCite, JADE, PelAIkan, Lexis+ AI, Westlaw), with what CiteCheck does differently and cannot do;
+  - "verified" and "good law" are never used of a result;
+  - LawCite and JADE are linked only at their home pages: per-citation link formats wait for Luc to confirm them (brief).
+- **Checked in a browser** (local server, 26 Oct 2026):
+  - A made-up 10-citation example was checked in 1.2 s cold, including a live Federal Register section check, and each result was the expected one. For instance, *Mabo v Commonwealth* (1992) 175 CLR 1 gives a name–citation mismatch, and s 52 of the Trade Practices Act 1974 resolves to the Competition and Consumer Act 2010, which has no s 52 today.
+  - Offline mode sent nothing and said that sections were not checked.
+  - A test PDF and a test Word file were read and checked.
+  - At phone width (375 px) there is no sideways scrolling.
+- **Corrections to public text found on the way:**
+  - The About page and README said every flagged tracker row was checked by hand. In fact Luc checked the 10 random rows (option A), and flagged rows stay "awaiting review".
+  - The README also listed status names the tracker no longer uses.
+  - Both are corrected, and the fake citations Luc read in 20 held-back rows are now mentioned.
+- **Status:** Claude (build); Luc deploys.
