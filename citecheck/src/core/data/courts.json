@@ -1,0 +1,380 @@
+[
+ {
+  "code": "HCA",
+  "name": "High Court of Australia",
+  "jurisdiction": "Cth",
+  "level": "apex"
+ },
+ {
+  "code": "FCA",
+  "name": "Federal Court of Australia",
+  "jurisdiction": "Cth",
+  "level": "superior"
+ },
+ {
+  "code": "FCAFC",
+  "name": "Federal Court of Australia (Full Court)",
+  "jurisdiction": "Cth",
+  "level": "superior"
+ },
+ {
+  "code": "FedCFamC1A",
+  "name": "Federal Circuit and Family Court of Australia (Division 1) Appellate",
+  "jurisdiction": "Cth",
+  "level": "superior"
+ },
+ {
+  "code": "FedCFamC1F",
+  "name": "Federal Circuit and Family Court of Australia (Division 1) First Instance",
+  "jurisdiction": "Cth",
+  "level": "superior"
+ },
+ {
+  "code": "FedCFamC2F",
+  "name": "Federal Circuit and Family Court of Australia (Division 2) Family Law",
+  "jurisdiction": "Cth",
+  "level": "intermediate"
+ },
+ {
+  "code": "FedCFamC2G",
+  "name": "Federal Circuit and Family Court of Australia (Division 2) General Federal Law",
+  "jurisdiction": "Cth",
+  "level": "intermediate"
+ },
+ {
+  "code": "FWC",
+  "name": "Fair Work Commission",
+  "jurisdiction": "Cth",
+  "level": "tribunal"
+ },
+ {
+  "code": "FWCFB",
+  "name": "Fair Work Commission (Full Bench)",
+  "jurisdiction": "Cth",
+  "level": "tribunal"
+ },
+ {
+  "code": "ARTA",
+  "name": "Administrative Review Tribunal",
+  "jurisdiction": "Cth",
+  "level": "tribunal"
+ },
+ {
+  "code": "AATA",
+  "name": "Administrative Appeals Tribunal",
+  "jurisdiction": "Cth",
+  "level": "tribunal"
+ },
+ {
+  "code": "ATMO",
+  "name": "Australian Trade Marks Office",
+  "jurisdiction": "Cth",
+  "level": "other"
+ },
+ {
+  "code": "NSWSC",
+  "name": "Supreme Court of New South Wales",
+  "jurisdiction": "NSW",
+  "level": "superior"
+ },
+ {
+  "code": "NSWCA",
+  "name": "New South Wales Court of Appeal",
+  "jurisdiction": "NSW",
+  "level": "superior"
+ },
+ {
+  "code": "NSWCCA",
+  "name": "New South Wales Court of Criminal Appeal",
+  "jurisdiction": "NSW",
+  "level": "superior"
+ },
+ {
+  "code": "NSWDC",
+  "name": "District Court of New South Wales",
+  "jurisdiction": "NSW",
+  "level": "intermediate"
+ },
+ {
+  "code": "NSWLEC",
+  "name": "Land and Environment Court of New South Wales",
+  "jurisdiction": "NSW",
+  "level": "superior"
+ },
+ {
+  "code": "NSWCATAP",
+  "name": "NSW Civil and Administrative Tribunal (Appeal Panel)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWCATAD",
+  "name": "NSW Civil and Administrative Tribunal (Administrative and Equal Opportunity Division)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWCATCD",
+  "name": "NSW Civil and Administrative Tribunal (Consumer and Commercial Division)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWCATOD",
+  "name": "NSW Civil and Administrative Tribunal (Occupational Division)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWCATGD",
+  "name": "NSW Civil and Administrative Tribunal (Guardianship Division)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWIRComm",
+  "name": "Industrial Relations Commission of New South Wales",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWPICPD",
+  "name": "Personal Injury Commission of New South Wales (Presidential Decision)",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "NSWPIC",
+  "name": "Personal Injury Commission of New South Wales",
+  "jurisdiction": "NSW",
+  "level": "tribunal"
+ },
+ {
+  "code": "VSC",
+  "name": "Supreme Court of Victoria",
+  "jurisdiction": "Vic",
+  "level": "superior"
+ },
+ {
+  "code": "VSCA",
+  "name": "Supreme Court of Victoria (Court of Appeal)",
+  "jurisdiction": "Vic",
+  "level": "superior"
+ },
+ {
+  "code": "VCC",
+  "name": "County Court of Victoria",
+  "jurisdiction": "Vic",
+  "level": "intermediate"
+ },
+ {
+  "code": "VCAT",
+  "name": "Victorian Civil and Administrative Tribunal",
+  "jurisdiction": "Vic",
+  "level": "tribunal"
+ },
+ {
+  "code": "VBAB",
+  "name": "Building Appeals Board (Victoria)",
+  "jurisdiction": "Vic",
+  "level": "tribunal"
+ },
+ {
+  "code": "QSC",
+  "name": "Supreme Court of Queensland",
+  "jurisdiction": "Qld",
+  "level": "superior"
+ },
+ {
+  "code": "QCA",
+  "name": "Queensland Court of Appeal",
+  "jurisdiction": "Qld",
+  "level": "superior"
+ },
+ {
+  "code": "QDC",
+  "name": "District Court of Queensland",
+  "jurisdiction": "Qld",
+  "level": "intermediate"
+ },
+ {
+  "code": "QCAT",
+  "name": "Queensland Civil and Administrative Tribunal",
+  "jurisdiction": "Qld",
+  "level": "tribunal"
+ },
+ {
+  "code": "QCATA",
+  "name": "Queensland Civil and Administrative Tribunal (Appeal)",
+  "jurisdiction": "Qld",
+  "level": "tribunal"
+ },
+ {
+  "code": "QIRC",
+  "name": "Queensland Industrial Relations Commission",
+  "jurisdiction": "Qld",
+  "level": "tribunal"
+ },
+ {
+  "code": "QICmr",
+  "name": "Queensland Information Commissioner",
+  "jurisdiction": "Qld",
+  "level": "other"
+ },
+ {
+  "code": "QBCCMCmr",
+  "name": "Queensland Body Corporate and Community Management Commissioner",
+  "jurisdiction": "Qld",
+  "level": "other"
+ },
+ {
+  "code": "WASC",
+  "name": "Supreme Court of Western Australia",
+  "jurisdiction": "WA",
+  "level": "superior"
+ },
+ {
+  "code": "WASCA",
+  "name": "Supreme Court of Western Australia (Court of Appeal)",
+  "jurisdiction": "WA",
+  "level": "superior"
+ },
+ {
+  "code": "WADC",
+  "name": "District Court of Western Australia",
+  "jurisdiction": "WA",
+  "level": "intermediate"
+ },
+ {
+  "code": "WASAT",
+  "name": "State Administrative Tribunal (WA)",
+  "jurisdiction": "WA",
+  "level": "tribunal"
+ },
+ {
+  "code": "SASC",
+  "name": "Supreme Court of South Australia",
+  "jurisdiction": "SA",
+  "level": "superior"
+ },
+ {
+  "code": "SASCA",
+  "name": "Supreme Court of South Australia (Court of Appeal)",
+  "jurisdiction": "SA",
+  "level": "superior"
+ },
+ {
+  "code": "SASCFC",
+  "name": "Supreme Court of South Australia (Full Court)",
+  "jurisdiction": "SA",
+  "level": "superior"
+ },
+ {
+  "code": "SADC",
+  "name": "District Court of South Australia",
+  "jurisdiction": "SA",
+  "level": "intermediate"
+ },
+ {
+  "code": "TASSC",
+  "name": "Supreme Court of Tasmania",
+  "jurisdiction": "Tas",
+  "level": "superior"
+ },
+ {
+  "code": "TASFC",
+  "name": "Supreme Court of Tasmania (Full Court)",
+  "jurisdiction": "Tas",
+  "level": "superior"
+ },
+ {
+  "code": "ACTSC",
+  "name": "Supreme Court of the Australian Capital Territory",
+  "jurisdiction": "ACT",
+  "level": "superior"
+ },
+ {
+  "code": "ACTCA",
+  "name": "ACT Court of Appeal",
+  "jurisdiction": "ACT",
+  "level": "superior"
+ },
+ {
+  "code": "ACAT",
+  "name": "ACT Civil and Administrative Tribunal",
+  "jurisdiction": "ACT",
+  "level": "tribunal"
+ },
+ {
+  "code": "FamCA",
+  "name": "Family Court of Australia (before 1 Sept 2021)",
+  "jurisdiction": "Cth",
+  "level": "superior"
+ },
+ {
+  "code": "FamCAFC",
+  "name": "Family Court of Australia (Full Court; before 1 Sept 2021)",
+  "jurisdiction": "Cth",
+  "level": "superior"
+ },
+ {
+  "code": "FCCA",
+  "name": "Federal Circuit Court of Australia (before 1 Sept 2021)",
+  "jurisdiction": "Cth",
+  "level": "intermediate"
+ },
+ {
+  "code": "FCWA",
+  "name": "Family Court of Western Australia",
+  "jurisdiction": "WA",
+  "level": "superior"
+ },
+ {
+  "code": "FCWAM",
+  "name": "Family Court of Western Australia (Magistrates)",
+  "jurisdiction": "WA",
+  "level": "lower"
+ },
+ {
+  "code": "WAIRC",
+  "name": "Western Australian Industrial Relations Commission",
+  "jurisdiction": "WA",
+  "level": "tribunal"
+ },
+ {
+  "code": "TASCCA",
+  "name": "Court of Criminal Appeal of Tasmania",
+  "jurisdiction": "Tas",
+  "level": "superior"
+ },
+ {
+  "code": "SACAT",
+  "name": "South Australian Civil and Administrative Tribunal",
+  "jurisdiction": "SA",
+  "level": "tribunal"
+ },
+ {
+  "code": "SAET",
+  "name": "South Australian Employment Tribunal",
+  "jurisdiction": "SA",
+  "level": "tribunal"
+ },
+ {
+  "code": "NTSC",
+  "name": "Supreme Court of the Northern Territory",
+  "jurisdiction": "NT",
+  "level": "superior"
+ },
+ {
+  "code": "NTCA",
+  "name": "Court of Appeal of the Northern Territory",
+  "jurisdiction": "NT",
+  "level": "superior"
+ },
+ {
+  "code": "NTCCA",
+  "name": "Court of Criminal Appeal of the Northern Territory",
+  "jurisdiction": "NT",
+  "level": "superior"
+ }
+]

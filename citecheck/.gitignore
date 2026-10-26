@@ -1,0 +1,6 @@
+node_modules/
+dist/
+# Indexes are built locally from the corpus and deployed, never committed (brief, R2).
+public/data/
+test-results/
+playwright-report/
