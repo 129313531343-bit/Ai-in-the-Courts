@@ -196,17 +196,17 @@ C0194,dev,mnc,real,,En Liquidation v Akhil Holdings Ltd [1990] HCA 11,exists,[20
 C0195,dev,mnc,real,,Renshaw v New South Wales Lotteries Corporation Pty Ltd [2021] NSWCA 41,exists,[2025] NSWCA 6,NSWCA|2021|41
 C0196,dev,report,real,,Quinn v Bradford Kendall Foundries Pty Limited (1986) 7 NSWLR 428,exists,[1988] NSWCA 24,NSWLR|7|428
 C0197,dev,report,real,,"Abalos v Australian Postal Commission (1988) 171 CLR 167, 179",exists,[1991] NSWCA 241,CLR|171|167
-C0198,dev,report,real,,[1936] 1 Ch 469,exists,[1995] FCA 643,Ch|1|469
-C0199,dev,report,real,,Donald Campbell & Co Limited v Pollak [1927] AC 732 at 811-2,exists,[1996] NSWCA 115,AC||732
+C0198,dev,report,real,,[1936] 1 Ch 469,not_in_report_index,[1995] FCA 643,Ch|1936/1|469
+C0199,dev,report,real,,Donald Campbell & Co Limited v Pollak [1927] AC 732 at 811-2,exists,[1996] NSWCA 115,AC|1927/|732
 C0200,dev,report,real,,Jones Bros Bus Company Pty Ltd v Baker (1992) 26 NSWLR 322,exists,[1996] NSWCA 579,NSWLR|26|322
 C0201,dev,report,real,,Elkington v Vockbay Pty Ltd (1993) 10 ACSR 785,exists,[1998] FCA 1169,ACSR|10|785
 C0202,dev,report,real,,"(1991) 102 ALR 339, 341",exists,[1998] FCA 1559,ALR|102|339
 C0203,dev,report,real,,Balfour Beattie Power Construction v Kidson [1989] 2 QdR 105,exists,[1998] FCA 1622,QdR|2|105
 C0204,dev,report,real,,Molnar Engineering Pty Ltd v The Herald and Weekly Times Ltd (1984) 1 FCR 455,exists,[1998] FCA 704,FCR|1|455
-C0205,dev,report,real,,Smith New Court Securities Ltd v Citibank NA [1997] AC 254 at 267,exists,[1999] FCA 388,AC||254
+C0205,dev,report,real,,Smith New Court Securities Ltd v Citibank NA [1997] AC 254 at 267,exists,[1999] FCA 388,AC|1997/|254
 C0206,dev,report,real,,Clarke v Building Services Corporation (1992) 1 NSWBLR 33,outside_coverage,[1999] NSWADT 111,NSWBLR|1|33
 C0207,dev,report,real,,Re Dekanic and The Tax Agents Board (1982) 6 ALD 240,exists,[1999] NSWADT 36,ALD|6|240
-C0208,dev,report,real,,E v K [1995] 2 NZLR 239 at 245,not_in_report_index,[1999] NSWSC 843,NZLR|2|239
+C0208,dev,report,real,,E v K [1995] 2 NZLR 239 at 245,not_in_report_index,[1999] NSWSC 843,NZLR|1995/2|239
 C0209,dev,report,real,,"Bowen v Hinchcliffe (1924) 24 SR 262, 267",outside_coverage,[1999] NSWSC 991,SR|24|262
 C0210,dev,report,real,,Kolback Securities Ltd v Epoch Mining NL (1987) 8 NSWLR 533,exists,[2000] FCA 1247,NSWLR|8|533
 C0211,dev,report,real,,Fletcher v (1988) 19 FCR 442,exists,[2000] FCA 1745,FCR|19|442
@@ -231,7 +231,7 @@ C0229,dev,report,real,,Palmer v Clarke (1989) 19 NSWLR 158,exists,[2003] NSWCA 1
 C0230,dev,report,real,,Grepe v Loam (1888) 37 Ch D 168,outside_coverage,[2003] NSWCA 307,Ch D|37|168
 C0231,dev,report,real,,Commissioner for Australian Capital Territory Revenue v Alphaone (1993) 49 FCR 576,exists,[2004] FCA 163,FCR|49|576
 C0232,dev,report,real,,Wilson v Minister for Aboriginal and Torres Strait Islander Affairs (1996) 189 CLR 1,exists,[2004] FCAFC 165,CLR|189|1
-C0233,dev,report,real,,Morgans v Launchbury (1973) AC 127,exists,[2004] NSWCA 378,AC||127
+C0233,dev,report,real,,Morgans v Launchbury (1973) AC 127,exists,[2004] NSWCA 378,AC|1973/|127
 C0234,dev,report,real,,White v Grogan (1972) 2 NSWLR 347,exists,[2004] NSWSC 10,NSWLR|2|347
 C0235,dev,report,real,,Gallo v Dawson (No 2) (1992) 109 ALR 319,exists,[2005] FCA 167,ALR|109|319
 C0236,dev,report,real,,"Industries of Australia Pty Ltd v Norwich Winterthur Insurance (Australia) Ltd (1986) 160 CLR 226, 244",exists,[2005] FCAFC 185,CLR|160|226
@@ -257,7 +257,7 @@ C0255,dev,report,real,,Cameron v Hogan (1934) 51 CLR 358,exists,[2007] NSWSC 141
 C0256,dev,report,real,,Oshlack v Richmond River Council (1998) 193 CLR 72,exists,[2007] NSWSC 253,CLR|193|72
 C0257,dev,report,real,,Craig v South Australia (1985) 184 CLR 163 at 179,exists,[2007] NSWSC 260,CLR|184|163
 C0258,dev,report,real,,Martin v Holgate (1866) LR 1,outside_coverage,[2008] NSWSC 1378,LR||1
-C0259,dev,report,real,,R v Boland [1974] VR 849 at 866-867,exists,[2008] NSWSC 817,VR||849
+C0259,dev,report,real,,R v Boland [1974] VR 849 at 866-867,exists,[2008] NSWSC 817,VR|1974/|849
 C0260,dev,report,real,,State of Queensland v JL Holdings Pty Limited (1997) 189 CLR 146,exists,[2009] FCA 366,CLR|189|146
 C0261,dev,report,real,,Hinchliff v Abu-Dabat (1998) 41 IPR 400 at 401,exists,[2009] FCA 445,IPR|41|400
 C0262,dev,report,real,,(1996) 84 A Crim R 67,exists,[2009] NSWLC 17,A Crim R|84|67
@@ -270,7 +270,7 @@ C0268,dev,report,real,,Kevin v Attorney-General (Commonwealth) (2001) 165 FLR 40
 C0269,dev,report,real,,Andrews v Law Society of British Columbia [1989] 1 SCR 143,outside_coverage,[2010] NSWCCA 196,SCR|1|143
 C0270,dev,report,real,,AMP Financial Planning v Green (2004) 51 ACSR 693,exists,[2010] NSWSC 629,ACSR|51|693
 C0271,dev,report,real,,Punin v Deputy Commissioner of Taxation (2000) 44 ATR 233,exists,[2011] FCA 1465,ATR|44|233
-C0272,dev,report,real,,Scott v Scott [1913] AC 417,exists,[2011] FCA 761,AC||417
+C0272,dev,report,real,,Scott v Scott [1913] AC 417,exists,[2011] FCA 761,AC|1913/|417
 C0273,dev,report,real,,(2004) 144 A Crim R 90,exists,[2011] NSWCCA 241,A Crim R|144|90
 C0274,dev,report,real,,Davids Securities Pty Ltd v Commonwealth Bank of Australia (1992) CLR 353,exists,[2011] NSWDC 125,CLR||353
 C0275,dev,report,real,,(2000) 49 NSWLR 383,exists,[2011] NSWIRComm 133,NSWLR|49|383
@@ -283,7 +283,7 @@ C0281,dev,report,real,,Beale v Government Insurance Office (1997) 48 NSWLR 430,e
 C0282,dev,report,real,,Covino v Bandag Manufacturing Pty Ltd [1983] 1 NSWLR 237,exists,[2012] NSWCA 106,NSWLR|1|237
 C0283,dev,report,real,,Godfrey v Henderson (1944) 44 SR (NSW) 447,exists,[2012] NSWCA 230,SR (NSW)|44|447
 C0284,dev,report,real,,Mison v Randwick Municipal Council (1991) 23 NSWLR 734,exists,[2012] NSWLEC 1109,NSWLR|23|734
-C0285,dev,report,real,,(2005) 13 VR 435,exists,[2012] NSWSC 1347,VR|13|435
+C0285,dev,report,real,,(2005) 13 VR 435,exists,[2012] NSWSC 1347,VR|2005/13|435
 C0286,dev,report,real,,(1998) 45 NSWLR 80,exists,[2012] NSWSC 181,NSWLR|45|80
 C0287,dev,report,real,,Hicks v Ruddock [2007] 156 FCR 574,exists,[2012] NSWSC 233,FCR|156|574
 C0288,dev,report,real,,Court of Appeal v Ritter (1985) 34 NSWLR 641,exists,[2012] NSWSC 542,NSWLR|34|641
@@ -298,7 +298,7 @@ C0296,dev,report,real,,(2012) 61 MVR 534,not_in_report_index,[2013] NSWSC 867,MV
 C0297,dev,report,real,,Carr v Finance Corporation of Australia Ltd (1982) 150 CLR 139 at 152,exists,[2013] NSWSC 940,CLR|150|139
 C0298,dev,report,real,,Sanders v Snell (1997) 73 FCR 569 at 601,exists,[2014] FCAFC 100,FCR|73|569
 C0299,dev,report,real,,Project Blue Sky v Australian Broadcasting Authority (1988) 194 CLR 355,exists,[2014] NSWCATAD 181,CLR|194|355
-C0300,dev,report,real,,Director of Public Prosecutions v Smith (1991) 1 VR 63,exists,[2014] NSWCATOD 43,VR|1|63
+C0300,dev,report,real,,Director of Public Prosecutions v Smith (1991) 1 VR 63,exists,[2014] NSWCATOD 43,VR|1991/1|63
 C0301,dev,report,real,,R v Sharma (2002) 54 NSWLR 300,exists,[2014] NSWCCA 223,NSWLR|54|300
 C0302,dev,report,real,,Minister for Immigration and Citizenship v MZYYL (2012) 207 FCR 211,exists,[2015] FCA 1031,FCR|207|211
 C0303,dev,report,real,,Perder Investments Pty Ltd v Elmer (1991) 31 FCR 201,exists,[2015] FCA 306,FCR|31|201
@@ -528,423 +528,422 @@ C0526,dev,mnc,synthetic,wrong_year,Marquess Investment Fund Pty Ltd v Tjen [2021
 C0527,dev,mnc,synthetic,wrong_year,R v MAK [2007] NSWCCA 381,outside_coverage,[2023] NSWDC 542,NSWCCA|2006|381
 C0528,dev,mnc,synthetic,wrong_year,Trustee for the East Rockingham RRF Project Trust v Acciona Construction Australia Pty Ltd (No 2) [2027] FCA 1014,outside_coverage,[2024] FCA 1213,FCA|2024|1014
 C0529,dev,mnc,synthetic,wrong_year,En Liquidation v Akhil Holdings Ltd [1992] HCA 11,no_record_in_range,[2025] FCA 83,HCA|1990|11
-C0530,dev,report,synthetic,other_case_parties,Butcher v Lachlan Elder Realty Pty Ltd (1988) 171 CLR 167,exists_other_parties,[1991] NSWCA 241,CLR|171|167
-C0531,dev,report,synthetic,other_case_parties,Godfrey v Henderson (1982) 6 ALD 240,exists_other_parties,[1999] NSWADT 36,ALD|6|240
-C0532,dev,report,synthetic,other_case_parties,Re Proptech Group Ltd (1986) 19 IR 18,exists_other_parties,[2000] NSWIRComm 118,IR|19|18
-C0533,dev,report,synthetic,other_case_parties,& Anor v Perpetual Trustees Victoria Limited [1984] 1 NSWLR 317,exists_other_parties,[2002] NSWIRComm 83,NSWLR|1|317
-C0534,dev,report,synthetic,other_case_parties,NBMZ v Minister for Immigration and Border Protection [1991] ALR 193,exists_other_parties,[2002] NSWLEC 1,ALR||193
-C0535,dev,report,synthetic,other_case_parties,Hajje v R (1989) 19 NSWLR 158,exists_other_parties,[2003] NSWCA 155,NSWLR|19|158
-C0536,dev,report,synthetic,other_case_parties,Energy Australia v Power Technologies Pty Limited (1993) 49 FCR 576,exists_other_parties,[2004] FCA 163,FCR|49|576
-C0537,dev,report,synthetic,other_case_parties,Maddaford v CSR Limited and Mulgoa Quarries Pty Ltd (1988) 164 CLR 465,exists_other_parties,[2006] NSWCCA 128,CLR|164|465
-C0538,dev,report,synthetic,other_case_parties,Health Care Complaints Commission v Grygiel (1989) 16 NSWLR 14,exists_other_parties,[2006] NSWSC 585,NSWLR|16|14
-C0539,dev,report,synthetic,other_case_parties,Purvis v State of New South Wales (1992) 176 CLR 256,exists_other_parties,[2007] FCA 1040,CLR|176|256
-C0540,dev,report,synthetic,other_case_parties,Egan v Chadwick (1998) 193 CLR 72,exists_other_parties,[2007] NSWSC 253,CLR|193|72
-C0541,dev,report,synthetic,other_case_parties,CLR Isbester v Knox City Council (2007) 228 CLR 651,exists_other_parties,[2010] FCA 1414,CLR|228|651
-C0542,dev,report,synthetic,other_case_parties,Rehm Pty Ltd v Websters Security Systems (International) Pty Ltd (1998) 44 NSWLR 493,exists_other_parties,[2011] NSWSC 1261,NSWLR|44|493
-C0543,dev,report,synthetic,other_case_parties,Timms v Clift (1997) 48 NSWLR 430,exists_other_parties,[2012] NSWADTAP 9,NSWLR|48|430
-C0544,dev,report,synthetic,other_case_parties,O'Donel v Commissioner for Road Transport & Tramways (NSW) (1997) 73 FCR 569,exists_other_parties,[2014] FCAFC 100,FCR|73|569
-C0545,dev,report,synthetic,other_case_parties,Thongpraphai v the Minister for Immigration and Multicultural Affairs (2012) 207 FCR 211,exists_other_parties,[2015] FCA 1031,FCR|207|211
-C0546,dev,report,synthetic,other_case_parties,PS Chellaram & Co Ltd v China Ocean Shipping Co (1963) 109 CLR 9,exists_other_parties,[2017] FCAFC 139,CLR|109|9
-C0547,dev,report,synthetic,other_case_parties,Advan Investments Pty Ltd v Dean Gleeson Motor Sales Pty Ltd (2000) 50 NSWLR 127,exists_other_parties,[2018] NSWLC 21,NSWLR|50|127
-C0548,dev,report,synthetic,other_case_parties,CQG15 v Minister for Immigration and Border Protection (1985) 1 NSWLR 602,exists_other_parties,[2019] NSWSC 297,NSWLR|1|602
-C0549,dev,report,synthetic,other_case_parties,Wingecarribee Shire Council v Lehman Brothers Australia Limited (No 3) (1985) 5 FCR 464,exists_other_parties,[2021] FCA 1372,FCR|5|464
-C0550,dev,report,synthetic,other_case_parties,En Liquidation v Akhil Holdings Ltd (2016) 93 NSWLR 231,exists_other_parties,[2021] NSWSC 1382,NSWLR|93|231
-C0551,dev,report,synthetic,wrong_page,Wilson v Minister for Aboriginal and Torres Strait Islander Affairs (1996) 189 CLR 303,not_in_report_index,[2004] FCAFC 165,CLR|189|1
-C0552,dev,report,synthetic,wrong_page,Mifsud v Campbell (1991) 21 NSWLR 368,not_in_report_index,[2005] NSWCA 110,NSWLR|21|725
-C0553,dev,report,synthetic,wrong_page,Smith v New South Wales Bar Association (1992) 176 CLR 81,not_in_report_index,[2007] FCA 1040,CLR|176|256
-C0554,dev,report,synthetic,wrong_page,Australian Consumer and Competition Commission v Dermalogica Pty Ltd [2005] 215 ALR 829,not_in_report_index,[2007] FCA 1859,ALR|215|482
-C0555,dev,report,synthetic,wrong_page,Oshlack v Richmond River Council (1998) 193 CLR 36,not_in_report_index,[2007] NSWSC 253,CLR|193|72
-C0556,dev,report,synthetic,wrong_page,R v Boland [1974] VR 1139,not_in_report_index,[2008] NSWSC 817,VR||849
-C0557,dev,report,synthetic,wrong_page,State of Queensland v JL Holdings Pty Limited (1997) 189 CLR 353,not_in_report_index,[2009] FCA 366,CLR|189|146
-C0558,dev,report,synthetic,wrong_page,AMP Financial Planning v Green (2004) 51 ACSR 759,not_in_report_index,[2010] NSWSC 629,ACSR|51|693
-C0559,dev,report,synthetic,wrong_page,Punin v Deputy Commissioner of Taxation (2000) 44 ATR 589,not_in_report_index,[2011] FCA 1465,ATR|44|233
-C0560,dev,report,synthetic,wrong_page,Davids Securities Pty Ltd v Commonwealth Bank of Australia (1992) CLR 651,not_in_report_index,[2011] NSWDC 125,CLR||353
-C0561,dev,report,synthetic,wrong_page,Hicks v Ruddock [2007] 156 FCR 503,not_in_report_index,[2012] NSWSC 233,FCR|156|574
-C0562,dev,report,synthetic,wrong_page,Court of Appeal v Ritter (1985) 34 NSWLR 752,not_in_report_index,[2012] NSWSC 542,NSWLR|34|641
-C0563,dev,report,synthetic,wrong_page,Koompahtoo Local Aboriginal Land Council v Sanpine Pty Ltd (2007) 233 CLR 162,exists_other_parties,[2013] NSWDC 124,CLR|233|115
-C0564,dev,report,synthetic,wrong_page,Jones v Australian Competition and Consumer Commission (2002) 76 ALD 507,not_in_report_index,[2016] FCA 356,ALD|76|424
-C0565,dev,report,synthetic,wrong_page,Pearce v The Queen (1998) 194 CLR 904,not_in_report_index,[2016] NSWCCA 220,CLR|194|610
-C0566,dev,report,synthetic,wrong_page,Purvis v State of New South Wales (2003) 217 CLR 381,not_in_report_index,[2017] NSWCATAD 342,CLR|217|92
-C0567,dev,report,synthetic,wrong_page,Strathfield Municipal Council v Poynting (2001) 116 LGERA 37,not_in_report_index,[2021] NSWLEC 1553,LGERA|116|319
-C0568,dev,report,synthetic,wrong_page,Drake v Minister for Immigration and Ethnic Affairs (1979) 2 ALD 422,not_in_report_index,[2022] NSWCATOD 177,ALD|2|60
-C0569,dev,report,synthetic,wrong_page,Adams v Kennick Trading (Int) Ltd (1986) 4 NSWLR 374,exists_other_parties,[2022] NSWDC 323,NSWLR|4|503
-C0570,dev,report,synthetic,wrong_page,Australian Broadcasting Corporation v O'Neill (2006) 227 CLR 268,not_in_report_index,[2024] NSWSC 14,CLR|227|57
-C0571,dev,report,synthetic,wrong_party,Palmer v Chief Commissioner of State Revenue (1989) 19 NSWLR 158,exists_other_parties,[2003] NSWCA 155,NSWLR|19|158
-C0572,dev,report,synthetic,wrong_party,Wyong Shire Council v Dawson (No 2) (1992) 109 ALR 319,exists_other_parties,[2005] FCA 167,ALR|109|319
-C0573,dev,report,synthetic,wrong_party,Veen v Ferrington (GD) (1988) 164 CLR 465,exists_other_parties,[2006] NSWCCA 128,CLR|164|465
-C0574,dev,report,synthetic,wrong_party,Oshlack v WorkPower Inc (1998) 193 CLR 72,exists_other_parties,[2007] NSWSC 253,CLR|193|72
-C0575,dev,report,synthetic,wrong_party,Ted Brown Quarries Pty Ltd v Boland [1974] VR 849,exists_other_parties,[2008] NSWSC 817,VR||849
-C0576,dev,report,synthetic,wrong_party,SZBYR v Brilliant Digital Entertainment Pty Ltd (2007) 235 ALR 609,exists_other_parties,[2010] FCA 79,ALR|235|609
-C0577,dev,report,synthetic,wrong_party,Federal Commissioner of Taxation v Green (2004) 51 ACSR 693,exists_other_parties,[2010] NSWSC 629,ACSR|51|693
-C0578,dev,report,synthetic,wrong_party,Punin v Bradford Kendall Foundries Pty Limited (2000) 44 ATR 233,exists_other_parties,[2011] FCA 1465,ATR|44|233
-C0579,dev,report,synthetic,wrong_party,Richmond River Council v Canterbury City Council (2001) 115 LGERA 373,exists_other_parties,[2011] NSWLEC 1341,LGERA|115|373
-C0580,dev,report,synthetic,wrong_party,Dare v Thongpraphai (1998) 44 NSWLR 493,exists_other_parties,[2011] NSWSC 1261,NSWLR|44|493
-C0581,dev,report,synthetic,wrong_party,Project Blue Sky v Tobacco Institute of Australia Ltd (No 2) (1988) 194 CLR 355,exists_other_parties,[2014] NSWCATAD 181,CLR|194|355
-C0582,dev,report,synthetic,wrong_party,Pearce v Kyriakides (1998) 194 CLR 610,exists_other_parties,[2016] NSWCCA 220,CLR|194|610
-C0583,dev,report,synthetic,wrong_party,Westport Insurance Corporation v Federal Commissioner of Taxation (1963) 109 CLR 9,exists_other_parties,[2017] FCAFC 139,CLR|109|9
-C0584,dev,report,synthetic,wrong_party,Ted Brown Quarries Pty Ltd v Brent LBC (1977) 16 ALR 23,exists_other_parties,[2019] NSWCATAP 140,ALR|16|23
-C0585,dev,report,synthetic,wrong_party,Waltons Stores (Interstate) Ltd v AWA15 (1988) 164 CLR 387,exists_other_parties,[2019] NSWCATCD 41,CLR|164|387
-C0586,dev,report,synthetic,wrong_party,JT International SA v Briginshaw (1938) 60 CLR 336,exists_other_parties,[2019] NSWCATCD 64,CLR|60|336
-C0587,dev,report,synthetic,wrong_party,Goodwin v Federal Commissioner of Taxation (1908) 7 CLR 1,exists_other_parties,[2021] FCA 1227,CLR|7|1
-C0588,dev,report,synthetic,wrong_party,Bullock v Norwich Winterthur Insurance (Australia) Ltd (1985) 5 FCR 464,exists_other_parties,[2021] FCA 1372,FCR|5|464
-C0589,dev,report,synthetic,wrong_party,Boatman v Euphoric Pty Ltd and Another (2008) 227 ALR 43,exists_other_parties,[2022] FCA 282,ALR|227|43
-C0590,dev,report,synthetic,wrong_party,Krakouer v Scenic Tours (2020) 268 CLR 326,exists_other_parties,[2023] NSWDC 243,CLR|268|326
-C0591,dev,report,synthetic,wrong_party,DPP (Cth) v Ford (2010) 79 NSWLR 1,exists_other_parties,[2024] NSWDC 377,NSWLR|79|1
-C0592,dev,report,synthetic,wrong_volume,Balfour Beattie Power Construction v Kidson [1989] 4 Qd R 105,not_in_report_index,[1998] FCA 1622,QdR|2|105
-C0593,dev,report,synthetic,wrong_volume,Re Dekanic and The Tax Agents Board (1982) 13 ALD 240,not_in_report_index,[1999] NSWADT 36,ALD|6|240
-C0594,dev,report,synthetic,wrong_volume,Veen v The Queen (No 2) (1988) 166 CLR 465,not_in_report_index,[2006] NSWCCA 128,CLR|164|465
-C0595,dev,report,synthetic,wrong_volume,Australian Consumer and Competition Commission v Dermalogica Pty Ltd [2005] 219 ALR 482,not_in_report_index,[2007] FCA 1859,ALR|215|482
-C0596,dev,report,synthetic,wrong_volume,Alcatel Australia Ltd v Scarcella (1998) 58 NSWLR 349,not_in_report_index,[2007] NSWSC 1375,NSWLR|44|349
-C0597,dev,report,synthetic,wrong_volume,Cameron v Hogan (1934) 27 CLR 358,not_in_report_index,[2007] NSWSC 1419,CLR|51|358
-C0598,dev,report,synthetic,wrong_volume,Craig v South Australia (1985) 178 CLR 163,not_in_report_index,[2007] NSWSC 260,CLR|184|163
-C0599,dev,report,synthetic,wrong_volume,Dare v Furness (1998) 27 NSWLR 493,not_in_report_index,[2011] NSWSC 1261,NSWLR|44|493
-C0600,dev,report,synthetic,wrong_volume,Mison v Randwick Municipal Council (1991) 5 NSWLR 734,not_in_report_index,[2012] NSWLEC 1109,NSWLR|23|734
-C0601,dev,report,synthetic,wrong_volume,R v Wright (1997) 82 A Crim R 48,not_in_report_index,[2013] NSWDC 330,A Crim R|93|48
-C0602,dev,report,synthetic,wrong_volume,Project Blue Sky v Australian Broadcasting Authority (1988) 181 CLR 355,not_in_report_index,[2014] NSWCATAD 181,CLR|194|355
-C0603,dev,report,synthetic,wrong_volume,Director of Public Prosecutions v Smith (1991) 2 VR 63,exists_other_parties,[2014] NSWCATOD 43,VR|1|63
-C0604,dev,report,synthetic,wrong_volume,R v Jurisic (1998) 34 NSWLR 209,not_in_report_index,[2017] NSWCCA 205,NSWLR|45|209
-C0605,dev,report,synthetic,wrong_volume,Goodwin v Phillips (1908) 16 CLR 1,exists_other_parties,[2021] FCA 1227,CLR|7|1
-C0606,dev,report,synthetic,wrong_volume,Antonakopoulos v State Bank of NSW (1999) 110 IR 385,not_in_report_index,[2021] NSWIRComm 1066,IR|91|385
-C0607,dev,report,synthetic,wrong_volume,Arab Bank Australia Ltd v Sayde Developments Pty Ltd (2016) 64 NSWLR 231,not_in_report_index,[2021] NSWSC 1382,NSWLR|93|231
-C0608,dev,report,synthetic,wrong_volume,Adams v Kennick Trading (Int) Ltd (1986) 32 NSWLR 503,not_in_report_index,[2022] NSWDC 323,NSWLR|4|503
-C0609,dev,report,synthetic,wrong_volume,Kirby v Sanderson Motors Pty Ltd (2001) 26 NSWLR 135,not_in_report_index,[2022] NSWDC 65,NSWLR|54|135
-C0610,dev,report,synthetic,wrong_volume,Haines v Leves (1987) 29 NSWLR 442,not_in_report_index,[2024] FCA 1230,NSWLR|8|442
-C0611,dev,report,synthetic,wrong_volume,Australian Broadcasting Corporation v O'Neill (2006) 254 CLR 57,not_in_report_index,[2024] NSWSC 14,CLR|227|57
-C0612,heldout,mnc,real,,Industrial Equity Ltd v Federal Commissioner of Taxation [1999] FCA 1533,exists,[1999] FCA 1796,FCA|1999|1533
-C0613,heldout,mnc,real,,Dhiman v Minister for Immigration and Multicultural Affairs [1999] FCA 1291,exists,[2000] FCA 803,FCA|1999|1291
-C0614,heldout,mnc,real,,Al-Anezi v Minister for Immigration and Multicultural Affairs [1999] FCA 355 at [21],exists,[2001] FCA 611,FCA|1999|355
-C0615,heldout,mnc,real,,Groves v BMW Australia Finance Pty Ltd [2001] QCA 16,outside_coverage,[2001] NSWSC 657,QCA|2001|16
-C0616,heldout,mnc,real,,[2000] FCA 441,exists,[2002] FCA 631,FCA|2000|441
-C0617,heldout,mnc,real,,Chen v Karandonis [2002] NSWCA 412,exists,[2003] NSWIRComm 459,NSWCA|2002|412
-C0618,heldout,mnc,real,,[2004] NSWIRComm 80 at [15],exists,[2004] NSWIRComm 314,NSWIRComm|2004|80
-C0619,heldout,mnc,real,,R v Thomson and Houlton [2000] NSWCCA 309,exists,[2004] NSWSC 597,NSWCCA|2000|309
-C0620,heldout,mnc,real,,Vairy v Wyong Shire Council [2005] HCA 62 at [49],exists,[2005] NSWCA 379,HCA|2005|62
-C0621,heldout,mnc,real,,R v Jacobs and Mehajer [2004] NSWCCA 462,exists,[2005] NSWSC 212,NSWCCA|2004|462
-C0622,heldout,mnc,real,,Mathews v Health Insurance Commission [2006] FCA 195,exists,[2006] FCA 453,FCA|2006|195
-C0623,heldout,mnc,real,,[2005] FCAFC 73 at [17],exists,[2006] FCA 77,FCAFC|2005|73
-C0624,heldout,mnc,real,,[1994] QICmr 7,outside_coverage,[2006] NSWADT 195,QICmr|1994|7
-C0625,heldout,mnc,real,,R v Thomas [2003] NSWCCA 165,exists,[2006] NSWCCA 173,NSWCCA|2003|165
-C0626,heldout,mnc,real,,Rana v Australian Federal Police [2006] FCAFC 169,exists,[2007] FCAFC 188,FCAFC|2006|169
-C0627,heldout,mnc,real,,Friends of Hinchinbrook Society Inc v Minister for the Environment [1997] FCA 295,exists,[2008] FCA 1667,FCA|1997|295
-C0628,heldout,mnc,real,,Chapman v Caska [2005] NSWCA 113 at [19],exists,[2008] NSWCCA 322,NSWCA|2005|113
-C0629,heldout,mnc,real,,Murphy & Allen v Swinbank [1999] NSWSC 934,exists,[2008] NSWSC 793,NSWSC|1999|934
-C0630,heldout,mnc,real,,[2008] QSC 216,outside_coverage,[2009] FCA 269,QSC|2008|216
-C0631,heldout,mnc,real,,Divine-Bortey v Brent LBC [1998] ICR 886,outside_coverage,[2009] NSWCA 389,ICR|1998|886
-C0632,heldout,mnc,real,,Black v Apps [2005] NSWSC 943,exists,[2009] NSWLEC 1326,NSWSC|2005|943
-C0633,heldout,mnc,real,,Ford v Henry [2009] NSWSC 147,exists,[2009] NSWSC 1254,NSWSC|2009|147
-C0634,heldout,mnc,real,,Pty Limited v Motor Accidents Insurance Board [2009] HCA 47,exists,[2009] NSWSC 1344,HCA|2009|47
-C0635,heldout,mnc,real,,Marsden v Amalgamated Television Services Pty Limited [2001] NSWSC 77,exists,[2009] NSWSC 156,NSWSC|2001|77
-C0636,heldout,mnc,real,,Specialty Fashion Group Limited v Muirhead Nominees Pty Limited & Ors [2009] NSWSC 754,exists,[2009] NSWSC 975,NSWSC|2009|754
-C0637,heldout,mnc,real,,Advan Investments Pty Ltd v Dean Gleeson Motor Sales Pty Ltd [2003] VSC 201 at [31],outside_coverage,[2010] FCA 560,VSC|2003|201
-C0638,heldout,mnc,real,,Auskay International Manufacturing and Trade Pty Ltd v Qantas Airways Ltd (No 5) [2009] FCA 1464,exists,[2010] FCAFC 129,FCA|2009|1464
-C0639,heldout,mnc,real,,Creamer v Chief Commissioner of State Revenue[2006] NSWADT 272,exists,[2010] NSWADT 117,NSWADT|2006|272
-C0640,heldout,mnc,real,,[2010] FCA 1248,exists,[2011] FCA 1007,FCA|2010|1248
-C0641,heldout,mnc,real,,Commissioner of Taxation v Denlay [2010] QCA 217,outside_coverage,[2011] FCA 222,QCA|2010|217
-C0642,heldout,mnc,real,,Tempo Services Ltd v Robinson and Anor [2005] SASC 161,outside_coverage,[2011] FCAFC 51,SASC|2005|161
-C0643,heldout,mnc,real,,Malec v JC Hutton Pty Ltd [1990] HCA 20,exists,[2011] NSWSC 119,HCA|1990|20
-C0644,heldout,mnc,real,,R v Finney (No 2) [2004] NSWCCA 150,exists,[2011] NSWSC 153,NSWCCA|2004|150
-C0645,heldout,mnc,real,,Australian Competition and Consumer Commission v Trading Post Australia Pty Ltd [2011] FCA 1086,exists,[2012] FCAFC 49,FCA|2011|1086
-C0646,heldout,mnc,real,,Moweno Pty Ltd v Stratis Promotions Pty Ltd [2002] NSWSC 1151,exists,[2012] NSWADTAP 8,NSWSC|2002|1151
-C0647,heldout,mnc,real,,El-Jalkh v R [2009] NSWCCA 139,exists,[2012] NSWCCA 85,NSWCCA|2009|139
-C0648,heldout,mnc,real,,Project Venture Developments v Pittwater Council [2005] NSWLEC 191,exists,[2012] NSWLEC 1030,NSWLEC|2005|191
-C0649,heldout,mnc,real,,Jones v Bradley [2003] NSWCA 81,exists,[2012] NSWSC 180,NSWCA|2003|81
-C0650,heldout,mnc,real,,US Manufacturing Co Pty Ltd v ABB Service Pty Ltd [2008] NSWSC 705,exists,[2012] NSWSC 666,NSWSC|2008|705
-C0651,heldout,mnc,real,,Re Telstra Corporation Ltd (No 3) [2007] ACompT 3,exists,[2013] ACompT 3,ACompT|2007|3
-C0652,heldout,mnc,real,,SZRMS v Minister for Immigration and Citizenship [2013] FMCA 161,outside_coverage,[2013] FCA 530,FMCA|2013|161
-C0653,heldout,mnc,real,,[2011] VSCA 248 at [26],outside_coverage,[2013] FCA 918,VSCA|2011|248
-C0654,heldout,mnc,real,,Wanice Pty Ltd v Bocove Pty Ltd [2003] NSWADTAP 24,exists,[2013] NSWADT 104,NSWADTAP|2003|24
-C0655,heldout,mnc,real,,[2009] NSWLEC 1148,exists,[2013] NSWLEC 1259,NSWLEC|2009|1148
-C0656,heldout,mnc,real,,Palerang Council v Banfield [2012] NSWLEC 85,exists,[2013] NSWLEC 189,NSWLEC|2012|85
-C0657,heldout,mnc,real,,Bale v Seltsam Pty Ltd [1996] HCAtrans 470,outside_coverage,[2013] NSWSC 1706,HCAtrans|1996|470
-C0658,heldout,mnc,real,,Gates v City Mutual Life Assurance Society Ltd [1986] HCA 3,no_record_in_range,[2014] NSWCA 396,HCA|1986|3
-C0659,heldout,mnc,real,,Hawkins v Barclay-Brown [2010] NSWSC 48 at [68]-[69],exists,[2014] NSWSC 247,NSWSC|2010|48
-C0660,heldout,mnc,real,,Moana v Minister for Immigration and Border Protection [2014] FCA 1084,exists,[2015] FCAFC 54,FCA|2014|1084
-C0661,heldout,mnc,real,,Trustee for the Kissane Family Trust v Burns [2015] NSWSC 423,exists,[2015] NSWCA 238,NSWSC|2015|423
-C0662,heldout,mnc,real,,CQG15 v Minister for Immigration and Border Protection [2016] FCAFC 146,exists,[2016] FCA 1449,FCAFC|2016|146
-C0663,heldout,mnc,real,,Murphy v Westpac Banking Corporation (No 2) [2015] FCA 266,exists,[2016] FCAFC 51,FCA|2015|266
-C0664,heldout,mnc,real,,Holder v Zeiher [2014] NSWSC 556,exists,[2016] NSWSC 1685,NSWSC|2014|556
-C0665,heldout,mnc,real,,Electric Generation Corporation v Woodside Energy Ltd [2014] HCA 7,exists,[2016] NSWSC 30,HCA|2014|7
-C0666,heldout,mnc,real,,[2017] NSWSC 541,exists,[2017] NSWCA 291,NSWSC|2017|541
-C0667,heldout,mnc,real,,HCCC v Khalsa (No 2) [2014] NSWCATOD 47,exists,[2017] NSWCATOD 24,NSWCATOD|2014|47
-C0668,heldout,mnc,real,,R v Collisson [2003] NSWCCA 212,exists,[2017] NSWDC 215,NSWCCA|2003|212
-C0669,heldout,mnc,real,,Muldrock v R [2011] HCA 39,exists,[2017] NSWDC 242,HCA|2011|39
-C0670,heldout,mnc,real,,Russell v Edwards (No 2) [2006] NSWCA 52 at [8],exists,[2017] NSWDC 304,NSWCA|2006|52
-C0671,heldout,mnc,real,,[2014] NSWCA 39,exists,[2017] NSWSC 1638,NSWCA|2014|39
-C0672,heldout,mnc,real,,Minister for Immigration and Citizenship v MZYZA [2013] FCA 572 at [31]-[32],exists,[2018] FCA 451,FCA|2013|572
-C0673,heldout,mnc,real,,AWA15 v Minister for Immigration & Anor [2017] FCCA 391,outside_coverage,[2018] FCA 604,FCCA|2017|391
-C0674,heldout,mnc,real,,[2013] HCA 18 at [28],exists,[2018] FCAFC 10,HCA|2013|18
-C0675,heldout,mnc,real,,Kiama Council v Grant [2006] NSWLEC 96,exists,[2018] NSWLEC 9,NSWLEC|2006|96
-C0676,heldout,mnc,real,,[1980] HCA 29,exists,[2018] NSWSC 1468,HCA|1980|29
-C0677,heldout,mnc,real,,[2018] FCAFC 40,exists,[2018] NSWSC 2001,FCAFC|2018|40
-C0678,heldout,mnc,real,,Boase v Axis International Management Pty Ltd (No 3) [2012] WASC 498,outside_coverage,[2019] FCA 1008,WASC|2012|498
-C0679,heldout,mnc,real,,BZC17 v Minister for Immigration and Border Protection [2018] FCA 902,exists,[2019] FCA 1918,FCA|2018|902
-C0680,heldout,mnc,real,,JT International SA v Commonwealth of Australia [2012] HCA 43,exists,[2019] FCA 605,HCA|2012|43
-C0681,heldout,mnc,real,,[2018] NSWSC 1424,exists,[2019] NSWCA 151,NSWSC|2018|1424
-C0682,heldout,mnc,real,,[2000] HCA 54,exists,[2019] NSWCCA 100,HCA|2000|54
-C0683,heldout,mnc,real,,Lowndes v The Queen [1999] HCA 29,exists,[2019] NSWCCA 96,HCA|1999|29
-C0684,heldout,mnc,real,,[2005] NSWLEC 191 at [22],exists,[2019] NSWLEC 1434,NSWLEC|2005|191
-C0685,heldout,mnc,real,,National Australia Bank Limited v Sayed (No 4) [2015] NSWSC 420,exists,[2019] NSWSC 1164,NSWSC|2015|420
-C0686,heldout,mnc,real,,[2011] HCA 18,exists,[2019] NSWSC 1511,HCA|2011|18
-C0687,heldout,mnc,real,,Minister for Immigration and Multicultural Affairs v Lay Lat [2006] FCAFC 61,exists,[2020] FCA 1095,FCAFC|2006|61
-C0688,heldout,mnc,real,,Hollis v Vabu Pty Ltd [2001] HCA 44,exists,[2020] FCAFC 122,HCA|2001|44
-C0689,heldout,mnc,real,,Thompson v Big Bert Pty Ltd [2007] FCA 1978 at [57],exists,[2020] FCAFC 84,FCA|2007|1978
-C0690,heldout,mnc,real,,[2000] NSWADT 28,exists,[2020] NSWCATAD 72,NSWADT|2000|28
-C0691,heldout,mnc,real,,Zenah Project Developments Pty Ltd v Kanj [2020] NSWDC 322,exists,[2020] NSWDC 380,NSWDC|2020|322
-C0692,heldout,mnc,real,,Ma v Expeditors International Pty Ltd [2014] NSWSC 859,exists,[2020] NSWSC 1224,NSWSC|2014|859
-C0693,heldout,mnc,real,,[2015] NSWSC 813,exists,[2020] NSWSC 1241,NSWSC|2015|813
-C0694,heldout,mnc,real,,Firebird Global Master Fund II Ltd v Republic of Nauru (No 2) [2015] HCA 53 at [6],exists,[2021] FCA 1449,HCA|2015|53
-C0695,heldout,mnc,real,,Department of Education and Training v Mullett (No 2) [2002] NSWCATAP 29 at [50],outside_coverage,[2021] NSWCATAD 272,NSWCATAP|2002|29
-C0696,heldout,mnc,real,,Investments Pty Ltd v Randwick City Council [2021] NSWLEC 1484,exists,[2021] NSWLEC 1616,NSWLEC|2021|1484
-C0697,heldout,mnc,real,,Fang v Li [2017] NSWLEC 1503,exists,[2021] NSWLEC 1672,NSWLEC|2017|1503
-C0698,heldout,mnc,real,,[1980] HCA 10,exists,[2021] NSWSC 1312,HCA|1980|10
-C0699,heldout,mnc,real,,R v Achurch [2011] NSWCCA 186,exists,[2022] NSWDC 501,NSWCCA|2011|186
-C0700,heldout,mnc,real,,Whitbread v Rail Corporation New South Wales [2011] NSWCA 130,exists,[2022] NSWDC 647,NSWCA|2011|130
-C0701,heldout,mnc,real,,Toga Penrith Developments Pty Limited v Penrith City Council [2022] NSWLEC 117,exists,[2022] NSWLEC 1612,NSWLEC|2022|117
-C0702,heldout,mnc,real,,[1990] HCA 69,outside_coverage,[2022] NSWLEC 35,HCA|1990|69
-C0703,heldout,mnc,real,,[2021] NSWCA 162,exists,[2022] NSWSC 401,NSWCA|2021|162
-C0704,heldout,mnc,real,,Synergy Scaffolding Services Pty Ltd v Alelaimat [2023] NSWCA 213,exists,[2023] NSWSC 1655,NSWCA|2023|213
-C0705,heldout,mnc,real,,[2014] NSWCATGD 37,exists,[2024] NSWCATGD 8,NSWCATGD|2014|37
-C0706,heldout,mnc,real,,Cahyadi v R [2007] NSWCCA 1,exists,[2024] NSWDC 437,NSWCCA|2007|1
-C0707,heldout,mnc,real,,[2010] NSWLEC 70,exists,[2024] NSWLEC 1461,NSWLEC|2010|70
-C0708,heldout,mnc,real,,[2009] NSWLEC 84 at [29],exists,[2024] NSWLEC 68,NSWLEC|2009|84
-C0709,heldout,mnc,real,,Baulderstone Hornibrook Engineering Pty Ltd v Gordian Runoff Ltd (No 2) [2009] NSWCA 12,exists,[2024] NSWSC 24,NSWCA|2009|12
-C0710,heldout,mnc,real,,Boatswain v Boatswain [2023] NSWSC 763 at [263]-[267],exists,[2025] NSWSC 57,NSWSC|2023|763
-C0711,heldout,report,real,,John Fairfax and Sons Limited v Foord (1988) 12 NSWLR 706,exists,[1989] NSWCA 67,NSWLR|12|706
-C0712,heldout,report,real,,Cory v Cory [1923] 1 Ch 90,exists,[1995] FCA 961,Ch|1|90
-C0713,heldout,report,real,,New South Wales Division v Sydney City Council (1987) 23 IR 454,exists,[1995] IRCA 144,IR|23|454
-C0714,heldout,report,real,,Deputy Commissioner of Taxation v Access Finance Corporation Pty Ltd (1987) 8 NSWLR 557 at 558,exists,[1996] FCA 708,NSWLR|8|557
-C0715,heldout,report,real,,Ling v Enrobrook (1977) 143 ALR 396,exists,[1998] FCA 1332,ALR|143|396
-C0716,heldout,report,real,,Misiaris v AFC Holdings Pty Limited (1988) 15 NSWLR 231,not_in_report_index,[1998] FCA 1419,NSWLR|15|231
-C0717,heldout,report,real,,"Snoid v CBS Records (1981) 38 ALR 383, 392",exists,[1999] FCA 36,ALR|38|383
-C0718,heldout,report,real,,R v Transport Secretary; Ex parte Factortame Ltd (No 2) [1991] 1 AC 603,exists,[1999] NSWSC 787,AC|1|603
-C0719,heldout,report,real,,R v Williams; Ex parte Lewis [1992] 1 Qd R 643 at 658,exists,[2000] FCA 1659,Qd R|1|643
-C0720,heldout,report,real,,Re Shead; Ex parte Shead (1954) 16 ABC 188,outside_coverage,[2000] FCA 353,ABC|16|188
-C0721,heldout,report,real,,(1998) 158 ALR 379,exists,[2000] NSWCCA 468,ALR|158|379
-C0722,heldout,report,real,,Minister for Immigration and Multicultural Affairs v Thiyagarajah (1997) 80 FCR 543,exists,[2001] FCA 101,FCR|80|543
-C0723,heldout,report,real,,ACCC v ASIC (2000) NSW SC 316,outside_coverage,[2001] FCA 187,NSW SC||316
-C0724,heldout,report,real,,(1998) 80 IR 326,exists,[2001] NSWIRComm 96,IR|80|326
-C0725,heldout,report,real,,[1920] 2 KB 106 at 132,exists,[2001] NSWSC 242,KB|2|106
-C0726,heldout,report,real,,(2002) 23 NSWCCR 372,outside_coverage,[2002] NSWCC 20,NSWCCR|23|372
-C0727,heldout,report,real,,Crofts v The Queen (1996) 186 CLR 427 at 440-441,exists,[2002] NSWCCA 412,CLR|186|427
-C0728,heldout,report,real,,Truth About Motorways Pty Ltd v Macquarie Infrastructure Investment Management Ltd (2000) 34 ASCR 673 at 678-681,outside_coverage,[2004] FCA 1167,ASCR|34|673
-C0729,heldout,report,real,,Van Reesema v Giameos (1979) 27 ALR 525,exists,[2004] FCA 411,ALR|27|525
-C0730,heldout,report,real,,Re Diplock's Estate [1948] Ch 251,exists,[2004] NSWSC 56,Ch||251
-C0731,heldout,report,real,,R v Previtera (1997) 94 A Crim R 76,exists,[2004] NSWSC 597,A Crim R|94|76
-C0732,heldout,report,real,,Allstate Explorations NL v Batepro Australia Pty Ltd (2004) NSWSC 261,outside_coverage,[2005] FCA 1240,NSWSC||261
-C0733,heldout,report,real,,[1965] VR 187 at 191,exists,[2005] NSWCCA 399,VR||187
-C0734,heldout,report,real,,Environment Protection Authority v Middle Harbour Constructions (2002) 119 LGERA 440 at 450,exists,[2005] NSWLEC 123,LGERA|119|440
-C0735,heldout,report,real,,(1977) 18 ALR 12,exists,[2005] NSWSC 1151,ALR|18|12
-C0736,heldout,report,real,,Salido v Nominal Defendant (1993) 32 NSWLR 524 at 530,exists,[2005] NSWSC 172,NSWLR|32|524
-C0737,heldout,report,real,,Blount Inc v Registrar of Trade Marks (1998) 83 FCR 50 at 58-9,exists,[2006] FCA 951,FCR|83|50
-C0738,heldout,report,real,,Meinhard v Salmon (1928) 249 NY 458,outside_coverage,[2006] FCAFC 44,NY|249|458
-C0739,heldout,report,real,,Vairy v Wyong Shire Council (2005) 80 ALJR 1 at 6,exists,[2006] NSWCA 242,ALJR|80|1
-C0740,heldout,report,real,,(Cth) Eyota Pty Ltd v Hanave Pty Ltd (1994) 12 ACSR 785,exists,[2006] NSWSC 1241,ACSR|12|785
-C0741,heldout,report,real,,(2004) 150 A Crim R 365,not_in_report_index,[2006] NSWSC 267,A Crim R|150|365
-C0742,heldout,report,real,,Nangkiriny v State of Western Australia (2002) 117 FCR 6,exists,[2007] FCA 474,FCR|117|6
-C0743,heldout,report,real,,(2007) NSWCCA 299,outside_coverage,[2007] NSWDC 223,NSWCCA||299
-C0744,heldout,report,real,,Re NRMA Limited (2000) 33 ACSR 595 at 605,exists,[2007] NSWSC 43,ACSR|33|595
-C0745,heldout,report,real,,Chief Commissioner of Stamp Duties v ISPT Pty Ltd (1998) 45 NSWLR 639,exists,[2007] NSWSC 802,NSWLR|45|639
-C0746,heldout,report,real,,Fencott v Muller (1983) 152 CLR 570,exists,[2008] FCA 1630,CLR|152|570
-C0747,heldout,report,real,,White Industries Australia Ltd v Commissioner of Taxation (2007) 160 FCR 298,exists,[2008] FCA 1667,FCR|160|298
-C0748,heldout,report,real,,[1997] 186 CLR 622 at 624-625,exists,[2008] FCA 84,CLR|186|622
-C0749,heldout,report,real,,Re the Minister for Immigration & Ethnic Affairs; Ex parte Lai Qin (1997) 143 ALR 1,exists,[2008] NSWADT 18,ALR|143|1
-C0750,heldout,report,real,,Postiglione v R (1997) 189 CLR 295,exists,[2008] NSWCCA 221,CLR|189|295
-C0751,heldout,report,real,,(1991) 30 FCR 102 at 109,exists,[2009] FCA 553,FCR|30|102
-C0752,heldout,report,real,,CIC Insurance Limited v Bankstown Football Club Limited (1995) 187 CLR 384,exists,[2009] NSWADT 253,CLR|187|384
-C0753,heldout,report,real,,Smith v Central Asbestos Co Ltd [1973] AC 518,exists,[2009] NSWCA 35,AC||518
-C0754,heldout,report,real,,(2007) 229 CLR 498,exists,[2009] NSWDC 46,CLR|229|498
-C0755,heldout,report,real,,(2003) 126 LGERA 279,not_in_report_index,[2009] NSWLEC 99,LGERA|126|279
-C0756,heldout,report,real,,Urban Transit of Authority of NSW v Nweiser (1992) 28 NSWLR 471,exists,[2009] NSWSC 702,NSWLR|28|471
-C0757,heldout,report,real,,Regina v Korgbara (2007) 71 NSWLR 187,exists,[2009] NSWSC 916,NSWLR|71|187
-C0758,heldout,report,real,,Ting & Anor v Blanche & Anor (1993) 118 ALR 543 at 552 – 553,exists,[2010] FCA 267,ALR|118|543
-C0759,heldout,report,real,,(2009) 262 ALR 53,exists,[2010] FCA 560,ALR|262|53
-C0760,heldout,report,real,,(1994) 181 CLR 201,exists,[2010] NSWSC 389,CLR|181|201
-C0761,heldout,report,real,,(2009) 26 JCL 1,outside_coverage,[2010] NSWSC 532,JCL|26|1
-C0762,heldout,report,real,,Sambo & Ors v Western Australia & Ors (2008) 172 FCR 271,exists,[2011] FCA 1317,FCR|172|271
-C0763,heldout,report,real,,Betfair Pty Ltd v Racing New South Wales (2010) 189 FCR 356,exists,[2011] FCA 961,FCR|189|356
-C0764,heldout,report,real,,R v Pollock (1993) 67 A Crim R 166,exists,[2011] NSWCCA 213,A Crim R|67|166
-C0765,heldout,report,real,,"(2003) 11 BPR 20,841",outside_coverage,[2011] NSWSC 1116,BPR|11|20
-C0766,heldout,report,real,,Slatyer v Daily Telegraph Newspaper Co Ltd (1908) 6 CLR 1,exists,[2012] NSWDC 238,CLR|6|1
-C0767,heldout,report,real,,Timms v Clift [1998] 2 Qd R 100 at 107,exists,[2012] NSWSC 1406,Qd R|2|100
-C0768,heldout,report,real,,Coles v Burke (1987) 10 NSWLR 429,exists,[2012] NSWSC 17,NSWLR|10|429
-C0769,heldout,report,real,,Tobin v Broadbent (1947) 75 CLR 389,not_in_report_index,[2012] NSWSC 666,CLR|75|389
-C0770,heldout,report,real,,(2009) 78 NSWLR 190,exists,[2012] NSWSC 895,NSWLR|78|190
-C0771,heldout,report,real,,Powerflex Services Pty Ltd v Data Access Corporation (1996) 67 FCR 65,exists,[2013] FCA 578,FCR|67|65
-C0772,heldout,report,real,,BHP Petroleum Pty Ltd v Oil Basins Ltd [1985] VR 756,exists,[2013] NSWCA 165,VR||756
-C0773,heldout,report,real,,State of New South Wales v Moss (2000) 54 NSWLR 536,exists,[2013] NSWDC 244,NSWLR|54|536
-C0774,heldout,report,real,,Dobb v Hacket (1993) 10 WAR 532,exists,[2013] NSWSC 1281,WAR|10|532
-C0775,heldout,report,real,,Minister for Immigration v SZIAI (2009) 259 ALR 429,exists,[2014] FCA 814,ALR|259|429
-C0776,heldout,report,real,,Calabar Properties Ltd v Stitcher [1984] 1 WLR 287,exists,[2014] NSWCA 396,WLR|1|287
-C0777,heldout,report,real,,(1993) 1 WLR 509,exists,[2015] NSWSC 1754,WLR|1|509
-C0778,heldout,report,real,,[1975] All ER 333,exists,[2016] NSWCA 45,All ER||333
-C0779,heldout,report,real,,(1997) 186 CLR 622,exists,[2016] NSWCATAP 103,CLR|186|622
-C0780,heldout,report,real,,"(2004) HCA 52, 219",outside_coverage,[2016] NSWCATAP 113,HCA||52
-C0781,heldout,report,real,,Soulemezis v Dudley (Holdings) Pty Ltd [1987] 10 NSWLR 247,exists,[2016] NSWCCA 277,NSWLR|10|247
-C0782,heldout,report,real,,Schaffer Corporation v Hawkesbury City Council (1992) 77 LGRA 21,outside_coverage,[2016] NSWLEC 1179,LGRA|77|21
-C0783,heldout,report,real,,Elyard Corp Pty Ltd v DDB Needham Sydney Pty Ltd (1995) 61 FCR 385 at 390-392,exists,[2016] NSWSC 191,FCR|61|385
-C0784,heldout,report,real,,Dolby Australia Pty Ltd v Catto (2004) 52 ACSR 204,not_in_report_index,[2016] NSWSC 254,ACSR|52|204
-C0785,heldout,report,real,,Lenijamar Pty Ltd v AGC (Advances) Ltd (1990) 27 FCR 388,exists,[2016] NSWSC 576,FCR|27|388
-C0786,heldout,report,real,,Masters v Cameron [1954] 91 CLR 353,exists,[2016] NSWSC 814,CLR|91|353
-C0787,heldout,report,real,,R v Speechley (2012) 221 A Crim R 175,exists,[2017] NSWCCA 16,A Crim R|221|175
-C0788,heldout,report,real,,Minister for Immigration and Citizenship v SZMDS (2010) 240 CLR 611,exists,[2018] FCAFC 10,CLR|240|611
-C0789,heldout,report,real,,Phillips v Roberts [1975] 2 NSWLR 207 at 212,exists,[2018] NSWSC 1646,NSWLR|2|207
-C0790,heldout,report,real,,Westport Insurance Corporation v Gordian Runoff Limited (2011) 244 CLR 239,exists,[2018] NSWSC 429,CLR|244|239
-C0791,heldout,report,real,,(2015) 255 CLR 46,exists,[2018] NSWSC 524,CLR|255|46
-C0792,heldout,report,real,,Newmont Pty Limited v Laverton Nickel NL (No 2) [1981] 1 NSWLR 221,exists,[2018] NSWSC 937,NSWLR|1|221
-C0793,heldout,report,real,,(2014) 309 ALR 67,exists,[2019] FCA 2168,ALR|309|67
-C0794,heldout,report,real,,MZKAJ v Minister for Immigration and Multi-Cultural and Indigenous Affairs (2005) FCA 1066,outside_coverage,[2019] FCA 2176,FCA||1066
-C0795,heldout,report,real,,Dale v State of Western Australia (2011) 191 FCR 521,exists,[2019] FCA 651,FCR|191|521
-C0796,heldout,report,real,,(1971) 17 FLR 141 at 167,exists,[2019] HCA 7,FLR|17|141
-C0797,heldout,report,real,,Worth v Clasohm (1952) 86 CLR 439 at 449,exists,[2019] NSWCA 303,CLR|86|439
-C0798,heldout,report,real,,PS Chellaram & Co Ltd v China Ocean Shipping Co (1991) 102 ALR 321 at 323,exists,[2019] NSWSC 113,ALR|102|321
-C0799,heldout,report,real,,(2006) 67 NSWLR 497,exists,[2019] NSWSC 114,NSWLR|67|497
-C0800,heldout,report,real,,Brambles Holdings Ltd v Bathurst City Council (2001) 53 NSWLR 153,exists,[2019] NSWSC 1468,NSWLR|53|153
-C0801,heldout,report,real,,(2018) 129 ACSR 265,exists,[2020] FCA 31,ACSR|129|265
-C0802,heldout,report,real,,Falgat Constructions Pty Ltd v Equity Australia Corporation Pty Ltd (2005) 62 NSWLR 385,exists,[2020] NSWCA 118,NSWLR|62|385
-C0803,heldout,report,real,,(1946) 46 SR (NSW) 318,exists,[2020] NSWCA 198,SR (NSW)|46|318
-C0804,heldout,report,real,,Reinhart v Welker (2011) NSWLR 311,exists,[2020] NSWCATOD 137,NSWLR||311
-C0805,heldout,report,real,,Towers Holdings Pty Limited v Sutherland Shire Council (2003) 129 LGERA 195,exists,[2020] NSWLEC 1517,LGERA|129|195
-C0806,heldout,report,real,,TR Administration Pty Ltd v Frank Marchetti & Sons Pty Ltd (2008) 66 ACSR 67,exists,[2020] NSWSC 108,ACSR|66|67
-C0807,heldout,report,real,,Calderbank v Calderbank [1975] 3 All ER 333,exists,[2021] FCA 1003,All ER|3|333
-C0808,heldout,report,real,,(2003) 214 CLR 118,exists,[2021] NSWCA 298,CLR|214|118
-C0809,heldout,report,real,,Re Australian Bank Employees Union; Ex parte Citicorp Australia Ltd (1989) 167 CLR 513 at 515,exists,[2021] NSWLEC 92,CLR|167|513
-C0810,heldout,report,real,,Langston v Langston (1834) 6 ER 1128 at 1147,outside_coverage,[2021] NSWSC 967,ER|6|1128
-C0811,heldout,report,real,,Immigration and Citizenship v SZRKT (2013) 212 FCR 99 at 131,exists,[2022] FCA 1162,FCR|212|99
-C0812,heldout,report,real,,CQG15 v Minister for Immigration and Border Protection (2016) 253 FCR 496,exists,[2022] FCA 1205,FCR|253|496
-C0813,heldout,report,real,,Jackamarra v Krakouer (1998) 195 CLR 516,exists,[2022] FCA 504,CLR|195|516
-C0814,heldout,report,real,,(2001) 207 CLR 72,exists,[2023] NSWCA 321,CLR|207|72
-C0815,heldout,report,real,,Egan v Chadwick (1999) 46 NSWLR 563,exists,[2023] NSWCATAD 45,NSWLR|46|563
-C0816,heldout,report,real,,Minehan v R (2010) NSWCCA 140,outside_coverage,[2023] NSWDC 337,NSWCCA||140
-C0817,heldout,report,real,,Goldberg v Waverley Council (2007) 156 LGERA 27,exists,[2024] NSWLEC 1461,LGERA|156|27
-C0818,heldout,report,real,,State of New South Wales v Naaman (No 2) (2018) 276 A Crim R 30,exists,[2024] NSWSC 1311,A Crim R|276|30
-C0819,heldout,mnc,synthetic,number_in_range,Dhiman v Minister for Immigration and Multicultural Affairs [1999] FCA 1615,no_record_in_range,[2000] FCA 803,FCA|1999|1291
-C0820,heldout,mnc,synthetic,number_in_range,R v Thomas [2003] NSWCCA 413,no_record_in_range,[2006] NSWCCA 173,NSWCCA|2003|165
-C0821,heldout,mnc,synthetic,number_in_range,Chapman v Caska [2005] NSWCA 452,no_record_in_range,[2008] NSWCCA 322,NSWCA|2005|113
-C0822,heldout,mnc,synthetic,number_in_range,Murphy & Allen v Swinbank [1999] NSWSC 1327,no_record_in_range,[2008] NSWSC 793,NSWSC|1999|934
-C0823,heldout,mnc,synthetic,number_in_range,Ford v Henry [2009] NSWSC 449,no_record_in_range,[2009] NSWSC 1254,NSWSC|2009|147
-C0824,heldout,mnc,synthetic,number_in_range,Specialty Fashion Group Limited v Muirhead Nominees Pty Limited & Ors [2009] NSWSC 886,no_record_in_range,[2009] NSWSC 975,NSWSC|2009|754
-C0825,heldout,mnc,synthetic,number_in_range,Auskay International Manufacturing and Trade Pty Ltd v Qantas Airways Ltd (No 5) [2009] FCA 1023,no_record_in_range,[2010] FCAFC 129,FCA|2009|1464
-C0826,heldout,mnc,synthetic,number_in_range,El-Jalkh v R [2009] NSWCCA 93,no_record_in_range,[2012] NSWCCA 85,NSWCCA|2009|139
-C0827,heldout,mnc,synthetic,number_in_range,Holder v Zeiher [2014] NSWSC 1635,no_record_in_range,[2016] NSWSC 1685,NSWSC|2014|556
-C0828,heldout,mnc,synthetic,number_in_range,Russell v Edwards (No 2) [2006] NSWCA 306,no_record_in_range,[2017] NSWDC 304,NSWCA|2006|52
-C0829,heldout,mnc,synthetic,number_in_range,BZC17 v Minister for Immigration and Border Protection [2018] FCA 878,no_record_in_range,[2019] FCA 1918,FCA|2018|902
-C0830,heldout,mnc,synthetic,number_in_range,Ma v Expeditors International Pty Ltd [2014] NSWSC 630,no_record_in_range,[2020] NSWSC 1224,NSWSC|2014|859
-C0831,heldout,mnc,synthetic,number_in_range,Firebird Global Master Fund II Ltd v Republic of Nauru (No 2) [2015] HCA 19,no_record_in_range,[2021] FCA 1449,HCA|2015|53
-C0832,heldout,mnc,synthetic,number_in_range,Toga Penrith Developments Pty Limited v Penrith City Council [2022] NSWLEC 875,no_record_in_range,[2022] NSWLEC 1612,NSWLEC|2022|117
-C0833,heldout,mnc,synthetic,number_out_of_range,Chen v Karandonis [2002] NSWCA 444,outside_coverage,[2003] NSWIRComm 459,NSWCA|2002|412
-C0834,heldout,mnc,synthetic,number_out_of_range,Specialty Fashion Group Limited v Muirhead Nominees Pty Limited & Ors [2009] NSWSC 1619,outside_coverage,[2009] NSWSC 975,NSWSC|2009|754
-C0835,heldout,mnc,synthetic,number_out_of_range,Auskay International Manufacturing and Trade Pty Ltd v Qantas Airways Ltd (No 5) [2009] FCA 1692,outside_coverage,[2010] FCAFC 129,FCA|2009|1464
-C0836,heldout,mnc,synthetic,number_out_of_range,R v Finney (No 2) [2004] NSWCCA 511,outside_coverage,[2011] NSWSC 153,NSWCCA|2004|150
-C0837,heldout,mnc,synthetic,number_out_of_range,Moweno Pty Ltd v Stratis Promotions Pty Ltd [2002] NSWSC 1323,outside_coverage,[2012] NSWADTAP 8,NSWSC|2002|1151
-C0838,heldout,mnc,synthetic,number_out_of_range,Jones v Bradley [2003] NSWCA 430,outside_coverage,[2012] NSWSC 180,NSWCA|2003|81
-C0839,heldout,mnc,synthetic,number_out_of_range,Palerang Council v Banfield [2012] NSWLEC 1381,outside_coverage,[2013] NSWLEC 189,NSWLEC|2012|85
-C0840,heldout,mnc,synthetic,number_out_of_range,Hawkins v Barclay-Brown [2010] NSWSC 1662,outside_coverage,[2014] NSWSC 247,NSWSC|2010|48
-C0841,heldout,mnc,synthetic,number_out_of_range,Trustee for the Kissane Family Trust v Burns [2015] NSWSC 2256,outside_coverage,[2015] NSWCA 238,NSWSC|2015|423
-C0842,heldout,mnc,synthetic,number_out_of_range,Holder v Zeiher [2014] NSWSC 1987,outside_coverage,[2016] NSWSC 1685,NSWSC|2014|556
-C0843,heldout,mnc,synthetic,number_out_of_range,Minister for Immigration and Citizenship v MZYZA [2013] FCA 1584,outside_coverage,[2018] FCA 451,FCA|2013|572
-C0844,heldout,mnc,synthetic,number_out_of_range,Ma v Expeditors International Pty Ltd [2014] NSWSC 2172,outside_coverage,[2020] NSWSC 1224,NSWSC|2014|859
-C0845,heldout,mnc,synthetic,number_out_of_range,Synergy Scaffolding Services Pty Ltd v Alelaimat [2023] NSWCA 341,outside_coverage,[2023] NSWSC 1655,NSWCA|2023|213
-C0846,heldout,mnc,synthetic,other_case_parties,Parist Holdings Pty Ltd v WT Partnership Australia Pty Ltd [1999] FCA 355,exists_other_parties,[2001] FCA 611,FCA|1999|355
-C0847,heldout,mnc,synthetic,other_case_parties,Sanders v Snell [2002] NSWCA 412,exists_other_parties,[2003] NSWIRComm 459,NSWCA|2002|412
-C0848,heldout,mnc,synthetic,other_case_parties,BHP Petroleum Pty Ltd v Oil Basins Ltd [2000] NSWCCA 309,exists_other_parties,[2004] NSWSC 597,NSWCCA|2000|309
-C0849,heldout,mnc,synthetic,other_case_parties,Powerflex Services Pty Ltd v Data Access Corporation [2006] FCA 195,exists_other_parties,[2006] FCA 453,FCA|2006|195
-C0850,heldout,mnc,synthetic,other_case_parties,Environment Protection Authority v Delta Electricity [2009] HCA 47,exists_other_parties,[2009] NSWSC 1344,HCA|2009|47
-C0851,heldout,mnc,synthetic,other_case_parties,R v Kamminga [2006] NSWADT 272,exists_other_parties,[2010] NSWADT 117,NSWADT|2006|272
-C0852,heldout,mnc,synthetic,other_case_parties,Purvis v State of New South Wales [1990] HCA 20,exists_other_parties,[2011] NSWSC 119,HCA|1990|20
-C0853,heldout,mnc,synthetic,other_case_parties,Industrial Equity Ltd v Federal Commissioner of Taxation [2015] NSWSC 423,exists_other_parties,[2015] NSWCA 238,NSWSC|2015|423
-C0854,heldout,mnc,synthetic,other_case_parties,Barker v Kyriakides [2020] NSWDC 322,exists_other_parties,[2020] NSWDC 380,NSWDC|2020|322
-C0855,heldout,mnc,synthetic,other_case_parties,Mifsud v Campbell [2023] NSWCA 213,exists_other_parties,[2023] NSWSC 1655,NSWCA|2023|213
-C0856,heldout,mnc,synthetic,other_case_parties,Dhanhoa v The Queen [2023] NSWSC 763,exists_other_parties,[2025] NSWSC 57,NSWSC|2023|763
-C0857,heldout,mnc,synthetic,wrong_court,Industrial Equity Ltd v Federal Commissioner of Taxation [1999] NSWCATAD 1533,outside_coverage,[1999] FCA 1796,FCA|1999|1533
-C0858,heldout,mnc,synthetic,wrong_court,Al-Anezi v Minister for Immigration and Multicultural Affairs [1999] FCAFC 355,outside_coverage,[2001] FCA 611,FCA|1999|355
-C0859,heldout,mnc,synthetic,wrong_court,Murphy & Allen v Swinbank [1999] WASC 934,outside_coverage,[2008] NSWSC 793,NSWSC|1999|934
-C0860,heldout,mnc,synthetic,wrong_court,Ford v Henry [2009] HCA 147,outside_coverage,[2009] NSWSC 1254,NSWSC|2009|147
-C0861,heldout,mnc,synthetic,wrong_court,Moweno Pty Ltd v Stratis Promotions Pty Ltd [2002] NSWCATAP 1151,outside_coverage,[2012] NSWADTAP 8,NSWSC|2002|1151
-C0862,heldout,mnc,synthetic,wrong_court,Jones v Bradley [2003] FCAFC 81,exists_other_parties,[2012] NSWSC 180,NSWCA|2003|81
-C0863,heldout,mnc,synthetic,wrong_court,Re Telstra Corporation Ltd (No 3) [2007] NSWCCA 3,exists_other_parties,[2013] ACompT 3,ACompT|2007|3
-C0864,heldout,mnc,synthetic,wrong_court,Lowndes v The Queen [1999] WASC 29,outside_coverage,[2019] NSWCCA 96,HCA|1999|29
-C0865,heldout,mnc,synthetic,wrong_court,Whitbread v Rail Corporation New South Wales [2011] VSCA 130,outside_coverage,[2022] NSWDC 647,NSWCA|2011|130
-C0866,heldout,mnc,synthetic,wrong_number,Industrial Equity Ltd v Federal Commissioner of Taxation [1999] FCA 1636,exists_other_parties,[1999] FCA 1796,FCA|1999|1533
-C0867,heldout,mnc,synthetic,wrong_number,Al-Anezi v Minister for Immigration and Multicultural Affairs [1999] FCA 1298,exists_other_parties,[2001] FCA 611,FCA|1999|355
-C0868,heldout,mnc,synthetic,wrong_number,R v Thomas [2003] NSWCCA 72,exists_other_parties,[2006] NSWCCA 173,NSWCCA|2003|165
-C0869,heldout,mnc,synthetic,wrong_number,Auskay International Manufacturing and Trade Pty Ltd v Qantas Airways Ltd (No 5) [2009] FCA 1245,exists_other_parties,[2010] FCAFC 129,FCA|2009|1464
-C0870,heldout,mnc,synthetic,wrong_number,Creamer v Chief Commissioner of State Revenue [2006] NSWADT 28,exists_other_parties,[2010] NSWADT 117,NSWADT|2006|272
-C0871,heldout,mnc,synthetic,wrong_number,Malec v JC Hutton Pty Ltd [1990] HCA 7,exists_other_parties,[2011] NSWSC 119,HCA|1990|20
-C0872,heldout,mnc,synthetic,wrong_number,Moweno Pty Ltd v Stratis Promotions Pty Ltd [2002] NSWSC 479,exists_other_parties,[2012] NSWADTAP 8,NSWSC|2002|1151
-C0873,heldout,mnc,synthetic,wrong_number,Moana v Minister for Immigration and Border Protection [2014] FCA 1438,exists_other_parties,[2015] FCAFC 54,FCA|2014|1084
-C0874,heldout,mnc,synthetic,wrong_number,Ma v Expeditors International Pty Ltd [2014] NSWSC 1233,exists_other_parties,[2020] NSWSC 1224,NSWSC|2014|859
-C0875,heldout,mnc,synthetic,wrong_number,Synergy Scaffolding Services Pty Ltd v Alelaimat [2023] NSWCA 7,exists_other_parties,[2023] NSWSC 1655,NSWCA|2023|213
-C0876,heldout,mnc,synthetic,wrong_number,Baulderstone Hornibrook Engineering Pty Ltd v Gordian Runoff Ltd (No 2) [2009] NSWCA 317,exists_other_parties,[2024] NSWSC 24,NSWCA|2009|12
-C0877,heldout,mnc,synthetic,wrong_party,The Registrar of Trade Marks v Australian Federal Police [2006] FCAFC 169,exists_other_parties,[2007] FCAFC 188,FCAFC|2006|169
-C0878,heldout,mnc,synthetic,wrong_party,Gourmet Goody's Family Restaurant Pty Ltd v Swinbank [1999] NSWSC 934,exists_other_parties,[2008] NSWSC 793,NSWSC|1999|934
-C0879,heldout,mnc,synthetic,wrong_party,Black v Health Care Complaints Commission [2005] NSWSC 943,exists_other_parties,[2009] NSWLEC 1326,NSWSC|2005|943
-C0880,heldout,mnc,synthetic,wrong_party,Pty Limited v Google Inc LLC (No 5) [2009] HCA 47,exists_other_parties,[2009] NSWSC 1344,HCA|2009|47
-C0881,heldout,mnc,synthetic,wrong_party,R v Trading Post Australia Pty Ltd [2011] FCA 1086,exists_other_parties,[2012] FCAFC 49,FCA|2011|1086
-C0882,heldout,mnc,synthetic,wrong_party,El-Jalkh v Sambo & Ors [2009] NSWCCA 139,exists_other_parties,[2012] NSWCCA 85,NSWCCA|2009|139
-C0883,heldout,mnc,synthetic,wrong_party,Trustee for the Kissane Family Trust v Brisbane Slipways and Engineering P/L [2015] NSWSC 423,exists_other_parties,[2015] NSWCA 238,NSWSC|2015|423
-C0884,heldout,mnc,synthetic,wrong_party,CQG15 v Sasterwan [2016] FCAFC 146,exists_other_parties,[2016] FCA 1449,FCAFC|2016|146
-C0885,heldout,mnc,synthetic,wrong_party,Murphy v Mastronardi [2015] FCA 266,exists_other_parties,[2016] FCAFC 51,FCA|2015|266
-C0886,heldout,mnc,synthetic,wrong_party,R v Furness [2003] NSWCCA 212,exists_other_parties,[2017] NSWDC 215,NSWCCA|2003|212
-C0887,heldout,mnc,synthetic,wrong_party,Thiyagarajah v Grant [2006] NSWLEC 96,exists_other_parties,[2018] NSWLEC 9,NSWLEC|2006|96
-C0888,heldout,mnc,synthetic,wrong_party,Langston v Big Bert Pty Ltd [2007] FCA 1978,exists_other_parties,[2020] FCAFC 84,FCA|2007|1978
-C0889,heldout,mnc,synthetic,wrong_year,Industrial Equity Ltd v Federal Commissioner of Taxation [1997] FCA 1533,exists_other_parties,[1999] FCA 1796,FCA|1999|1533
-C0890,heldout,mnc,synthetic,wrong_year,Dhiman v Minister for Immigration and Multicultural Affairs [1996] FCA 1291,outside_coverage,[2000] FCA 803,FCA|1999|1291
-C0891,heldout,mnc,synthetic,wrong_year,Mathews v Health Insurance Commission [2008] FCA 195,exists_other_parties,[2006] FCA 453,FCA|2006|195
-C0892,heldout,mnc,synthetic,wrong_year,Friends of Hinchinbrook Society Inc v Minister for the Environment [1999] FCA 295,exists_other_parties,[2008] FCA 1667,FCA|1997|295
-C0893,heldout,mnc,synthetic,wrong_year,Pty Limited v Motor Accidents Insurance Board [2007] HCA 47,no_record_in_range,[2009] NSWSC 1344,HCA|2009|47
-C0894,heldout,mnc,synthetic,wrong_year,R v Finney (No 2) [2001] NSWCCA 150,exists_other_parties,[2011] NSWSC 153,NSWCCA|2004|150
-C0895,heldout,mnc,synthetic,wrong_year,El-Jalkh v R [2007] NSWCCA 139,exists_other_parties,[2012] NSWCCA 85,NSWCCA|2009|139
-C0896,heldout,mnc,synthetic,wrong_year,Wanice Pty Ltd v Bocove Pty Ltd [2002] NSWADTAP 24,exists_other_parties,[2013] NSWADT 104,NSWADTAP|2003|24
-C0897,heldout,mnc,synthetic,wrong_year,Holder v Zeiher [2013] NSWSC 556,exists_other_parties,[2016] NSWSC 1685,NSWSC|2014|556
-C0898,heldout,mnc,synthetic,wrong_year,Cahyadi v R [2004] NSWCCA 1,exists_other_parties,[2024] NSWDC 437,NSWCCA|2007|1
-C0899,heldout,report,synthetic,other_case_parties,Scott v Scott (1977) 143 ALR 396,exists_other_parties,[1998] FCA 1332,ALR|143|396
-C0900,heldout,report,synthetic,other_case_parties,Goodwin v Phillips (1996) 186 CLR 427,exists_other_parties,[2002] NSWCCA 412,CLR|186|427
-C0901,heldout,report,synthetic,other_case_parties,Plaintiff M1/2021 v Minister for Home Affairs (1994) 12 ACSR 785,exists_other_parties,[2006] NSWSC 1241,ACSR|12|785
-C0902,heldout,report,synthetic,other_case_parties,Divine-Bortey v Brent LBC (2002) 117 FCR 6,exists_other_parties,[2007] FCA 474,FCR|117|6
-C0903,heldout,report,synthetic,other_case_parties,Re Dekanic and The Tax Agents Board (1997) 143 ALR 1,exists_other_parties,[2008] NSWADT 18,ALR|143|1
-C0904,heldout,report,synthetic,other_case_parties,Radio Limerick One Ltd v Independent Radio and Television Commission [1973] AC 518,exists_other_parties,[2009] NSWCA 35,AC||518
-C0905,heldout,report,synthetic,other_case_parties,Ted Brown Quarries Pty Ltd v General Quarries (Gilston) Pty Ltd (1993) 118 ALR 543,exists_other_parties,[2010] FCA 267,ALR|118|543
-C0906,heldout,report,synthetic,other_case_parties,Balfour Beattie Power Construction v Kidson (2008) 172 FCR 271,exists_other_parties,[2011] FCA 1317,FCR|172|271
-C0907,heldout,report,synthetic,other_case_parties,Dolby Australia Pty Ltd v Catto (1908) 6 CLR 1,exists_other_parties,[2012] NSWDC 238,CLR|6|1
-C0908,heldout,report,synthetic,other_case_parties,Hill v Compass Ten Pty Ltd [1987] 10 NSWLR 247,exists_other_parties,[2016] NSWCCA 277,NSWLR|10|247
-C0909,heldout,report,synthetic,other_case_parties,Austin v Wells (1995) 61 FCR 385,exists_other_parties,[2016] NSWSC 191,FCR|61|385
-C0910,heldout,report,synthetic,other_case_parties,R v Wright (2001) 53 NSWLR 153,exists_other_parties,[2019] NSWSC 1468,NSWLR|53|153
-C0911,heldout,report,synthetic,other_case_parties,Elleray v Rail Corporation NSW (1999) 46 NSWLR 563,exists_other_parties,[2023] NSWCATAD 45,NSWLR|46|563
-C0912,heldout,report,synthetic,wrong_page,John Fairfax and Sons Limited v Foord (1988) 12 NSWLR 619,not_in_report_index,[1989] NSWCA 67,NSWLR|12|706
-C0913,heldout,report,synthetic,wrong_page,R v Williams; Ex parte Lewis [1992] 1 Qd R 870,not_in_report_index,[2000] FCA 1659,Qd R|1|643
-C0914,heldout,report,synthetic,wrong_page,Van Reesema v Giameos (1979) 27 ALR 909,not_in_report_index,[2004] FCA 411,ALR|27|525
-C0915,heldout,report,synthetic,wrong_page,Blount Inc v Registrar of Trade Marks (1998) 83 FCR 314,exists_other_parties,[2006] FCA 951,FCR|83|50
-C0916,heldout,report,synthetic,wrong_page,Betfair Pty Ltd v Racing New South Wales (2010) 189 FCR 78,not_in_report_index,[2011] FCA 961,FCR|189|356
-C0917,heldout,report,synthetic,wrong_page,Soulemezis v Dudley (Holdings) Pty Ltd [1987] 10 NSWLR 625,not_in_report_index,[2016] NSWCCA 277,NSWLR|10|247
-C0918,heldout,report,synthetic,wrong_page,Elyard Corp Pty Ltd v DDB Needham Sydney Pty Ltd (1995) 61 FCR 44,not_in_report_index,[2016] NSWSC 191,FCR|61|385
-C0919,heldout,report,synthetic,wrong_page,Lenijamar Pty Ltd v AGC (Advances) Ltd (1990) 27 FCR 469,not_in_report_index,[2016] NSWSC 576,FCR|27|388
-C0920,heldout,report,synthetic,wrong_page,Masters v Cameron [1954] 91 CLR 712,not_in_report_index,[2016] NSWSC 814,CLR|91|353
-C0921,heldout,report,synthetic,wrong_page,R v Speechley (2012) 221 A Crim R 255,not_in_report_index,[2017] NSWCCA 16,A Crim R|221|175
-C0922,heldout,report,synthetic,wrong_page,PS Chellaram & Co Ltd v China Ocean Shipping Co (1991) 102 ALR 396,not_in_report_index,[2019] NSWSC 113,ALR|102|321
-C0923,heldout,report,synthetic,wrong_page,Brambles Holdings Ltd v Bathurst City Council (2001) 53 NSWLR 451,exists_other_parties,[2019] NSWSC 1468,NSWLR|53|153
-C0924,heldout,report,synthetic,wrong_page,Re Australian Bank Employees Union; Ex parte Citicorp Australia Ltd (1989) 167 CLR 364,not_in_report_index,[2021] NSWLEC 92,CLR|167|513
-C0925,heldout,report,synthetic,wrong_page,Goldberg v Waverley Council (2007) 156 LGERA 334,not_in_report_index,[2024] NSWLEC 1461,LGERA|156|27
-C0926,heldout,report,synthetic,wrong_party,BZC17 v Giameos (1979) 27 ALR 525,exists_other_parties,[2004] FCA 411,ALR|27|525
-C0927,heldout,report,synthetic,wrong_party,Nangkiriny v R (2002) 117 FCR 6,exists_other_parties,[2007] FCA 474,FCR|117|6
-C0928,heldout,report,synthetic,wrong_party,Root Quality Technologies Pty Ltd v Western Australia & Ors (2008) 172 FCR 271,exists_other_parties,[2011] FCA 1317,FCR|172|271
-C0929,heldout,report,synthetic,wrong_party,Gallo v Clift [1998] 2 Qd R 100,exists_other_parties,[2012] NSWSC 1406,Qd R|2|100
-C0930,heldout,report,synthetic,wrong_party,Pollock v Oil Basins Ltd [1985] VR 756,exists_other_parties,[2013] NSWCA 165,VR||756
-C0931,heldout,report,synthetic,wrong_party,Western Murray Irrigation Ltd v Hacket (1993) 10 WAR 532,exists_other_parties,[2013] NSWSC 1281,WAR|10|532
-C0932,heldout,report,synthetic,wrong_party,SZRMS v Stitcher [1984] 1 WLR 287,exists_other_parties,[2014] NSWCA 396,WLR|1|287
-C0933,heldout,report,synthetic,wrong_party,Phillips v Zenah Project Developments Pty Ltd [1975] 2 NSWLR 207,exists_other_parties,[2018] NSWSC 1646,NSWLR|2|207
-C0934,heldout,report,synthetic,wrong_party,Towers Holdings Pty Limited v Muldrock (2003) 129 LGERA 195,exists_other_parties,[2020] NSWLEC 1517,LGERA|129|195
-C0935,heldout,report,synthetic,wrong_party,Goldberg (1989) 167 CLR 513,exists_other_parties,[2021] NSWLEC 92,CLR|167|513
-C0936,heldout,report,synthetic,wrong_party,Fletcher v v Krakouer (1998) 195 CLR 516,exists_other_parties,[2022] FCA 504,CLR|195|516
-C0937,heldout,report,synthetic,wrong_volume,Cory v Cory [1923] 15 Ch 90,not_in_report_index,[1995] FCA 961,Ch|1|90
-C0938,heldout,report,synthetic,wrong_volume,Ling v Enrobrook (1977) 136 ALR 396,not_in_report_index,[1998] FCA 1332,ALR|143|396
-C0939,heldout,report,synthetic,wrong_volume,Snoid v CBS Records (1981) 26 ALR 383,not_in_report_index,[1999] FCA 36,ALR|38|383
-C0940,heldout,report,synthetic,wrong_volume,Crofts v The Queen (1996) 198 CLR 427,not_in_report_index,[2002] NSWCCA 412,CLR|186|427
-C0941,heldout,report,synthetic,wrong_volume,Nangkiriny v State of Western Australia (2002) 123 FCR 6,not_in_report_index,[2007] FCA 474,FCR|117|6
-C0942,heldout,report,synthetic,wrong_volume,Re the Minister for Immigration & Ethnic Affairs; Ex parte Lai Qin (1997) 128 ALR 1,exists_other_parties,[2008] NSWADT 18,ALR|143|1
-C0943,heldout,report,synthetic,wrong_volume,Postiglione v R (1997) 204 CLR 295,not_in_report_index,[2008] NSWCCA 221,CLR|189|295
-C0944,heldout,report,synthetic,wrong_volume,Masters v Cameron [1954] 105 CLR 353,not_in_report_index,[2016] NSWSC 814,CLR|91|353
-C0945,heldout,report,synthetic,wrong_volume,Phillips v Roberts [1975] 5 NSWLR 207,not_in_report_index,[2018] NSWSC 1646,NSWLR|2|207
-C0946,heldout,report,synthetic,wrong_volume,Dale v State of Western Australia (2011) 206 FCR 521,not_in_report_index,[2019] FCA 651,FCR|191|521
-C0947,heldout,report,synthetic,wrong_volume,Falgat Constructions Pty Ltd v Equity Australia Corporation Pty Ltd (2005) 52 NSWLR 385,not_in_report_index,[2020] NSWCA 118,NSWLR|62|385
-C0948,heldout,report,synthetic,wrong_volume,Calderbank v Calderbank [1975] 10 All ER 333,not_in_report_index,[2021] FCA 1003,All ER|3|333
-C0949,heldout,report,synthetic,wrong_volume,CQG15 v Minister for Immigration and Border Protection (2016) 266 FCR 496,not_in_report_index,[2022] FCA 1205,FCR|253|496
+C0530,dev,report,synthetic,other_case_parties,Minister for Immigration and Ethnic Affairs v Wu Shan Liang (1982) 6 ALD 240,exists_other_parties,[1999] NSWADT 36,ALD|6|240
+C0531,dev,report,synthetic,other_case_parties,Butcher v Lachlan Elder Realty Pty Ltd (1988) 18 NSWLR 540,exists_other_parties,[2000] NSWSC 1229,NSWLR|18|540
+C0532,dev,report,synthetic,other_case_parties,En Liquidation v Akhil Holdings Ltd (1999) 42 IPR 552,exists_other_parties,[2001] FCA 683,IPR|42|552
+C0533,dev,report,synthetic,other_case_parties,Austin v Wells [1991] ALR 193,exists_other_parties,[2002] NSWLEC 1,ALR||193
+C0534,dev,report,synthetic,other_case_parties,Health Care Complaints Commission v Grygiel (1989) 19 NSWLR 158,exists_other_parties,[2003] NSWCA 155,NSWLR|19|158
+C0535,dev,report,synthetic,other_case_parties,Re Dekanic and The Tax Agents Board (1993) 49 FCR 576,exists_other_parties,[2004] FCA 163,FCR|49|576
+C0536,dev,report,synthetic,other_case_parties,Scott v Scott (1972) 2 NSWLR 347,exists_other_parties,[2004] NSWSC 10,NSWLR|2|347
+C0537,dev,report,synthetic,other_case_parties,Contreras v Minister for Immigration and Border Protection (2001) 206 CLR 323,exists_other_parties,[2006] FCAFC 9,CLR|206|323
+C0538,dev,report,synthetic,other_case_parties,Wingecarribee Shire Council v Lehman Brothers Australia Limited (No 3) (1989) 16 NSWLR 14,exists_other_parties,[2006] NSWSC 585,NSWLR|16|14
+C0539,dev,report,synthetic,other_case_parties,CQG15 v Minister for Immigration and Border Protection (1998) 44 NSWLR 493,exists_other_parties,[2011] NSWSC 1261,NSWLR|44|493
+C0540,dev,report,synthetic,other_case_parties,State Rail Authority v Smith (2002) 209 CLR 478,exists_other_parties,[2013] NSWSC 208,CLR|209|478
+C0541,dev,report,synthetic,other_case_parties,BBO v Commissioner Victims Rights (1997) 73 FCR 569,exists_other_parties,[2014] FCAFC 100,FCR|73|569
+C0542,dev,report,synthetic,other_case_parties,Advan Investments Pty Ltd v Dean Gleeson Motor Sales Pty Ltd (2012) 207 FCR 211,exists_other_parties,[2015] FCA 1031,FCR|207|211
+C0543,dev,report,synthetic,other_case_parties,Re Dekanic and The Tax Agents Board (1963) 109 CLR 9,exists_other_parties,[2017] FCAFC 139,CLR|109|9
+C0544,dev,report,synthetic,other_case_parties,Dolby Australia Pty Ltd v Catto (2000) 50 NSWLR 127,exists_other_parties,[2018] NSWLC 21,NSWLR|50|127
+C0545,dev,report,synthetic,other_case_parties,Divine-Bortey v Brent LBC (1985) 1 NSWLR 602,exists_other_parties,[2019] NSWSC 297,NSWLR|1|602
+C0546,dev,report,synthetic,other_case_parties,Re Proptech Group Ltd (1985) 5 FCR 464,exists_other_parties,[2021] FCA 1372,FCR|5|464
+C0547,dev,report,synthetic,other_case_parties,Windy Dropdown Pty Ltd v Warringah Council (2016) 93 NSWLR 231,exists_other_parties,[2021] NSWSC 1382,NSWLR|93|231
+C0548,dev,report,synthetic,other_case_parties,Trade Practices Commissioner v Arnotts Ltd (2008) 227 ALR 43,exists_other_parties,[2022] FCA 282,ALR|227|43
+C0549,dev,report,synthetic,other_case_parties,Rehm Pty Ltd v Websters Security Systems (International) Pty Ltd [1983] 2 NSWLR 682,exists_other_parties,[2022] NSWDC 507,NSWLR|2|682
+C0550,dev,report,synthetic,other_case_parties,Dye v Commonwealth Bank of Australia (1991) 30 FCR 548,exists_other_parties,[2023] FCA 1198,FCR|30|548
+C0551,dev,report,synthetic,other_case_parties,Martin v Holgate (2006) 227 CLR 57,exists_other_parties,[2024] NSWSC 14,CLR|227|57
+C0552,dev,report,synthetic,wrong_page,Jess v Scott (1986) 12 FCR 481,not_in_report_index,[2001] FCA 247,FCR|12|187
+C0553,dev,report,synthetic,wrong_page,Gallo v Dawson (No 2) (1992) 109 ALR 248,not_in_report_index,[2005] FCA 167,ALR|109|319
+C0554,dev,report,synthetic,wrong_page,Mifsud v Campbell (1991) 21 NSWLR 368,not_in_report_index,[2005] NSWCA 110,NSWLR|21|725
+C0555,dev,report,synthetic,wrong_page,R v AO (2003) 138 A Crim R 545,not_in_report_index,[2005] NSWSC 521,A Crim R|138|189
+C0556,dev,report,synthetic,wrong_page,Minister for Immigration and Multicultural Affairs v Yusuf (2001) 206 CLR 664,not_in_report_index,[2006] FCAFC 9,CLR|206|323
+C0557,dev,report,synthetic,wrong_page,English v Aradlay Insurance Brokers Pty Limited (2005) 145 IR 491,not_in_report_index,[2006] NSWIRComm 358,IR|145|129
+C0558,dev,report,synthetic,wrong_page,Australian Consumer and Competition Commission v Dermalogica Pty Ltd [2005] 215 ALR 829,not_in_report_index,[2007] FCA 1859,ALR|215|482
+C0559,dev,report,synthetic,wrong_page,Alcatel Australia Ltd v Scarcella (1998) 44 NSWLR 556,not_in_report_index,[2007] NSWSC 1375,NSWLR|44|349
+C0560,dev,report,synthetic,wrong_page,R v Boland [1974] VR 1139,not_in_report_index,[2008] NSWSC 817,VR|1974/|849
+C0561,dev,report,synthetic,wrong_page,Hinchliff v Abu-Dabat (1998) 41 IPR 136,not_in_report_index,[2009] FCA 445,IPR|41|400
+C0562,dev,report,synthetic,wrong_page,AMP Financial Planning v Green (2004) 51 ACSR 759,not_in_report_index,[2010] NSWSC 629,ACSR|51|693
+C0563,dev,report,synthetic,wrong_page,Punin v Deputy Commissioner of Taxation (2000) 44 ATR 344,not_in_report_index,[2011] FCA 1465,ATR|44|233
+C0564,dev,report,synthetic,wrong_page,Mison v Randwick Municipal Council (1991) 23 NSWLR 1032,not_in_report_index,[2012] NSWLEC 1109,NSWLR|23|734
+C0565,dev,report,synthetic,wrong_page,Court of Appeal v Ritter (1985) 34 NSWLR 1025,not_in_report_index,[2012] NSWSC 542,NSWLR|34|641
+C0566,dev,report,synthetic,wrong_page,Koompahtoo Local Aboriginal Land Council v Sanpine Pty Ltd (2007) 233 CLR 162,exists_other_parties,[2013] NSWDC 124,CLR|233|115
+C0567,dev,report,synthetic,wrong_page,City West Housing Pty Ltd v Sydney City Council (1999) 110 LGERA 621,not_in_report_index,[2015] NSWLEC 1079,LGERA|110|262
+C0568,dev,report,synthetic,wrong_page,Jones v Australian Competition and Consumer Commission (2002) 76 ALD 507,not_in_report_index,[2016] FCA 356,ALD|76|424
+C0569,dev,report,synthetic,wrong_page,Purvis v State of New South Wales (2003) 217 CLR 381,not_in_report_index,[2017] NSWCATAD 342,CLR|217|92
+C0570,dev,report,synthetic,wrong_page,SZTAL v Minister for Immigration and Border Protection [2017] 91 ALJR 1016,not_in_report_index,[2018] FCA 967,ALJR|91|936
+C0571,dev,report,synthetic,wrong_page,Productions Pty Ltd v O'Neill (1985) 1 NSWLR 427,not_in_report_index,[2019] NSWSC 297,NSWLR|1|602
+C0572,dev,report,synthetic,wrong_page,Adams v Kennick Trading (Int) Ltd (1986) 4 NSWLR 374,exists_other_parties,[2022] NSWDC 323,NSWLR|4|503
+C0573,dev,report,synthetic,wrong_page,DPP (Cth) v De La Rosa (2010) 79 NSWLR 303,not_in_report_index,[2024] NSWDC 377,NSWLR|79|1
+C0574,dev,report,synthetic,wrong_party,Jess v Kyriakides (1986) 12 FCR 187,exists_other_parties,[2001] FCA 247,FCR|12|187
+C0575,dev,report,synthetic,wrong_party,Palmer v Chief Commissioner of State Revenue (1989) 19 NSWLR 158,exists_other_parties,[2003] NSWCA 155,NSWLR|19|158
+C0576,dev,report,synthetic,wrong_party,White v R (1972) 2 NSWLR 347,exists_other_parties,[2004] NSWSC 10,NSWLR|2|347
+C0577,dev,report,synthetic,wrong_party,Wyong Shire Council v Dawson (No 2) (1992) 109 ALR 319,exists_other_parties,[2005] FCA 167,ALR|109|319
+C0578,dev,report,synthetic,wrong_party,R v Bradford Kendall Foundries Pty Limited (2003) 138 A Crim R 189,exists_other_parties,[2005] NSWSC 521,A Crim R|138|189
+C0579,dev,report,synthetic,wrong_party,Slater v Crittenden (1966) 117 CLR 412,exists_other_parties,[2006] NSWCA 100,CLR|117|412
+C0580,dev,report,synthetic,wrong_party,R v Ferrington (GD) (1989) 16 NSWLR 14,exists_other_parties,[2006] NSWSC 585,NSWLR|16|14
+C0581,dev,report,synthetic,wrong_party,Ted Brown Quarries Pty Ltd v Boland [1974] VR 849,exists_other_parties,[2008] NSWSC 817,VR|1974/|849
+C0582,dev,report,synthetic,wrong_party,SZBYR v Brilliant Digital Entertainment Pty Ltd (2007) 235 ALR 609,exists_other_parties,[2010] FCA 79,ALR|235|609
+C0583,dev,report,synthetic,wrong_party,Federal Commissioner of Taxation v Green (2004) 51 ACSR 693,exists_other_parties,[2010] NSWSC 629,ACSR|51|693
+C0584,dev,report,synthetic,wrong_party,Richmond River Council v Canterbury City Council (2001) 115 LGERA 373,exists_other_parties,[2011] NSWLEC 1341,LGERA|115|373
+C0585,dev,report,synthetic,wrong_party,Dare v Thongpraphai (1998) 44 NSWLR 493,exists_other_parties,[2011] NSWSC 1261,NSWLR|44|493
+C0586,dev,report,synthetic,wrong_party,BZC17 v Ritter (1985) 34 NSWLR 641,exists_other_parties,[2012] NSWSC 542,NSWLR|34|641
+C0587,dev,report,synthetic,wrong_party,Project Blue Sky v Tobacco Institute of Australia Ltd (No 2) (1988) 194 CLR 355,exists_other_parties,[2014] NSWCATAD 181,CLR|194|355
+C0588,dev,report,synthetic,wrong_party,Westport Insurance Corporation v Federal Commissioner of Taxation (1963) 109 CLR 9,exists_other_parties,[2017] FCAFC 139,CLR|109|9
+C0589,dev,report,synthetic,wrong_party,Ted Brown Quarries Pty Ltd v Brent LBC (1977) 16 ALR 23,exists_other_parties,[2019] NSWCATAP 140,ALR|16|23
+C0590,dev,report,synthetic,wrong_party,Waltons Stores (Interstate) Ltd v Ford (1988) 164 CLR 387,exists_other_parties,[2019] NSWCATCD 41,CLR|164|387
+C0591,dev,report,synthetic,wrong_party,JT International SA v Briginshaw (1938) 60 CLR 336,exists_other_parties,[2019] NSWCATCD 64,CLR|60|336
+C0592,dev,report,synthetic,wrong_party,Bullock v Norwich Winterthur Insurance (Australia) Ltd (1985) 5 FCR 464,exists_other_parties,[2021] FCA 1372,FCR|5|464
+C0593,dev,report,synthetic,wrong_party,Ireland v AWA15 (2019) 101 NSWLR 658,exists_other_parties,[2022] FCA 891,NSWLR|101|658
+C0594,dev,report,synthetic,wrong_party,Pollock v Minister for Immigration and Ethnic Affairs (1979) 2 ALD 60,exists_other_parties,[2022] NSWCATOD 177,ALD|2|60
+C0595,dev,report,synthetic,wrong_party,Krakouer v Scenic Tours (2020) 268 CLR 326,exists_other_parties,[2023] NSWDC 243,CLR|268|326
+C0596,dev,report,synthetic,wrong_volume,Abalos v Australian Postal Commission (1988) 190 CLR 167,not_in_report_index,[1991] NSWCA 241,CLR|171|167
+C0597,dev,report,synthetic,wrong_volume,Balfour Beattie Power Construction v Kidson [1989] 16 Qd R 105,not_in_report_index,[1998] FCA 1622,QdR|2|105
+C0598,dev,report,synthetic,wrong_volume,Re Dekanic and The Tax Agents Board (1982) 8 ALD 240,not_in_report_index,[1999] NSWADT 36,ALD|6|240
+C0599,dev,report,synthetic,wrong_volume,White v Grogan (1972) 8 NSWLR 347,not_in_report_index,[2004] NSWSC 10,NSWLR|2|347
+C0600,dev,report,synthetic,wrong_volume,R v Saleam (1989) 18 NSWLR 14,not_in_report_index,[2006] NSWSC 585,NSWLR|16|14
+C0601,dev,report,synthetic,wrong_volume,Australian Consumer and Competition Commission v Dermalogica Pty Ltd [2005] 200 ALR 482,not_in_report_index,[2007] FCA 1859,ALR|215|482
+C0602,dev,report,synthetic,wrong_volume,Cameron v Hogan (1934) 44 CLR 358,not_in_report_index,[2007] NSWSC 1419,CLR|51|358
+C0603,dev,report,synthetic,wrong_volume,Craig v South Australia (1985) 166 CLR 163,not_in_report_index,[2007] NSWSC 260,CLR|184|163
+C0604,dev,report,synthetic,wrong_volume,State of Queensland v JL Holdings Pty Limited (1997) 188 CLR 146,exists_same_parties,[2009] FCA 366,CLR|189|146
+C0605,dev,report,synthetic,wrong_volume,Vandyke v Vandyke (1976) 24 ALR 621,not_in_report_index,[2009] NSWSC 362,ALR|12|621
+C0606,dev,report,synthetic,wrong_volume,Hicks v Ruddock [2007] 170 FCR 574,exists_other_parties,[2012] NSWSC 233,FCR|156|574
+C0607,dev,report,synthetic,wrong_volume,R v Wright (1997) 120 A Crim R 48,not_in_report_index,[2013] NSWDC 330,A Crim R|93|48
+C0608,dev,report,synthetic,wrong_volume,Carr v Finance Corporation of Australia Ltd (1982) 133 CLR 139,not_in_report_index,[2013] NSWSC 940,CLR|150|139
+C0609,dev,report,synthetic,wrong_volume,Project Blue Sky v Australian Broadcasting Authority (1988) 181 CLR 355,not_in_report_index,[2014] NSWCATAD 181,CLR|194|355
+C0610,dev,report,synthetic,wrong_volume,Director of Public Prosecutions v Smith (1991) 29 VR 63,not_in_report_index,[2014] NSWCATOD 43,VR|1991/1|63
+C0611,dev,report,synthetic,wrong_volume,City West Housing Pty Ltd v Sydney City Council (1999) 100 LGERA 262,not_in_report_index,[2015] NSWLEC 1079,LGERA|110|262
+C0612,dev,report,synthetic,wrong_volume,R v Jurisic (1998) 34 NSWLR 209,not_in_report_index,[2017] NSWCCA 205,NSWLR|45|209
+C0613,dev,report,synthetic,wrong_volume,Bullock v FFTSA (1985) 2 FCR 464,not_in_report_index,[2021] FCA 1372,FCR|5|464
+C0614,dev,report,synthetic,wrong_volume,Arab Bank Australia Ltd v Sayde Developments Pty Ltd (2016) 64 NSWLR 231,not_in_report_index,[2021] NSWSC 1382,NSWLR|93|231
+C0615,dev,report,synthetic,wrong_volume,Adams v Kennick Trading (Int) Ltd (1986) 32 NSWLR 503,not_in_report_index,[2022] NSWDC 323,NSWLR|4|503
+C0616,dev,report,synthetic,wrong_volume,Haines v Leves (1987) 29 NSWLR 442,not_in_report_index,[2024] FCA 1230,NSWLR|8|442
+C0617,heldout,mnc,real,,Industrial Equity Ltd v Federal Commissioner of Taxation [1999] FCA 1533,exists,[1999] FCA 1796,FCA|1999|1533
+C0618,heldout,mnc,real,,Dhiman v Minister for Immigration and Multicultural Affairs [1999] FCA 1291,exists,[2000] FCA 803,FCA|1999|1291
+C0619,heldout,mnc,real,,Al-Anezi v Minister for Immigration and Multicultural Affairs [1999] FCA 355 at [21],exists,[2001] FCA 611,FCA|1999|355
+C0620,heldout,mnc,real,,Groves v BMW Australia Finance Pty Ltd [2001] QCA 16,outside_coverage,[2001] NSWSC 657,QCA|2001|16
+C0621,heldout,mnc,real,,[2000] FCA 441,exists,[2002] FCA 631,FCA|2000|441
+C0622,heldout,mnc,real,,Chen v Karandonis [2002] NSWCA 412,exists,[2003] NSWIRComm 459,NSWCA|2002|412
+C0623,heldout,mnc,real,,[2004] NSWIRComm 80 at [15],exists,[2004] NSWIRComm 314,NSWIRComm|2004|80
+C0624,heldout,mnc,real,,R v Thomson and Houlton [2000] NSWCCA 309,exists,[2004] NSWSC 597,NSWCCA|2000|309
+C0625,heldout,mnc,real,,Vairy v Wyong Shire Council [2005] HCA 62 at [49],exists,[2005] NSWCA 379,HCA|2005|62
+C0626,heldout,mnc,real,,R v Jacobs and Mehajer [2004] NSWCCA 462,exists,[2005] NSWSC 212,NSWCCA|2004|462
+C0627,heldout,mnc,real,,Mathews v Health Insurance Commission [2006] FCA 195,exists,[2006] FCA 453,FCA|2006|195
+C0628,heldout,mnc,real,,[2005] FCAFC 73 at [17],exists,[2006] FCA 77,FCAFC|2005|73
+C0629,heldout,mnc,real,,[1994] QICmr 7,outside_coverage,[2006] NSWADT 195,QICmr|1994|7
+C0630,heldout,mnc,real,,R v Thomas [2003] NSWCCA 165,exists,[2006] NSWCCA 173,NSWCCA|2003|165
+C0631,heldout,mnc,real,,Rana v Australian Federal Police [2006] FCAFC 169,exists,[2007] FCAFC 188,FCAFC|2006|169
+C0632,heldout,mnc,real,,Friends of Hinchinbrook Society Inc v Minister for the Environment [1997] FCA 295,exists,[2008] FCA 1667,FCA|1997|295
+C0633,heldout,mnc,real,,Chapman v Caska [2005] NSWCA 113 at [19],exists,[2008] NSWCCA 322,NSWCA|2005|113
+C0634,heldout,mnc,real,,Murphy & Allen v Swinbank [1999] NSWSC 934,exists,[2008] NSWSC 793,NSWSC|1999|934
+C0635,heldout,mnc,real,,[2008] QSC 216,outside_coverage,[2009] FCA 269,QSC|2008|216
+C0636,heldout,mnc,real,,Divine-Bortey v Brent LBC [1998] ICR 886,outside_coverage,[2009] NSWCA 389,ICR|1998|886
+C0637,heldout,mnc,real,,Black v Apps [2005] NSWSC 943,exists,[2009] NSWLEC 1326,NSWSC|2005|943
+C0638,heldout,mnc,real,,Ford v Henry [2009] NSWSC 147,exists,[2009] NSWSC 1254,NSWSC|2009|147
+C0639,heldout,mnc,real,,Pty Limited v Motor Accidents Insurance Board [2009] HCA 47,exists,[2009] NSWSC 1344,HCA|2009|47
+C0640,heldout,mnc,real,,Marsden v Amalgamated Television Services Pty Limited [2001] NSWSC 77,exists,[2009] NSWSC 156,NSWSC|2001|77
+C0641,heldout,mnc,real,,Specialty Fashion Group Limited v Muirhead Nominees Pty Limited & Ors [2009] NSWSC 754,exists,[2009] NSWSC 975,NSWSC|2009|754
+C0642,heldout,mnc,real,,Advan Investments Pty Ltd v Dean Gleeson Motor Sales Pty Ltd [2003] VSC 201 at [31],outside_coverage,[2010] FCA 560,VSC|2003|201
+C0643,heldout,mnc,real,,Auskay International Manufacturing and Trade Pty Ltd v Qantas Airways Ltd (No 5) [2009] FCA 1464,exists,[2010] FCAFC 129,FCA|2009|1464
+C0644,heldout,mnc,real,,Creamer v Chief Commissioner of State Revenue[2006] NSWADT 272,exists,[2010] NSWADT 117,NSWADT|2006|272
+C0645,heldout,mnc,real,,[2010] FCA 1248,exists,[2011] FCA 1007,FCA|2010|1248
+C0646,heldout,mnc,real,,Commissioner of Taxation v Denlay [2010] QCA 217,outside_coverage,[2011] FCA 222,QCA|2010|217
+C0647,heldout,mnc,real,,Tempo Services Ltd v Robinson and Anor [2005] SASC 161,outside_coverage,[2011] FCAFC 51,SASC|2005|161
+C0648,heldout,mnc,real,,Malec v JC Hutton Pty Ltd [1990] HCA 20,exists,[2011] NSWSC 119,HCA|1990|20
+C0649,heldout,mnc,real,,R v Finney (No 2) [2004] NSWCCA 150,exists,[2011] NSWSC 153,NSWCCA|2004|150
+C0650,heldout,mnc,real,,Australian Competition and Consumer Commission v Trading Post Australia Pty Ltd [2011] FCA 1086,exists,[2012] FCAFC 49,FCA|2011|1086
+C0651,heldout,mnc,real,,Moweno Pty Ltd v Stratis Promotions Pty Ltd [2002] NSWSC 1151,exists,[2012] NSWADTAP 8,NSWSC|2002|1151
+C0652,heldout,mnc,real,,El-Jalkh v R [2009] NSWCCA 139,exists,[2012] NSWCCA 85,NSWCCA|2009|139
+C0653,heldout,mnc,real,,Project Venture Developments v Pittwater Council [2005] NSWLEC 191,exists,[2012] NSWLEC 1030,NSWLEC|2005|191
+C0654,heldout,mnc,real,,Jones v Bradley [2003] NSWCA 81,exists,[2012] NSWSC 180,NSWCA|2003|81
+C0655,heldout,mnc,real,,US Manufacturing Co Pty Ltd v ABB Service Pty Ltd [2008] NSWSC 705,exists,[2012] NSWSC 666,NSWSC|2008|705
+C0656,heldout,mnc,real,,Re Telstra Corporation Ltd (No 3) [2007] ACompT 3,exists,[2013] ACompT 3,ACompT|2007|3
+C0657,heldout,mnc,real,,SZRMS v Minister for Immigration and Citizenship [2013] FMCA 161,outside_coverage,[2013] FCA 530,FMCA|2013|161
+C0658,heldout,mnc,real,,[2011] VSCA 248 at [26],outside_coverage,[2013] FCA 918,VSCA|2011|248
+C0659,heldout,mnc,real,,Wanice Pty Ltd v Bocove Pty Ltd [2003] NSWADTAP 24,exists,[2013] NSWADT 104,NSWADTAP|2003|24
+C0660,heldout,mnc,real,,[2009] NSWLEC 1148,exists,[2013] NSWLEC 1259,NSWLEC|2009|1148
+C0661,heldout,mnc,real,,Palerang Council v Banfield [2012] NSWLEC 85,exists,[2013] NSWLEC 189,NSWLEC|2012|85
+C0662,heldout,mnc,real,,Bale v Seltsam Pty Ltd [1996] HCAtrans 470,outside_coverage,[2013] NSWSC 1706,HCAtrans|1996|470
+C0663,heldout,mnc,real,,Gates v City Mutual Life Assurance Society Ltd [1986] HCA 3,no_record_in_range,[2014] NSWCA 396,HCA|1986|3
+C0664,heldout,mnc,real,,Hawkins v Barclay-Brown [2010] NSWSC 48 at [68]-[69],exists,[2014] NSWSC 247,NSWSC|2010|48
+C0665,heldout,mnc,real,,Moana v Minister for Immigration and Border Protection [2014] FCA 1084,exists,[2015] FCAFC 54,FCA|2014|1084
+C0666,heldout,mnc,real,,Trustee for the Kissane Family Trust v Burns [2015] NSWSC 423,exists,[2015] NSWCA 238,NSWSC|2015|423
+C0667,heldout,mnc,real,,CQG15 v Minister for Immigration and Border Protection [2016] FCAFC 146,exists,[2016] FCA 1449,FCAFC|2016|146
+C0668,heldout,mnc,real,,Murphy v Westpac Banking Corporation (No 2) [2015] FCA 266,exists,[2016] FCAFC 51,FCA|2015|266
+C0669,heldout,mnc,real,,Holder v Zeiher [2014] NSWSC 556,exists,[2016] NSWSC 1685,NSWSC|2014|556
+C0670,heldout,mnc,real,,Electric Generation Corporation v Woodside Energy Ltd [2014] HCA 7,exists,[2016] NSWSC 30,HCA|2014|7
+C0671,heldout,mnc,real,,[2017] NSWSC 541,exists,[2017] NSWCA 291,NSWSC|2017|541
+C0672,heldout,mnc,real,,HCCC v Khalsa (No 2) [2014] NSWCATOD 47,exists,[2017] NSWCATOD 24,NSWCATOD|2014|47
+C0673,heldout,mnc,real,,R v Collisson [2003] NSWCCA 212,exists,[2017] NSWDC 215,NSWCCA|2003|212
+C0674,heldout,mnc,real,,Muldrock v R [2011] HCA 39,exists,[2017] NSWDC 242,HCA|2011|39
+C0675,heldout,mnc,real,,Russell v Edwards (No 2) [2006] NSWCA 52 at [8],exists,[2017] NSWDC 304,NSWCA|2006|52
+C0676,heldout,mnc,real,,[2014] NSWCA 39,exists,[2017] NSWSC 1638,NSWCA|2014|39
+C0677,heldout,mnc,real,,Minister for Immigration and Citizenship v MZYZA [2013] FCA 572 at [31]-[32],exists,[2018] FCA 451,FCA|2013|572
+C0678,heldout,mnc,real,,AWA15 v Minister for Immigration & Anor [2017] FCCA 391,outside_coverage,[2018] FCA 604,FCCA|2017|391
+C0679,heldout,mnc,real,,[2013] HCA 18 at [28],exists,[2018] FCAFC 10,HCA|2013|18
+C0680,heldout,mnc,real,,Kiama Council v Grant [2006] NSWLEC 96,exists,[2018] NSWLEC 9,NSWLEC|2006|96
+C0681,heldout,mnc,real,,[1980] HCA 29,exists,[2018] NSWSC 1468,HCA|1980|29
+C0682,heldout,mnc,real,,[2018] FCAFC 40,exists,[2018] NSWSC 2001,FCAFC|2018|40
+C0683,heldout,mnc,real,,Boase v Axis International Management Pty Ltd (No 3) [2012] WASC 498,outside_coverage,[2019] FCA 1008,WASC|2012|498
+C0684,heldout,mnc,real,,BZC17 v Minister for Immigration and Border Protection [2018] FCA 902,exists,[2019] FCA 1918,FCA|2018|902
+C0685,heldout,mnc,real,,JT International SA v Commonwealth of Australia [2012] HCA 43,exists,[2019] FCA 605,HCA|2012|43
+C0686,heldout,mnc,real,,[2018] NSWSC 1424,exists,[2019] NSWCA 151,NSWSC|2018|1424
+C0687,heldout,mnc,real,,[2000] HCA 54,exists,[2019] NSWCCA 100,HCA|2000|54
+C0688,heldout,mnc,real,,Lowndes v The Queen [1999] HCA 29,exists,[2019] NSWCCA 96,HCA|1999|29
+C0689,heldout,mnc,real,,[2005] NSWLEC 191 at [22],exists,[2019] NSWLEC 1434,NSWLEC|2005|191
+C0690,heldout,mnc,real,,National Australia Bank Limited v Sayed (No 4) [2015] NSWSC 420,exists,[2019] NSWSC 1164,NSWSC|2015|420
+C0691,heldout,mnc,real,,[2011] HCA 18,exists,[2019] NSWSC 1511,HCA|2011|18
+C0692,heldout,mnc,real,,Minister for Immigration and Multicultural Affairs v Lay Lat [2006] FCAFC 61,exists,[2020] FCA 1095,FCAFC|2006|61
+C0693,heldout,mnc,real,,Hollis v Vabu Pty Ltd [2001] HCA 44,exists,[2020] FCAFC 122,HCA|2001|44
+C0694,heldout,mnc,real,,Thompson v Big Bert Pty Ltd [2007] FCA 1978 at [57],exists,[2020] FCAFC 84,FCA|2007|1978
+C0695,heldout,mnc,real,,[2000] NSWADT 28,exists,[2020] NSWCATAD 72,NSWADT|2000|28
+C0696,heldout,mnc,real,,Zenah Project Developments Pty Ltd v Kanj [2020] NSWDC 322,exists,[2020] NSWDC 380,NSWDC|2020|322
+C0697,heldout,mnc,real,,Ma v Expeditors International Pty Ltd [2014] NSWSC 859,exists,[2020] NSWSC 1224,NSWSC|2014|859
+C0698,heldout,mnc,real,,[2015] NSWSC 813,exists,[2020] NSWSC 1241,NSWSC|2015|813
+C0699,heldout,mnc,real,,Firebird Global Master Fund II Ltd v Republic of Nauru (No 2) [2015] HCA 53 at [6],exists,[2021] FCA 1449,HCA|2015|53
+C0700,heldout,mnc,real,,Department of Education and Training v Mullett (No 2) [2002] NSWCATAP 29 at [50],outside_coverage,[2021] NSWCATAD 272,NSWCATAP|2002|29
+C0701,heldout,mnc,real,,Investments Pty Ltd v Randwick City Council [2021] NSWLEC 1484,exists,[2021] NSWLEC 1616,NSWLEC|2021|1484
+C0702,heldout,mnc,real,,Fang v Li [2017] NSWLEC 1503,exists,[2021] NSWLEC 1672,NSWLEC|2017|1503
+C0703,heldout,mnc,real,,[1980] HCA 10,exists,[2021] NSWSC 1312,HCA|1980|10
+C0704,heldout,mnc,real,,R v Achurch [2011] NSWCCA 186,exists,[2022] NSWDC 501,NSWCCA|2011|186
+C0705,heldout,mnc,real,,Whitbread v Rail Corporation New South Wales [2011] NSWCA 130,exists,[2022] NSWDC 647,NSWCA|2011|130
+C0706,heldout,mnc,real,,Toga Penrith Developments Pty Limited v Penrith City Council [2022] NSWLEC 117,exists,[2022] NSWLEC 1612,NSWLEC|2022|117
+C0707,heldout,mnc,real,,[1990] HCA 69,outside_coverage,[2022] NSWLEC 35,HCA|1990|69
+C0708,heldout,mnc,real,,[2021] NSWCA 162,exists,[2022] NSWSC 401,NSWCA|2021|162
+C0709,heldout,mnc,real,,Synergy Scaffolding Services Pty Ltd v Alelaimat [2023] NSWCA 213,exists,[2023] NSWSC 1655,NSWCA|2023|213
+C0710,heldout,mnc,real,,[2014] NSWCATGD 37,exists,[2024] NSWCATGD 8,NSWCATGD|2014|37
+C0711,heldout,mnc,real,,Cahyadi v R [2007] NSWCCA 1,exists,[2024] NSWDC 437,NSWCCA|2007|1
+C0712,heldout,mnc,real,,[2010] NSWLEC 70,exists,[2024] NSWLEC 1461,NSWLEC|2010|70
+C0713,heldout,mnc,real,,[2009] NSWLEC 84 at [29],exists,[2024] NSWLEC 68,NSWLEC|2009|84
+C0714,heldout,mnc,real,,Baulderstone Hornibrook Engineering Pty Ltd v Gordian Runoff Ltd (No 2) [2009] NSWCA 12,exists,[2024] NSWSC 24,NSWCA|2009|12
+C0715,heldout,mnc,real,,Boatswain v Boatswain [2023] NSWSC 763 at [263]-[267],exists,[2025] NSWSC 57,NSWSC|2023|763
+C0716,heldout,report,real,,John Fairfax and Sons Limited v Foord (1988) 12 NSWLR 706,exists,[1989] NSWCA 67,NSWLR|12|706
+C0717,heldout,report,real,,Cory v Cory [1923] 1 Ch 90,not_in_report_index,[1995] FCA 961,Ch|1923/1|90
+C0718,heldout,report,real,,New South Wales Division v Sydney City Council (1987) 23 IR 454,exists,[1995] IRCA 144,IR|23|454
+C0719,heldout,report,real,,Deputy Commissioner of Taxation v Access Finance Corporation Pty Ltd (1987) 8 NSWLR 557 at 558,exists,[1996] FCA 708,NSWLR|8|557
+C0720,heldout,report,real,,Ling v Enrobrook (1977) 143 ALR 396,exists,[1998] FCA 1332,ALR|143|396
+C0721,heldout,report,real,,Misiaris v AFC Holdings Pty Limited (1988) 15 NSWLR 231,not_in_report_index,[1998] FCA 1419,NSWLR|15|231
+C0722,heldout,report,real,,"Snoid v CBS Records (1981) 38 ALR 383, 392",exists,[1999] FCA 36,ALR|38|383
+C0723,heldout,report,real,,R v Transport Secretary; Ex parte Factortame Ltd (No 2) [1991] 1 AC 603,exists,[1999] NSWSC 787,AC|1991/1|603
+C0724,heldout,report,real,,R v Williams; Ex parte Lewis [1992] 1 Qd R 643 at 658,exists,[2000] FCA 1659,Qd R|1992/1|643
+C0725,heldout,report,real,,Re Shead; Ex parte Shead (1954) 16 ABC 188,outside_coverage,[2000] FCA 353,ABC|16|188
+C0726,heldout,report,real,,(1998) 158 ALR 379,exists,[2000] NSWCCA 468,ALR|158|379
+C0727,heldout,report,real,,Minister for Immigration and Multicultural Affairs v Thiyagarajah (1997) 80 FCR 543,exists,[2001] FCA 101,FCR|80|543
+C0728,heldout,report,real,,ACCC v ASIC (2000) NSW SC 316,outside_coverage,[2001] FCA 187,NSW SC||316
+C0729,heldout,report,real,,(1998) 80 IR 326,exists,[2001] NSWIRComm 96,IR|80|326
+C0730,heldout,report,real,,[1920] 2 KB 106 at 132,exists,[2001] NSWSC 242,KB|1920/2|106
+C0731,heldout,report,real,,(2002) 23 NSWCCR 372,outside_coverage,[2002] NSWCC 20,NSWCCR|23|372
+C0732,heldout,report,real,,Crofts v The Queen (1996) 186 CLR 427 at 440-441,exists,[2002] NSWCCA 412,CLR|186|427
+C0733,heldout,report,real,,Truth About Motorways Pty Ltd v Macquarie Infrastructure Investment Management Ltd (2000) 34 ASCR 673 at 678-681,outside_coverage,[2004] FCA 1167,ASCR|34|673
+C0734,heldout,report,real,,Van Reesema v Giameos (1979) 27 ALR 525,exists,[2004] FCA 411,ALR|27|525
+C0735,heldout,report,real,,Re Diplock's Estate [1948] Ch 251,not_in_report_index,[2004] NSWSC 56,Ch|1948/|251
+C0736,heldout,report,real,,R v Previtera (1997) 94 A Crim R 76,exists,[2004] NSWSC 597,A Crim R|94|76
+C0737,heldout,report,real,,Allstate Explorations NL v Batepro Australia Pty Ltd (2004) NSWSC 261,outside_coverage,[2005] FCA 1240,NSWSC||261
+C0738,heldout,report,real,,[1965] VR 187 at 191,exists,[2005] NSWCCA 399,VR|1965/|187
+C0739,heldout,report,real,,Environment Protection Authority v Middle Harbour Constructions (2002) 119 LGERA 440 at 450,exists,[2005] NSWLEC 123,LGERA|119|440
+C0740,heldout,report,real,,(1977) 18 ALR 12,exists,[2005] NSWSC 1151,ALR|18|12
+C0741,heldout,report,real,,Salido v Nominal Defendant (1993) 32 NSWLR 524 at 530,exists,[2005] NSWSC 172,NSWLR|32|524
+C0742,heldout,report,real,,Blount Inc v Registrar of Trade Marks (1998) 83 FCR 50 at 58-9,exists,[2006] FCA 951,FCR|83|50
+C0743,heldout,report,real,,Meinhard v Salmon (1928) 249 NY 458,outside_coverage,[2006] FCAFC 44,NY|249|458
+C0744,heldout,report,real,,Vairy v Wyong Shire Council (2005) 80 ALJR 1 at 6,exists,[2006] NSWCA 242,ALJR|80|1
+C0745,heldout,report,real,,(Cth) Eyota Pty Ltd v Hanave Pty Ltd (1994) 12 ACSR 785,exists,[2006] NSWSC 1241,ACSR|12|785
+C0746,heldout,report,real,,(2004) 150 A Crim R 365,not_in_report_index,[2006] NSWSC 267,A Crim R|150|365
+C0747,heldout,report,real,,Nangkiriny v State of Western Australia (2002) 117 FCR 6,exists,[2007] FCA 474,FCR|117|6
+C0748,heldout,report,real,,(2007) NSWCCA 299,outside_coverage,[2007] NSWDC 223,NSWCCA||299
+C0749,heldout,report,real,,Re NRMA Limited (2000) 33 ACSR 595 at 605,exists,[2007] NSWSC 43,ACSR|33|595
+C0750,heldout,report,real,,Chief Commissioner of Stamp Duties v ISPT Pty Ltd (1998) 45 NSWLR 639,exists,[2007] NSWSC 802,NSWLR|45|639
+C0751,heldout,report,real,,Fencott v Muller (1983) 152 CLR 570,exists,[2008] FCA 1630,CLR|152|570
+C0752,heldout,report,real,,White Industries Australia Ltd v Commissioner of Taxation (2007) 160 FCR 298,exists,[2008] FCA 1667,FCR|160|298
+C0753,heldout,report,real,,[1997] 186 CLR 622 at 624-625,exists,[2008] FCA 84,CLR|186|622
+C0754,heldout,report,real,,Re the Minister for Immigration & Ethnic Affairs; Ex parte Lai Qin (1997) 143 ALR 1,exists,[2008] NSWADT 18,ALR|143|1
+C0755,heldout,report,real,,Postiglione v R (1997) 189 CLR 295,exists,[2008] NSWCCA 221,CLR|189|295
+C0756,heldout,report,real,,(1991) 30 FCR 102 at 109,exists,[2009] FCA 553,FCR|30|102
+C0757,heldout,report,real,,CIC Insurance Limited v Bankstown Football Club Limited (1995) 187 CLR 384,exists,[2009] NSWADT 253,CLR|187|384
+C0758,heldout,report,real,,Smith v Central Asbestos Co Ltd [1973] AC 518,exists,[2009] NSWCA 35,AC|1973/|518
+C0759,heldout,report,real,,(2007) 229 CLR 498,exists,[2009] NSWDC 46,CLR|229|498
+C0760,heldout,report,real,,(2003) 126 LGERA 279,not_in_report_index,[2009] NSWLEC 99,LGERA|126|279
+C0761,heldout,report,real,,Urban Transit of Authority of NSW v Nweiser (1992) 28 NSWLR 471,exists,[2009] NSWSC 702,NSWLR|28|471
+C0762,heldout,report,real,,Regina v Korgbara (2007) 71 NSWLR 187,exists,[2009] NSWSC 916,NSWLR|71|187
+C0763,heldout,report,real,,Ting & Anor v Blanche & Anor (1993) 118 ALR 543 at 552 – 553,exists,[2010] FCA 267,ALR|118|543
+C0764,heldout,report,real,,(2009) 262 ALR 53,exists,[2010] FCA 560,ALR|262|53
+C0765,heldout,report,real,,(1994) 181 CLR 201,exists,[2010] NSWSC 389,CLR|181|201
+C0766,heldout,report,real,,(2009) 26 JCL 1,outside_coverage,[2010] NSWSC 532,JCL|26|1
+C0767,heldout,report,real,,Sambo & Ors v Western Australia & Ors (2008) 172 FCR 271,exists,[2011] FCA 1317,FCR|172|271
+C0768,heldout,report,real,,Betfair Pty Ltd v Racing New South Wales (2010) 189 FCR 356,exists,[2011] FCA 961,FCR|189|356
+C0769,heldout,report,real,,R v Pollock (1993) 67 A Crim R 166,exists,[2011] NSWCCA 213,A Crim R|67|166
+C0770,heldout,report,real,,"(2003) 11 BPR 20,841",outside_coverage,[2011] NSWSC 1116,BPR|11|20
+C0771,heldout,report,real,,Slatyer v Daily Telegraph Newspaper Co Ltd (1908) 6 CLR 1,exists,[2012] NSWDC 238,CLR|6|1
+C0772,heldout,report,real,,Timms v Clift [1998] 2 Qd R 100 at 107,exists,[2012] NSWSC 1406,Qd R|1998/2|100
+C0773,heldout,report,real,,Coles v Burke (1987) 10 NSWLR 429,exists,[2012] NSWSC 17,NSWLR|10|429
+C0774,heldout,report,real,,Tobin v Broadbent (1947) 75 CLR 389,not_in_report_index,[2012] NSWSC 666,CLR|75|389
+C0775,heldout,report,real,,(2009) 78 NSWLR 190,exists,[2012] NSWSC 895,NSWLR|78|190
+C0776,heldout,report,real,,Powerflex Services Pty Ltd v Data Access Corporation (1996) 67 FCR 65,exists,[2013] FCA 578,FCR|67|65
+C0777,heldout,report,real,,BHP Petroleum Pty Ltd v Oil Basins Ltd [1985] VR 756,exists,[2013] NSWCA 165,VR|1985/|756
+C0778,heldout,report,real,,State of New South Wales v Moss (2000) 54 NSWLR 536,exists,[2013] NSWDC 244,NSWLR|54|536
+C0779,heldout,report,real,,Dobb v Hacket (1993) 10 WAR 532,exists,[2013] NSWSC 1281,WAR|10|532
+C0780,heldout,report,real,,Minister for Immigration v SZIAI (2009) 259 ALR 429,exists,[2014] FCA 814,ALR|259|429
+C0781,heldout,report,real,,Calabar Properties Ltd v Stitcher [1984] 1 WLR 287,exists,[2014] NSWCA 396,WLR|1984/1|287
+C0782,heldout,report,real,,(1993) 1 WLR 509,exists,[2015] NSWSC 1754,WLR|1993/1|509
+C0783,heldout,report,real,,[1975] All ER 333,exists,[2016] NSWCA 45,All ER|1975/|333
+C0784,heldout,report,real,,(1997) 186 CLR 622,exists,[2016] NSWCATAP 103,CLR|186|622
+C0785,heldout,report,real,,"(2004) HCA 52, 219",outside_coverage,[2016] NSWCATAP 113,HCA||52
+C0786,heldout,report,real,,Soulemezis v Dudley (Holdings) Pty Ltd [1987] 10 NSWLR 247,exists,[2016] NSWCCA 277,NSWLR|10|247
+C0787,heldout,report,real,,Schaffer Corporation v Hawkesbury City Council (1992) 77 LGRA 21,outside_coverage,[2016] NSWLEC 1179,LGRA|77|21
+C0788,heldout,report,real,,Elyard Corp Pty Ltd v DDB Needham Sydney Pty Ltd (1995) 61 FCR 385 at 390-392,exists,[2016] NSWSC 191,FCR|61|385
+C0789,heldout,report,real,,Dolby Australia Pty Ltd v Catto (2004) 52 ACSR 204,not_in_report_index,[2016] NSWSC 254,ACSR|52|204
+C0790,heldout,report,real,,Lenijamar Pty Ltd v AGC (Advances) Ltd (1990) 27 FCR 388,exists,[2016] NSWSC 576,FCR|27|388
+C0791,heldout,report,real,,Masters v Cameron [1954] 91 CLR 353,exists,[2016] NSWSC 814,CLR|91|353
+C0792,heldout,report,real,,R v Speechley (2012) 221 A Crim R 175,exists,[2017] NSWCCA 16,A Crim R|221|175
+C0793,heldout,report,real,,Minister for Immigration and Citizenship v SZMDS (2010) 240 CLR 611,exists,[2018] FCAFC 10,CLR|240|611
+C0794,heldout,report,real,,Phillips v Roberts [1975] 2 NSWLR 207 at 212,exists,[2018] NSWSC 1646,NSWLR|2|207
+C0795,heldout,report,real,,Westport Insurance Corporation v Gordian Runoff Limited (2011) 244 CLR 239,exists,[2018] NSWSC 429,CLR|244|239
+C0796,heldout,report,real,,(2015) 255 CLR 46,exists,[2018] NSWSC 524,CLR|255|46
+C0797,heldout,report,real,,Newmont Pty Limited v Laverton Nickel NL (No 2) [1981] 1 NSWLR 221,exists,[2018] NSWSC 937,NSWLR|1|221
+C0798,heldout,report,real,,(2014) 309 ALR 67,exists,[2019] FCA 2168,ALR|309|67
+C0799,heldout,report,real,,MZKAJ v Minister for Immigration and Multi-Cultural and Indigenous Affairs (2005) FCA 1066,outside_coverage,[2019] FCA 2176,FCA||1066
+C0800,heldout,report,real,,Dale v State of Western Australia (2011) 191 FCR 521,exists,[2019] FCA 651,FCR|191|521
+C0801,heldout,report,real,,(1971) 17 FLR 141 at 167,exists,[2019] HCA 7,FLR|17|141
+C0802,heldout,report,real,,Worth v Clasohm (1952) 86 CLR 439 at 449,exists,[2019] NSWCA 303,CLR|86|439
+C0803,heldout,report,real,,PS Chellaram & Co Ltd v China Ocean Shipping Co (1991) 102 ALR 321 at 323,exists,[2019] NSWSC 113,ALR|102|321
+C0804,heldout,report,real,,(2006) 67 NSWLR 497,exists,[2019] NSWSC 114,NSWLR|67|497
+C0805,heldout,report,real,,Brambles Holdings Ltd v Bathurst City Council (2001) 53 NSWLR 153,exists,[2019] NSWSC 1468,NSWLR|53|153
+C0806,heldout,report,real,,(2018) 129 ACSR 265,exists,[2020] FCA 31,ACSR|129|265
+C0807,heldout,report,real,,Falgat Constructions Pty Ltd v Equity Australia Corporation Pty Ltd (2005) 62 NSWLR 385,exists,[2020] NSWCA 118,NSWLR|62|385
+C0808,heldout,report,real,,(1946) 46 SR (NSW) 318,exists,[2020] NSWCA 198,SR (NSW)|46|318
+C0809,heldout,report,real,,Reinhart v Welker (2011) NSWLR 311,exists,[2020] NSWCATOD 137,NSWLR||311
+C0810,heldout,report,real,,Towers Holdings Pty Limited v Sutherland Shire Council (2003) 129 LGERA 195,exists,[2020] NSWLEC 1517,LGERA|129|195
+C0811,heldout,report,real,,TR Administration Pty Ltd v Frank Marchetti & Sons Pty Ltd (2008) 66 ACSR 67,exists,[2020] NSWSC 108,ACSR|66|67
+C0812,heldout,report,real,,Calderbank v Calderbank [1975] 3 All ER 333,exists,[2021] FCA 1003,All ER|1975/3|333
+C0813,heldout,report,real,,(2003) 214 CLR 118,exists,[2021] NSWCA 298,CLR|214|118
+C0814,heldout,report,real,,Re Australian Bank Employees Union; Ex parte Citicorp Australia Ltd (1989) 167 CLR 513 at 515,exists,[2021] NSWLEC 92,CLR|167|513
+C0815,heldout,report,real,,Langston v Langston (1834) 6 ER 1128 at 1147,outside_coverage,[2021] NSWSC 967,ER|6|1128
+C0816,heldout,report,real,,Immigration and Citizenship v SZRKT (2013) 212 FCR 99 at 131,exists,[2022] FCA 1162,FCR|212|99
+C0817,heldout,report,real,,CQG15 v Minister for Immigration and Border Protection (2016) 253 FCR 496,exists,[2022] FCA 1205,FCR|253|496
+C0818,heldout,report,real,,Jackamarra v Krakouer (1998) 195 CLR 516,exists,[2022] FCA 504,CLR|195|516
+C0819,heldout,report,real,,(2001) 207 CLR 72,exists,[2023] NSWCA 321,CLR|207|72
+C0820,heldout,report,real,,Egan v Chadwick (1999) 46 NSWLR 563,exists,[2023] NSWCATAD 45,NSWLR|46|563
+C0821,heldout,report,real,,Minehan v R (2010) NSWCCA 140,outside_coverage,[2023] NSWDC 337,NSWCCA||140
+C0822,heldout,report,real,,Goldberg v Waverley Council (2007) 156 LGERA 27,exists,[2024] NSWLEC 1461,LGERA|156|27
+C0823,heldout,report,real,,State of New South Wales v Naaman (No 2) (2018) 276 A Crim R 30,exists,[2024] NSWSC 1311,A Crim R|276|30
+C0824,heldout,mnc,synthetic,number_in_range,Dhiman v Minister for Immigration and Multicultural Affairs [1999] FCA 1615,no_record_in_range,[2000] FCA 803,FCA|1999|1291
+C0825,heldout,mnc,synthetic,number_in_range,R v Thomas [2003] NSWCCA 413,no_record_in_range,[2006] NSWCCA 173,NSWCCA|2003|165
+C0826,heldout,mnc,synthetic,number_in_range,Chapman v Caska [2005] NSWCA 452,no_record_in_range,[2008] NSWCCA 322,NSWCA|2005|113
+C0827,heldout,mnc,synthetic,number_in_range,Murphy & Allen v Swinbank [1999] NSWSC 1327,no_record_in_range,[2008] NSWSC 793,NSWSC|1999|934
+C0828,heldout,mnc,synthetic,number_in_range,Ford v Henry [2009] NSWSC 449,no_record_in_range,[2009] NSWSC 1254,NSWSC|2009|147
+C0829,heldout,mnc,synthetic,number_in_range,Specialty Fashion Group Limited v Muirhead Nominees Pty Limited & Ors [2009] NSWSC 886,no_record_in_range,[2009] NSWSC 975,NSWSC|2009|754
+C0830,heldout,mnc,synthetic,number_in_range,Auskay International Manufacturing and Trade Pty Ltd v Qantas Airways Ltd (No 5) [2009] FCA 1023,no_record_in_range,[2010] FCAFC 129,FCA|2009|1464
+C0831,heldout,mnc,synthetic,number_in_range,El-Jalkh v R [2009] NSWCCA 93,no_record_in_range,[2012] NSWCCA 85,NSWCCA|2009|139
+C0832,heldout,mnc,synthetic,number_in_range,Holder v Zeiher [2014] NSWSC 1635,no_record_in_range,[2016] NSWSC 1685,NSWSC|2014|556
+C0833,heldout,mnc,synthetic,number_in_range,Russell v Edwards (No 2) [2006] NSWCA 306,no_record_in_range,[2017] NSWDC 304,NSWCA|2006|52
+C0834,heldout,mnc,synthetic,number_in_range,BZC17 v Minister for Immigration and Border Protection [2018] FCA 878,no_record_in_range,[2019] FCA 1918,FCA|2018|902
+C0835,heldout,mnc,synthetic,number_in_range,Ma v Expeditors International Pty Ltd [2014] NSWSC 630,no_record_in_range,[2020] NSWSC 1224,NSWSC|2014|859
+C0836,heldout,mnc,synthetic,number_in_range,Firebird Global Master Fund II Ltd v Republic of Nauru (No 2) [2015] HCA 19,no_record_in_range,[2021] FCA 1449,HCA|2015|53
+C0837,heldout,mnc,synthetic,number_in_range,Toga Penrith Developments Pty Limited v Penrith City Council [2022] NSWLEC 875,no_record_in_range,[2022] NSWLEC 1612,NSWLEC|2022|117
+C0838,heldout,mnc,synthetic,number_out_of_range,Chen v Karandonis [2002] NSWCA 444,outside_coverage,[2003] NSWIRComm 459,NSWCA|2002|412
+C0839,heldout,mnc,synthetic,number_out_of_range,Specialty Fashion Group Limited v Muirhead Nominees Pty Limited & Ors [2009] NSWSC 1619,outside_coverage,[2009] NSWSC 975,NSWSC|2009|754
+C0840,heldout,mnc,synthetic,number_out_of_range,Auskay International Manufacturing and Trade Pty Ltd v Qantas Airways Ltd (No 5) [2009] FCA 1692,outside_coverage,[2010] FCAFC 129,FCA|2009|1464
+C0841,heldout,mnc,synthetic,number_out_of_range,R v Finney (No 2) [2004] NSWCCA 511,outside_coverage,[2011] NSWSC 153,NSWCCA|2004|150
+C0842,heldout,mnc,synthetic,number_out_of_range,Moweno Pty Ltd v Stratis Promotions Pty Ltd [2002] NSWSC 1323,outside_coverage,[2012] NSWADTAP 8,NSWSC|2002|1151
+C0843,heldout,mnc,synthetic,number_out_of_range,Jones v Bradley [2003] NSWCA 430,outside_coverage,[2012] NSWSC 180,NSWCA|2003|81
+C0844,heldout,mnc,synthetic,number_out_of_range,Palerang Council v Banfield [2012] NSWLEC 1381,outside_coverage,[2013] NSWLEC 189,NSWLEC|2012|85
+C0845,heldout,mnc,synthetic,number_out_of_range,Hawkins v Barclay-Brown [2010] NSWSC 1662,outside_coverage,[2014] NSWSC 247,NSWSC|2010|48
+C0846,heldout,mnc,synthetic,number_out_of_range,Trustee for the Kissane Family Trust v Burns [2015] NSWSC 2256,outside_coverage,[2015] NSWCA 238,NSWSC|2015|423
+C0847,heldout,mnc,synthetic,number_out_of_range,Holder v Zeiher [2014] NSWSC 1987,outside_coverage,[2016] NSWSC 1685,NSWSC|2014|556
+C0848,heldout,mnc,synthetic,number_out_of_range,Minister for Immigration and Citizenship v MZYZA [2013] FCA 1584,outside_coverage,[2018] FCA 451,FCA|2013|572
+C0849,heldout,mnc,synthetic,number_out_of_range,Ma v Expeditors International Pty Ltd [2014] NSWSC 2172,outside_coverage,[2020] NSWSC 1224,NSWSC|2014|859
+C0850,heldout,mnc,synthetic,number_out_of_range,Synergy Scaffolding Services Pty Ltd v Alelaimat [2023] NSWCA 341,outside_coverage,[2023] NSWSC 1655,NSWCA|2023|213
+C0851,heldout,mnc,synthetic,other_case_parties,Parist Holdings Pty Ltd v WT Partnership Australia Pty Ltd [1999] FCA 355,exists_other_parties,[2001] FCA 611,FCA|1999|355
+C0852,heldout,mnc,synthetic,other_case_parties,Sanders v Snell [2002] NSWCA 412,exists_other_parties,[2003] NSWIRComm 459,NSWCA|2002|412
+C0853,heldout,mnc,synthetic,other_case_parties,BHP Petroleum Pty Ltd v Oil Basins Ltd [2000] NSWCCA 309,exists_other_parties,[2004] NSWSC 597,NSWCCA|2000|309
+C0854,heldout,mnc,synthetic,other_case_parties,Powerflex Services Pty Ltd v Data Access Corporation [2006] FCA 195,exists_other_parties,[2006] FCA 453,FCA|2006|195
+C0855,heldout,mnc,synthetic,other_case_parties,Environment Protection Authority v Delta Electricity [2009] HCA 47,exists_other_parties,[2009] NSWSC 1344,HCA|2009|47
+C0856,heldout,mnc,synthetic,other_case_parties,R v Kamminga [2006] NSWADT 272,exists_other_parties,[2010] NSWADT 117,NSWADT|2006|272
+C0857,heldout,mnc,synthetic,other_case_parties,Purvis v State of New South Wales [1990] HCA 20,exists_other_parties,[2011] NSWSC 119,HCA|1990|20
+C0858,heldout,mnc,synthetic,other_case_parties,Industrial Equity Ltd v Federal Commissioner of Taxation [2015] NSWSC 423,exists_other_parties,[2015] NSWCA 238,NSWSC|2015|423
+C0859,heldout,mnc,synthetic,other_case_parties,Barker v Kyriakides [2020] NSWDC 322,exists_other_parties,[2020] NSWDC 380,NSWDC|2020|322
+C0860,heldout,mnc,synthetic,other_case_parties,Mifsud v Campbell [2023] NSWCA 213,exists_other_parties,[2023] NSWSC 1655,NSWCA|2023|213
+C0861,heldout,mnc,synthetic,other_case_parties,Dhanhoa v The Queen [2023] NSWSC 763,exists_other_parties,[2025] NSWSC 57,NSWSC|2023|763
+C0862,heldout,mnc,synthetic,wrong_court,Industrial Equity Ltd v Federal Commissioner of Taxation [1999] NSWCATAD 1533,outside_coverage,[1999] FCA 1796,FCA|1999|1533
+C0863,heldout,mnc,synthetic,wrong_court,Al-Anezi v Minister for Immigration and Multicultural Affairs [1999] FCAFC 355,outside_coverage,[2001] FCA 611,FCA|1999|355
+C0864,heldout,mnc,synthetic,wrong_court,Murphy & Allen v Swinbank [1999] WASC 934,outside_coverage,[2008] NSWSC 793,NSWSC|1999|934
+C0865,heldout,mnc,synthetic,wrong_court,Ford v Henry [2009] HCA 147,outside_coverage,[2009] NSWSC 1254,NSWSC|2009|147
+C0866,heldout,mnc,synthetic,wrong_court,Moweno Pty Ltd v Stratis Promotions Pty Ltd [2002] NSWCATAP 1151,outside_coverage,[2012] NSWADTAP 8,NSWSC|2002|1151
+C0867,heldout,mnc,synthetic,wrong_court,Jones v Bradley [2003] FCAFC 81,exists_other_parties,[2012] NSWSC 180,NSWCA|2003|81
+C0868,heldout,mnc,synthetic,wrong_court,Re Telstra Corporation Ltd (No 3) [2007] NSWCCA 3,exists_other_parties,[2013] ACompT 3,ACompT|2007|3
+C0869,heldout,mnc,synthetic,wrong_court,Lowndes v The Queen [1999] WASC 29,outside_coverage,[2019] NSWCCA 96,HCA|1999|29
+C0870,heldout,mnc,synthetic,wrong_court,Whitbread v Rail Corporation New South Wales [2011] VSCA 130,outside_coverage,[2022] NSWDC 647,NSWCA|2011|130
+C0871,heldout,mnc,synthetic,wrong_number,Industrial Equity Ltd v Federal Commissioner of Taxation [1999] FCA 1636,exists_other_parties,[1999] FCA 1796,FCA|1999|1533
+C0872,heldout,mnc,synthetic,wrong_number,Al-Anezi v Minister for Immigration and Multicultural Affairs [1999] FCA 1298,exists_other_parties,[2001] FCA 611,FCA|1999|355
+C0873,heldout,mnc,synthetic,wrong_number,R v Thomas [2003] NSWCCA 72,exists_other_parties,[2006] NSWCCA 173,NSWCCA|2003|165
+C0874,heldout,mnc,synthetic,wrong_number,Auskay International Manufacturing and Trade Pty Ltd v Qantas Airways Ltd (No 5) [2009] FCA 1245,exists_other_parties,[2010] FCAFC 129,FCA|2009|1464
+C0875,heldout,mnc,synthetic,wrong_number,Creamer v Chief Commissioner of State Revenue [2006] NSWADT 28,exists_other_parties,[2010] NSWADT 117,NSWADT|2006|272
+C0876,heldout,mnc,synthetic,wrong_number,Malec v JC Hutton Pty Ltd [1990] HCA 7,exists_other_parties,[2011] NSWSC 119,HCA|1990|20
+C0877,heldout,mnc,synthetic,wrong_number,Moweno Pty Ltd v Stratis Promotions Pty Ltd [2002] NSWSC 479,exists_other_parties,[2012] NSWADTAP 8,NSWSC|2002|1151
+C0878,heldout,mnc,synthetic,wrong_number,Moana v Minister for Immigration and Border Protection [2014] FCA 1438,exists_other_parties,[2015] FCAFC 54,FCA|2014|1084
+C0879,heldout,mnc,synthetic,wrong_number,Ma v Expeditors International Pty Ltd [2014] NSWSC 1233,exists_other_parties,[2020] NSWSC 1224,NSWSC|2014|859
+C0880,heldout,mnc,synthetic,wrong_number,Synergy Scaffolding Services Pty Ltd v Alelaimat [2023] NSWCA 7,exists_other_parties,[2023] NSWSC 1655,NSWCA|2023|213
+C0881,heldout,mnc,synthetic,wrong_number,Baulderstone Hornibrook Engineering Pty Ltd v Gordian Runoff Ltd (No 2) [2009] NSWCA 317,exists_other_parties,[2024] NSWSC 24,NSWCA|2009|12
+C0882,heldout,mnc,synthetic,wrong_party,The Registrar of Trade Marks v Australian Federal Police [2006] FCAFC 169,exists_other_parties,[2007] FCAFC 188,FCAFC|2006|169
+C0883,heldout,mnc,synthetic,wrong_party,Gourmet Goody's Family Restaurant Pty Ltd v Swinbank [1999] NSWSC 934,exists_other_parties,[2008] NSWSC 793,NSWSC|1999|934
+C0884,heldout,mnc,synthetic,wrong_party,Black v Health Care Complaints Commission [2005] NSWSC 943,exists_other_parties,[2009] NSWLEC 1326,NSWSC|2005|943
+C0885,heldout,mnc,synthetic,wrong_party,Pty Limited v Google Inc LLC (No 5) [2009] HCA 47,exists_other_parties,[2009] NSWSC 1344,HCA|2009|47
+C0886,heldout,mnc,synthetic,wrong_party,R v Trading Post Australia Pty Ltd [2011] FCA 1086,exists_other_parties,[2012] FCAFC 49,FCA|2011|1086
+C0887,heldout,mnc,synthetic,wrong_party,El-Jalkh v Sambo & Ors [2009] NSWCCA 139,exists_other_parties,[2012] NSWCCA 85,NSWCCA|2009|139
+C0888,heldout,mnc,synthetic,wrong_party,Trustee for the Kissane Family Trust v Brisbane Slipways and Engineering P/L [2015] NSWSC 423,exists_other_parties,[2015] NSWCA 238,NSWSC|2015|423
+C0889,heldout,mnc,synthetic,wrong_party,CQG15 v Sasterwan [2016] FCAFC 146,exists_other_parties,[2016] FCA 1449,FCAFC|2016|146
+C0890,heldout,mnc,synthetic,wrong_party,Murphy v Mastronardi [2015] FCA 266,exists_other_parties,[2016] FCAFC 51,FCA|2015|266
+C0891,heldout,mnc,synthetic,wrong_party,R v Furness [2003] NSWCCA 212,exists_other_parties,[2017] NSWDC 215,NSWCCA|2003|212
+C0892,heldout,mnc,synthetic,wrong_party,Thiyagarajah v Grant [2006] NSWLEC 96,exists_other_parties,[2018] NSWLEC 9,NSWLEC|2006|96
+C0893,heldout,mnc,synthetic,wrong_party,Langston v Big Bert Pty Ltd [2007] FCA 1978,exists_other_parties,[2020] FCAFC 84,FCA|2007|1978
+C0894,heldout,mnc,synthetic,wrong_year,Industrial Equity Ltd v Federal Commissioner of Taxation [1997] FCA 1533,exists_other_parties,[1999] FCA 1796,FCA|1999|1533
+C0895,heldout,mnc,synthetic,wrong_year,Dhiman v Minister for Immigration and Multicultural Affairs [1996] FCA 1291,outside_coverage,[2000] FCA 803,FCA|1999|1291
+C0896,heldout,mnc,synthetic,wrong_year,Mathews v Health Insurance Commission [2008] FCA 195,exists_other_parties,[2006] FCA 453,FCA|2006|195
+C0897,heldout,mnc,synthetic,wrong_year,Friends of Hinchinbrook Society Inc v Minister for the Environment [1999] FCA 295,exists_other_parties,[2008] FCA 1667,FCA|1997|295
+C0898,heldout,mnc,synthetic,wrong_year,Pty Limited v Motor Accidents Insurance Board [2007] HCA 47,no_record_in_range,[2009] NSWSC 1344,HCA|2009|47
+C0899,heldout,mnc,synthetic,wrong_year,R v Finney (No 2) [2001] NSWCCA 150,exists_other_parties,[2011] NSWSC 153,NSWCCA|2004|150
+C0900,heldout,mnc,synthetic,wrong_year,El-Jalkh v R [2007] NSWCCA 139,exists_other_parties,[2012] NSWCCA 85,NSWCCA|2009|139
+C0901,heldout,mnc,synthetic,wrong_year,Wanice Pty Ltd v Bocove Pty Ltd [2002] NSWADTAP 24,exists_other_parties,[2013] NSWADT 104,NSWADTAP|2003|24
+C0902,heldout,mnc,synthetic,wrong_year,Holder v Zeiher [2013] NSWSC 556,exists_other_parties,[2016] NSWSC 1685,NSWSC|2014|556
+C0903,heldout,mnc,synthetic,wrong_year,Cahyadi v R [2004] NSWCCA 1,exists_other_parties,[2024] NSWDC 437,NSWCCA|2007|1
+C0904,heldout,report,synthetic,other_case_parties,Timms v Clift [1991] 1 AC 603,exists_other_parties,[1999] NSWSC 787,AC|1991/1|603
+C0905,heldout,report,synthetic,other_case_parties,Maddaford v CSR Limited and Mulgoa Quarries Pty Ltd (1979) 27 ALR 525,exists_other_parties,[2004] FCA 411,ALR|27|525
+C0906,heldout,report,synthetic,other_case_parties,Sasterwan v Morris (1994) 12 ACSR 785,exists_other_parties,[2006] NSWSC 1241,ACSR|12|785
+C0907,heldout,report,synthetic,other_case_parties,Elleray v Rail Corporation NSW (1997) 143 ALR 1,exists_other_parties,[2008] NSWADT 18,ALR|143|1
+C0908,heldout,report,synthetic,other_case_parties,O'Donel v Commissioner for Road Transport & Tramways (NSW) (2008) 172 FCR 271,exists_other_parties,[2011] FCA 1317,FCR|172|271
+C0909,heldout,report,synthetic,other_case_parties,CLR Isbester v Knox City Council (2010) 189 FCR 356,exists_other_parties,[2011] FCA 961,FCR|189|356
+C0910,heldout,report,synthetic,other_case_parties,Eastman v The Director of Public Prosecutions (No 2) [1987] 10 NSWLR 247,exists_other_parties,[2016] NSWCCA 277,NSWLR|10|247
+C0911,heldout,report,synthetic,other_case_parties,Re Proptech Group Ltd (1990) 27 FCR 388,exists_other_parties,[2016] NSWSC 576,FCR|27|388
+C0912,heldout,report,synthetic,other_case_parties,Department of Education and Training v Mullett (No 2) (2012) 221 A Crim R 175,exists_other_parties,[2017] NSWCCA 16,A Crim R|221|175
+C0913,heldout,report,synthetic,other_case_parties,Plaintiff M1/2021 v Minister for Home Affairs [1975] 2 NSWLR 207,exists_other_parties,[2018] NSWSC 1646,NSWLR|2|207
+C0914,heldout,report,synthetic,other_case_parties,House v The King (2001) 53 NSWLR 153,exists_other_parties,[2019] NSWSC 1468,NSWLR|53|153
+C0915,heldout,report,synthetic,other_case_parties,Godfrey v Henderson (2008) 66 ACSR 67,exists_other_parties,[2020] NSWSC 108,ACSR|66|67
+C0916,heldout,report,synthetic,wrong_page,New South Wales Division v Sydney City Council (1987) 23 IR 172,not_in_report_index,[1995] IRCA 144,IR|23|454
+C0917,heldout,report,synthetic,wrong_page,Deputy Commissioner of Taxation v Access Finance Corporation Pty Ltd (1987) 8 NSWLR 768,not_in_report_index,[1996] FCA 708,NSWLR|8|557
+C0918,heldout,report,synthetic,wrong_page,Snoid v CBS Records (1981) 38 ALR 234,not_in_report_index,[1999] FCA 36,ALR|38|383
+C0919,heldout,report,synthetic,wrong_page,R v Williams; Ex parte Lewis [1992] 1 Qd R 870,not_in_report_index,[2000] FCA 1659,Qd R|1992/1|643
+C0920,heldout,report,synthetic,wrong_page,Minister for Immigration and Multicultural Affairs v Thiyagarajah (1997) 80 FCR 377,not_in_report_index,[2001] FCA 101,FCR|80|543
+C0921,heldout,report,synthetic,wrong_page,Crofts v The Queen (1996) 186 CLR 149,not_in_report_index,[2002] NSWCCA 412,CLR|186|427
+C0922,heldout,report,synthetic,wrong_page,Van Reesema v Giameos (1979) 27 ALR 489,not_in_report_index,[2004] FCA 411,ALR|27|525
+C0923,heldout,report,synthetic,wrong_page,Re NRMA Limited (2000) 33 ACSR 676,not_in_report_index,[2007] NSWSC 43,ACSR|33|595
+C0924,heldout,report,synthetic,wrong_page,Minister for Immigration v SZIAI (2009) 259 ALR 736,not_in_report_index,[2014] FCA 814,ALR|259|429
+C0925,heldout,report,synthetic,wrong_page,Soulemezis v Dudley (Holdings) Pty Ltd [1987] 10 NSWLR 625,not_in_report_index,[2016] NSWCCA 277,NSWLR|10|247
+C0926,heldout,report,synthetic,wrong_page,Westport Insurance Corporation v Gordian Runoff Limited (2011) 244 CLR 152,not_in_report_index,[2018] NSWSC 429,CLR|244|239
+C0927,heldout,report,synthetic,wrong_page,PS Chellaram & Co Ltd v China Ocean Shipping Co (1991) 102 ALR 396,not_in_report_index,[2019] NSWSC 113,ALR|102|321
+C0928,heldout,report,synthetic,wrong_page,Brambles Holdings Ltd v Bathurst City Council (2001) 53 NSWLR 451,exists_other_parties,[2019] NSWSC 1468,NSWLR|53|153
+C0929,heldout,report,synthetic,wrong_party,Goldberg v CBS Records (1981) 38 ALR 383,exists_other_parties,[1999] FCA 36,ALR|38|383
+C0930,heldout,report,synthetic,wrong_party,Van Reesema v WorkPower Inc (1979) 27 ALR 525,exists_other_parties,[2004] FCA 411,ALR|27|525
+C0931,heldout,report,synthetic,wrong_party,Nangkiriny v Muldrock (2002) 117 FCR 6,exists_other_parties,[2007] FCA 474,FCR|117|6
+C0932,heldout,report,synthetic,wrong_party,Root Quality Technologies Pty Ltd v Western Australia & Ors (2008) 172 FCR 271,exists_other_parties,[2011] FCA 1317,FCR|172|271
+C0933,heldout,report,synthetic,wrong_party,Gallo v Clift [1998] 2 Qd R 100,exists_other_parties,[2012] NSWSC 1406,Qd R|1998/2|100
+C0934,heldout,report,synthetic,wrong_party,SZRMS v Stitcher [1984] 1 WLR 287,exists_other_parties,[2014] NSWCA 396,WLR|1984/1|287
+C0935,heldout,report,synthetic,wrong_party,Western Murray Irrigation Ltd v DDB Needham Sydney Pty Ltd (1995) 61 FCR 385,exists_other_parties,[2016] NSWSC 191,FCR|61|385
+C0936,heldout,report,synthetic,wrong_party,Boatman v Laverton Nickel NL (No 2) [1981] 1 NSWLR 221,exists_other_parties,[2018] NSWSC 937,NSWLR|1|221
+C0937,heldout,report,synthetic,wrong_party,Fletcher v v Krakouer (1998) 195 CLR 516,exists_other_parties,[2022] FCA 504,CLR|195|516
+C0938,heldout,report,synthetic,wrong_volume,Deputy Commissioner of Taxation v Access Finance Corporation Pty Ltd (1987) 15 NSWLR 557,not_in_report_index,[1996] FCA 708,NSWLR|8|557
+C0939,heldout,report,synthetic,wrong_volume,Ling v Enrobrook (1977) 163 ALR 396,not_in_report_index,[1998] FCA 1332,ALR|143|396
+C0940,heldout,report,synthetic,wrong_volume,Vairy v Wyong Shire Council (2005) 95 ALJR 1,exists_other_parties,[2006] NSWCA 242,ALJR|80|1
+C0941,heldout,report,synthetic,wrong_volume,Re the Minister for Immigration & Ethnic Affairs; Ex parte Lai Qin (1997) 119 ALR 1,exists_other_parties,[2008] NSWADT 18,ALR|143|1
+C0942,heldout,report,synthetic,wrong_volume,Coles v Burke (1987) 4 NSWLR 429,not_in_report_index,[2012] NSWSC 17,NSWLR|10|429
+C0943,heldout,report,synthetic,wrong_volume,Phillips v Roberts [1975] 14 NSWLR 207,not_in_report_index,[2018] NSWSC 1646,NSWLR|2|207
+C0944,heldout,report,synthetic,wrong_volume,Dale v State of Western Australia (2011) 206 FCR 521,not_in_report_index,[2019] FCA 651,FCR|191|521
+C0945,heldout,report,synthetic,wrong_volume,Falgat Constructions Pty Ltd v Equity Australia Corporation Pty Ltd (2005) 76 NSWLR 385,not_in_report_index,[2020] NSWCA 118,NSWLR|62|385
+C0946,heldout,report,synthetic,wrong_volume,TR Administration Pty Ltd v Frank Marchetti & Sons Pty Ltd (2008) 77 ACSR 67,not_in_report_index,[2020] NSWSC 108,ACSR|66|67
+C0947,heldout,report,synthetic,wrong_volume,Re Australian Bank Employees Union; Ex parte Citicorp Australia Ltd (1989) 156 CLR 513,not_in_report_index,[2021] NSWLEC 92,CLR|167|513
+C0948,heldout,report,synthetic,wrong_volume,CQG15 v Minister for Immigration and Border Protection (2016) 266 FCR 496,not_in_report_index,[2022] FCA 1205,FCR|253|496

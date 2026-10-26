@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { COURTS, normaliseChars, parseCitations, partiesBefore } from "../src/core/parse.ts";
-import { SERIES, findSeries, seriesKey } from "../src/core/series.ts";
+import { SERIES, findSeries, reportKey, seriesKey } from "../src/core/series.ts";
 import type { CaseCitation, StatuteCitation } from "../src/core/types.ts";
 
 const cases = (text: string) => parseCitations(text).filter((c): c is CaseCitation => c.kind !== "statute");
@@ -378,5 +378,15 @@ describe("tables", () => {
   it("normaliseChars keeps the length", () => {
     const s = "‘a’ – “b”  c\n";
     expect(normaliseChars(s)).toHaveLength(s.length);
+  });
+});
+
+describe("report keys", () => {
+  it("round series ignore the year", () => {
+    expect(reportKey("CLR", 1992, 175, 1)).toBe("175|1");
+  });
+  it("square series include the year", () => {
+    expect(reportKey("Qd R", 1990, 1, 5)).toBe("1990/1|5");
+    expect(reportKey("AC", 1932, null, 562)).toBe("1932/|562");
   });
 });

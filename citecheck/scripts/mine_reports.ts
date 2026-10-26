@@ -9,7 +9,8 @@
  *
  * Usage: node citecheck/scripts/mine_reports.ts [--limit N]   (full runs also write data/interim/index_b_mining.json)
  * Output (gitignored, local only): cache/corpus/reports_raw.json, aggregated per citation:
- *   { "<series>|<volume>|<page>": { n, years: {year: count}, parties: {encoded: count}, names: {written: count} } }
+ *   { "<series>|<reportKey>": { n, years: {year: count}, parties: {encoded: count}, names: {written: count} } }
+ * reportKey (src/core/series.ts): "volume|page", or "year/volume|page" for square-bracket series.
  * "names" keeps the party names as written, for the evaluation's ground truth on this machine;
  * the public index is built from the fingerprints alone (scripts/25_build_index_b.py).
  */
@@ -19,6 +20,7 @@ import { createInterface } from "node:readline";
 import { fileURLToPath } from "node:url";
 import { parseCitations } from "../src/core/parse.ts";
 import { sides } from "../src/core/fingerprint.ts";
+import { reportKey } from "../src/core/series.ts";
 import type { CaseCitation } from "../src/core/types.ts";
 
 const ROOT = fileURLToPath(new URL("../../", import.meta.url));
@@ -54,7 +56,7 @@ for await (const line of lines) {
   for (const c of parseCitations(d.text ?? "")) {
     if (c.kind !== "report") continue;
     const r = c as CaseCitation;
-    const key = `${r.series}|${r.volume ?? ""}|${r.page}`;
+    const key = `${r.series}|${reportKey(r.series!, r.year, r.volume, r.page!)}`;
     cites++;
     let e = index.get(key);
     if (!e) index.set(key, (e = { n: 0, years: {}, parties: {}, names: {} }));

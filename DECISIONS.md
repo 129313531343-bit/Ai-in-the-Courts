@@ -348,3 +348,15 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
 - Every other AI-extracted field in those rows stays blank until AustLII replies. This applies D024's own carve-out (human-verified values are published) to one field rather than a whole row.
 - **Single source:** `aic/impugned.py` holds Luc's corrections, so the tracker and the CiteCheck evaluation items (D034) publish the same values. It raises an error if one of Luc's notes has no fixed value, so a raw note can never be published.
 - **Status:** Luc (choice); Claude (build).
+
+### D036: Report keys include the year for square-bracket series (26 Oct 2026)
+- **Found while designing the matcher:** in square-bracket series (Qd R, VR, AC, QB, KB, Ch, WLR, All ER, NZLR) the volumes run within a year, so "[1990] 1 Qd R 5" and "[1991] 1 Qd R 5" are different reports. Index (b) keyed reports by volume and page alone, which merged them.
+- **Fix:** one key function, `reportKey()` in `citecheck/src/core/series.ts` and its twin `aic/series.py`: "volume|page", or "year/volume|page" for square series. Both read the series table, now in `citecheck/src/core/data/series.json`.
+  - The generator's ground-truth interface (`aic/corrupt.py`) now passes the year. This was committed on its own, still before any matcher code; corruption types and labels are unchanged.
+- **Rebuilt:**
+  - mining gives 107,436 distinct reports (was 93,006), of which 63,282 are cited by 2+ judgments (was 58,912);
+  - index (b) is 1.26 MiB, and all indexes 5.51 MiB of 10 MB;
+  - the case items are now 948: 600 real and 396 synthetic, less 48 dropped for 13 authorities in both splits; dev 616, held-out 332;
+  - the fabricated items are unchanged (65).
+- These figures supersede the index (b) and item counts in D033.
+- **Status:** Claude.

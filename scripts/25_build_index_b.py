@@ -7,6 +7,7 @@ three of the commonest ways judgments name the parties, as fingerprints only (D0
 
 Output (gitignored, deployed), one gzipped file per series:
   citecheck/public/data/b/<SERIESKEY>.json.gz  {"series": "CLR", "r": {"175|1": [n, year, ["fp fp|fp", ...]]}}
+  (keys are reportKey(): "volume|page", or "year/volume|page" for square-bracket series such as Qd R)
   citecheck/public/data/b/index.json           every series: citations kept, judgments cited
 SERIESKEY is the series without spaces or full stops, upper case ("Qd R" -> "QDR"), as in
 citecheck/src/core/series.ts seriesKey(). Checksums: scripts/26_index_manifest.py.
@@ -37,10 +38,10 @@ def main() -> None:
     for key, e in raw.items():
         if e["n"] < MIN_CITING:
             continue
-        series, vol, page = key.split("|")
+        series, within = key.split("|", 1)  # within: reportKey, "vol|page" or "year/vol|page"
         year = max(e["years"].items(), key=lambda kv: (kv[1], kv[0]))[0]
         top = [enc for enc, _ in sorted(e["parties"].items(), key=lambda kv: -kv[1])[:VARIANTS]]
-        shards[series_key(series)][f"{vol}|{page}"] = [e["n"], int(year), top]
+        shards[series_key(series)][within] = [e["n"], int(year), top]
         names[series_key(series)] = series
     OUT.mkdir(parents=True, exist_ok=True)
     for old in OUT.glob("*.json.gz"):

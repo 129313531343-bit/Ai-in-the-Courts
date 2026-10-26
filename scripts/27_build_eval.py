@@ -34,6 +34,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from aic import ROOT  # noqa: E402
 from aic.corrupt import MNC_TYPES, REPORT_TYPES, CaseCite, corrupt  # noqa: E402
 from aic.courts import courts  # noqa: E402
+from aic.series import report_key  # noqa: E402
 
 SEED = 20261026
 REAL_PER_KIND = 300  # about 600 real citations (brief)
@@ -105,7 +106,8 @@ def extract(text: str, own_mnc: tuple[str, int, int]) -> list[dict]:
         p = parties_before(flat, m.start())
         out.append({"kind": "report", "start": p if p is not None else m.start(), "core": m.start(), "end": end,
                     "has_parties": p is not None,
-                    "authority": f"{s}|{m.group('v') or ''}|{int(m.group('p'))}", "year": int(m.group("y")),
+                    "authority": f"{s}|{report_key(s, int(m.group('y')), int(m.group('v') or 0), int(m.group('p')))}",
+                    "year": int(m.group("y")),
                     "series": s, "volume": int(m.group("v")) if m.group("v") else 0, "page": int(m.group("p")),
                     "square": m.group("b") == "["})
     for m in MNC_CORE.finditer(flat):
@@ -145,8 +147,8 @@ class Ground:
     def mnc_max(self, court, year):
         return self.top.get((court, year))
 
-    def report_parties(self, series, volume, page):
-        return self.reports.get(f"{series}|{volume or ''}|{page}")
+    def report_parties(self, series, year, volume, page):
+        return self.reports.get(f"{series}|{report_key(series, year, volume, page)}")
 
     def report_series(self):
         return self.series
@@ -169,7 +171,7 @@ def real_label(c: dict, g: Ground) -> str:
     series = series_canonical(c["series"], g.series)
     if series not in g.series:
         return "outside_coverage"
-    return "exists" if g.report_parties(series, c["volume"], c["page"]) else "not_in_report_index"
+    return "exists" if g.report_parties(series, c["year"], c["volume"], c["page"]) else "not_in_report_index"
 
 
 def main() -> None:

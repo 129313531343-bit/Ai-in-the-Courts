@@ -29,7 +29,7 @@ def test_re_ex_parte_and_no_2():
 
 def test_year_only_series_is_a_report_not_an_mnc():
     assert found("Donoghue v Stevenson [1932] AC 562 applies.") == [
-        ("report", "Donoghue v Stevenson [1932] AC 562", "Donoghue v Stevenson", "AC||562")]
+        ("report", "Donoghue v Stevenson [1932] AC 562", "Donoghue v Stevenson", "AC|1932/|562")]
 
 
 def test_bare_citation_has_no_parties():
