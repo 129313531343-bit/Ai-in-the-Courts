@@ -360,3 +360,26 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
   - the fabricated items are unchanged (65).
 - These figures supersede the index (b) and item counts in D033.
 - **Status:** Claude.
+
+### D037: The matcher, with defaults fixed before the evaluation (26 Oct 2026)
+- **Luc's choice:** a preview site before the test set is finished. The rule kept: no run against the evaluation items, and no tuning, until Luc freezes the set. The matcher was tested only on a synthetic fixture index (`citecheck/tests/match.test.ts`, 40 tests).
+- **States** (`citecheck/src/core/match.ts`):
+  - FOUND: a record exists, and the party names match where given.
+  - MISMATCH: a record exists, but its parties differ, or an Act's title exists with another year.
+  - NO_RECORD: within coverage, there is no such record.
+  - CANNOT_CHECK: outside coverage. That covers a court not in the corpus, a decision after 10 March 2025, a number above the court-year maximum, a court-year whose gap rate is above the threshold, a series not indexed, a report volume above the highest cited, Victorian/ACT/NT legislation, and a state Act not found (the brief's list).
+  - The site never says "verified" or "good law".
+- **Defaults, chosen before any evaluation:**
+  - gap-rate threshold 15%;
+  - party rule "every side": each side of the case name must share an identifying word with the record, so "Smith v Brown" does not match "Smith v Jones";
+  - words naming the Crown are ignored, so "R" and "The Queen" meet.
+  - Both are settings to tune on dev after the freeze.
+- **Report citations:** a report not in index (b) gives NO_RECORD, with the caveat that only reports cited by 2+ judgments are indexed. Rejected alternative: CANNOT_CHECK, which would make every fabricated report citation uncheckable. Above the highest volume cited, the result is CANNOT_CHECK, since the report may postdate the snapshot.
+- **Commonwealth Acts:**
+  - The API cannot search former names (its nameHistory filter fails server side), so the full Act list (13,747 Acts with former names and status) is downloaded once at build time (`scripts/29_fetch_cth_acts.py`, index (d), 1 request per 10 s).
+  - Section numbers are checked live against the EPUB of the version in force: register id and date only, read with the platform's own decompression (`zip.ts`, `legislation.ts`).
+  - Offline mode makes no request and says sections were not checked.
+  - A repealed Act is FOUND with its status shown; a former name is FOUND with the current name shown.
+- **State Acts:** titles in force at the snapshot only (index (c)). Sections are not checked, and the page says so.
+- **Links:** the official copy (corpus URL), AustLII for MNCs (format confirmed by Luc), and the Federal Register. LawCite and JADE links wait for Luc to confirm their formats (brief).
+- **Status:** Claude; thresholds to tune on dev after Luc's freeze.
