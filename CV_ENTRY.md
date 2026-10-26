@@ -25,6 +25,9 @@ Hand-off for Luc's CVs. Every number below comes from the project's data (`data/
 - Automatically checked every row and ran a pre-registered human audit (91.1% of judgement fields correct; 95% CI 82.8–95.6%).
 - Published a static site, open data (CC BY 4.0), a two-page methods note and a public log of every judgement call.
 
+### Release 2 preview bullet (optional; keep the word "preview" until the evaluation is published)
+- Built CiteCheck AU (preview), an in-browser tool that finds the case and statute citations in a document and checks each against 187,443 Australian decisions, 63,282 law-report citations and 13,747 Commonwealth Acts. Party names are stored only as one-way fingerprints, and documents never leave the browser. Its evaluation on a frozen held-out test set is in progress.
+
 ## (b) Cover-letter sentence
 
 I built AI in Australian Courts (ai-in-australian-courts.pages.dev), a public tracker of 112 Australian decisions in which AI-generated false citations reached a court, together with a matrix of 14 court AI practice notes and a one-page verification checklist, so that every summary and figure can be traced back to its source.
@@ -38,6 +41,7 @@ I built AI in Australian Courts (ai-in-australian-courts.pages.dev), a public tr
 - Checklist (A4 PDF): https://ai-in-australian-courts.pages.dev/checklist.pdf
 - Code, data and decision log: https://github.com/129313531343-bit/Ai-in-the-Courts
 - Methods note (PDF): https://github.com/129313531343-bit/Ai-in-the-Courts/blob/main/docs/methods.pdf
+- CiteCheck AU (preview): https://ai-in-australian-courts.pages.dev/citecheck/
 
 ## (d) Status
 
@@ -48,4 +52,4 @@ I built AI in Australian Courts (ai-in-australian-courts.pages.dev), a public tr
 - **Rows awaiting review:** 37 rows are flagged by the automatic checks for human review.
 - **Two "no guidance found" entries:** the District Court of Western Australia and the State Administrative Tribunal (WA) were searched by script, but not yet confirmed by hand.
 - **Corrections to the source database:** five court-label corrections are drafted for its maintainer, but not yet sent.
-- **Release 2:** a citation-checking tool (CiteCheck AU) is planned, but not started.
+- **Release 2:** CiteCheck AU has been online as a preview since 26 October 2026, labelled "not yet evaluated". Before its accuracy is published, the evaluation set must be completed and frozen (statute items, 30 adversarial items, inspection), then run once on the held-out split. A practice note is still to be written.
