@@ -321,3 +321,24 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
   - **Privacy:** the strings are case names as published in judgments. A scan against the tracker's self-represented parties found no tracker case; the only hits were common surnames in unrelated authorities.
 - **Still to add before the freeze:** the tracker's fabricated citations (after Luc's check, E2), at least 100 statute items with labels Luc confirms, and Luc's 30 adversarial items. Then Luc inspects 60 random items plus every fabricated one and approves the freeze.
 - **Status:** Claude.
+
+### D034: Luc's check of the 47 held-back fake citations; fabricated items for the evaluation (26 Oct 2026)
+- **Luc's check** (review page, Fake citations tab, saved locally): all 20 cases. 42 citations marked right, 5 corrected, and missing citations noted in 3 cases.
+- **Corrections turned into fixed values** (`scripts/28_build_fabricated.py`, CORRECTIONS and ADDED, each keeping his note):
+  - **AIC-0033, both citations:** label not_located, not not_stated. The court describes a false case name but qualifies its finding about genuineness ([35]–[37]). Luc's second correction had no text, and his note on the first covers the same passage, so the same label is used.
+  - **AIC-0036:** footnote markers removed ("[Redacted (Second Case)]", "[Redacted (Third Case)]").
+  - **AIC-0104:** wrong_pinpoint instead of exists_but_misdescribed, because the criticism concerns paragraph [7] specifically.
+  - **Added:**
+    - s 85(3) of the Industrial Relations Act 1996 (NSW) (AIC-0036);
+    - "FWC Rule XXXX" (AIC-0038), a placeholder: not_stated with a note, not a finding of non-existence;
+    - Domestic Building Contract Act 1995 (Vic) and Civil Procedure Act 2010 (Vic) (AIC-0098).
+
+    The court's own characterisation was not given for these, so they are labelled not_stated until Luc's freeze inspection.
+- **Fabricated items** (`eval/items_fabricated.csv`): 65 items.
+  - Sources: the 69 citations Luc has read (18 from his spot-check, 47 checked here, 4 added), less 4 the court itself redacted, which no tool can check.
+  - By kind: 26 MNC, 11 report, 7 statute, and 21 "other" (a clause, a rule, a bare section, or a case name with no citation).
+  - About 15 fall within the corpus's coverage: the brief's "recall on real fabricated citations within coverage" will rest on a handful, so each will be described, not just summed.
+  - Split: 39 dev, 26 held-out, by tracker decision.
+- **Publication:** these strings come from rows whose AI-extracted details are otherwise held back (D024). They are published here because Luc read each one himself, which is the carve-out D024 makes.
+- **Privacy:** no item shares a personal name with its own case's title. The broad scan's hits were common words (Queensland, Smith, Citizenship).
+- **Status:** Luc (checks); Claude (translation).
