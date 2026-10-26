@@ -1,0 +1,302 @@
+{
+  "nsw_sc_gen23": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "corrected",
+        "value": "Affidavits, witness statements and character references must disclose that Gen AI did not generate the content. The disclosure also covers annexures and exhibits prepared by the deponent for the evidence, subject to leave. Annexures and exhibits not created for the proceedings are exempt from that disclosure. Submissions require verification in the document. Experts granted leave must identify affected content and the program and version used, annex a record of use unless excused, and identify and annex any applicable AI code or principles."
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "corrected",
+        "value": "Gen AI must not generate or rephrase witness evidence, although merely preparatory work is permitted. Exceptional leave may permit preparation of annexures or exhibits. Expert reports generally require prior leave, but paragraph 23 requires leave at the first directions hearing for specified professional negligence and work injury reports. Protected material requires the safeguards in paragraph 9A, including restricted use and no model training. Subject to those safeguards, permitted uses include chronologies, indexes, witness lists, briefs, draft Crown Case Statements, document summaries and verified submissions."
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "vic_sc_gen25": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "corrected",
+        "value": "Confidential or sensitive information should not enter public AI tools. Closed tools require caution and checks of terms or settings to establish security. Particular caution is required for evidence and expert reports. Witness evidence must reflect personal knowledge and words. Expert reports must comply with the applicable code or practice note."
+      },
+      "verification_duty": {
+        "verdict": "corrected",
+        "value": "AI content must undergo meaningful human verification. Users should check that authorities exist and support the propositions attributed. Quotations must be checked for accuracy and correct attribution. Verification requires reliable sources. AI confirmation alone is insufficient, but original source material housed within an AI tool may be consulted."
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "vic_sc_gen26": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "correct",
+        "value": null
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "qld_sc_pd5_2025": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "corrected",
+        "value": "Gen AI must not mislead about work undertaken or document production, or replace a witness’s own evidence. AI use must respect restrictions on using information obtained from other parties outside the proceedings, unless leave is granted or the information has been received into evidence. Confidential, suppressed or privileged information should not enter public or unsecured tools. Caution is required when preparing evidence. Expert reports must comply with the Harmonised Expert Witness Code and express the expert’s own opinion."
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "wa_sc_pd921": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "corrected",
+        "value": "Gen AI must not mislead about work undertaken or document production, or replace a witness’s own evidence. AI use must respect restrictions on using information obtained from other parties outside the proceedings, unless leave is granted or the information has been received into evidence. Confidential, suppressed or privileged information should not enter public or unsecured tools. Caution is required when preparing evidence. Expert reports must comply with the Harmonised Expert Witness Code and express the expert’s own opinion."
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "qcat_pd10_2025": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "correct",
+        "value": null
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "corrected",
+        "value": "Apply the same correction as for the Queensland Supreme Court. Replace the practitioner sentence with the following. Practitioners responsible for written or oral submissions containing references to nonexistent cases, legislation or other material may face regulatory referral, a requirement to show cause against personal costs, or both."
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "vcat_pnvcat11": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "corrected",
+        "value": "Paragraph 23 also requires experts to identify whether the tool was open loop or closed loop. Add “including whether the tool was open loop or closed loop” after “the GenAI tool used”.  Banned or cautioned uses. Fair. The summary preserves the distinction between prohibitions and cautions."
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "correct",
+        "value": null
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "art_genai_pd": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "correct",
+        "value": null
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "fcfcoa_pd_ai": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "correct",
+        "value": null
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "vcc_ai_pn": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "correct",
+        "value": null
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "fca_gpn_ai": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "correct",
+        "value": null
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  },
+  "fwc_genai_gn": {
+    "cells": {
+      "who_is_bound": {
+        "verdict": "correct",
+        "value": null
+      },
+      "disclosure_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "banned_or_cautioned_uses": {
+        "verdict": "correct",
+        "value": null
+      },
+      "verification_duty": {
+        "verdict": "correct",
+        "value": null
+      },
+      "consequences": {
+        "verdict": "correct",
+        "value": null
+      }
+    },
+    "reviewed_on": "2026-10-26"
+  }
+}

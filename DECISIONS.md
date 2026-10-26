@@ -38,7 +38,14 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
 - **Chosen by Luc: (b)**, on condition that Luc reads AustLII's terms himself first. **25 Oct 2026: Luc reported that he had read AustLII's terms and approved sending the AustLII-print judgments (as stripped text).** His reasons are to be added here in his own words.
 - **How (b) works:** `aic/doctext.py` strips running headers and footers, page numbers, AustLII's banner and page-1 header block (database name, title line, "Last Updated"), AustLII URL footers, and Wikisource cover and end pages. It also de-duplicates characters printed twice to fake bold. The text is cached per row (`aic/corpus.py`, keyed by source SHA-256 and `EXTRACTION_VERSION`), and its SHA-256 is recorded when sent. Citations come back as character offsets into exactly that text, so each quote is checked byte-for-byte and mapped to page and paragraph. Library versions are pinned in `requirements.txt` so the extraction is reproducible.
 - `official_url` in the tracker is always the court's or an official publisher's URL. It is never Charlotin's copy, an AustLII print or Wikisource.
-- **Status:** Luc (option b; AustLII terms read and approved 25 Oct 2026).
+- **26 Oct 2026, reopened:** asked for his reasons in his own words, Luc answered: "I am unsure if this is acceptable to do."
+  - **What has already happened:** on 25 Oct 2026, after Luc's go-ahead, the stripped text of 104 judgments (94 of them AustLII prints) was sent to Anthropic's API (Message Batches) for extraction. That cannot be undone. Nothing has been published.
+  - **Until this is resolved,** no field extracted by AI from an AustLII-print copy is published.
+  - **Options:** (i) ask AustLII directly (Luc sends; draft provided) and act on the reply; (ii) rebuild those rows from the courts' own published copies, downloaded by Luc; (iii) withdraw the AI-extracted fields for AustLII-print rows and publish only facts read by script, Charlotin's coding and Luc's spot-check.
+  - **Recommendation:** (i), because it settles the question at the source, with (iii) as the fallback if there is no answer by launch.
+- **26 Oct 2026:** Luc chose option (i). He will email AustLII himself and report the reply. The fallback, if there is no answer by launch, is (iii).
+- **26 Oct 2026:** Luc reported that he had sent the email to AustLII.
+- **Status:** OPEN (awaiting AustLII's reply).
 
 ### D008: Pass A development sample (25 Oct 2026)
 - **Options:** (a) 10 random documents; (b) a fixed, stratified 10.
@@ -138,5 +145,75 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
   - **Published instead:** SHA-256 hashes (`raw/SHA256SUMS.txt`, `data/interim/doc_hashes.csv`), so anyone can confirm they hold identical files.
   - **Public tracker:** `data/tracker.csv` withholds case titles wherever our extraction *or* Charlotin's coding shows a self-represented party (protective). The full version stays local in `data/interim/tracker_full.csv`.
   - **Test fixtures:** two tests that used real case names now use invented ones.
-  - **History:** the one existing commit is rewritten so that no version in the repo contains these files. Because GitHub can keep a replaced commit reachable by its ID, the private GitHub repo is to be deleted and published again, rather than force-pushed.
+  - **History:** the one existing commit is rewritten so that no version in the repo contains these files. Because GitHub can keep a replaced commit reachable by its ID, the private GitHub repo was deleted and published again rather than force-pushed. On 26 Oct 2026 Luc deleted the old `ai-in-courts` repo and published the rewritten history as the private repo `Ai-in-the-Courts` (one commit, b58d0a7).
 - **Status:** Luc.
+
+### D023: Luc's answers to the open questions (26 Oct 2026)
+- **Tracker review scope:** option A, the 10 pre-registered random rows only. Flagged and hand-only rows are not reviewed for R1, so they publish only facts read by script and Charlotin's coding.
+- **Rules matrix check:** Luc reads each cell next to its quoted paragraph (D019).
+- **Hand-collected instruments** (Federal Court, FCFCOA, FWC, ART, County Court, VCAT, QCAT, WA District Court, WA SAT): collected by Luc **before** launch.
+- **Checklist:** approved as is.
+- **Drafts:** Claude drafts both the methods paper and a fact pack for Luc's practice note.
+- **About page:** no extra wording about who did the spot-check.
+- **GitHub username:** kept.
+- **AustLII link format** (`/cgi-bin/viewdoc/au/cases/<jurisdiction>/<CODE>/<year>/<number>.html`): Luc confirmed it opened the right decision. These links are generated for people to click; AustLII is never fetched in code.
+- **Corrections email:** ai.courts.corrections@proton.me, a dedicated Proton Mail account (Gmail refused Luc's phone number for verification). It is on the site and in CORRECTIONS.md.
+- **D007:** reopened (see D007).
+
+### D024: Launch before AustLII replies (26 Oct 2026)
+- **Luc:** launch R1 before AustLII answers the D007 question.
+- **Rule applied:** D007 fallback (iii), with one carve-out. Fields the AI extracted from an AustLII-printed copy are not published (`details_withheld`). Rows Luc has checked against the judgment himself are published, because their values rest on his reading, not on the AI processing alone. Facts read by script (citation, court, date) and Charlotin's coding are published for every row.
+- **Effect at the time of writing:** 63 auto-verified rows are held back; 2 rows from non-AustLII copies publish extracted details. Luc's 10 spot-checked rows (all from AustLII copies) will publish once he has checked them.
+- **Checklist statistic:** now computed from Charlotin's own coding of the Australian rows (55 of 108, 50.9%) rather than from our extraction. It is independent of the AustLII question, and its sample is much larger (108 rows instead of 2).
+- **Launch condition:** the site and methods paper say "we are asking AustLII", so Luc must have sent the email before launch.
+- **If AustLII says yes:** remove the hold (`WITHHOLD_AI_FIELDS_FROM_COPIES` in `scripts/12_build_tracker.py`) and rebuild. **If no:** delete the AI-derived fields for those rows and record it in CHANGELOG.md.
+- **Status:** Luc.
+
+### D025: Spot-check and rules check completed by Luc (26 Oct 2026)
+- **Spot-check (10 pre-registered random rows):**
+  - Fields needing judgement: 72 of 79 correct, 91.1% (Wilson 95% 82.8–95.6%), with 1 unsure.
+  - Header facts: 50 of 50.
+  - 4 of 10 rows had every judgement field marked correct.
+  - Errors were omissions (a missing error type or impugned citation) and over-calls: "submissions_disregarded" in 3 rows where the court had not disregarded the submissions, and "found_by_court" where the court only suspected AI use. These patterns also bear on the 55 auto-verified rows still held back (D024), so check them before release.
+- **Review-page bug:** the spot-check page also saved a hidden Rules-tab box as a field named "undefined", marked correct, in all 10 decisions. It was removed (backups kept locally), the page was fixed, and the accuracy above excludes it.
+- **Corrections:** Luc wrote his corrections as prose. They were translated into the tracker's fixed values in `data/review/structured_corrections.json`.
+  - Applied (5): each follows an explicit instruction in his notes.
+  - Awaiting Luc's choice (2, both AIC-0060): the categories for two impugned citations, and the consequence. Those fields are published blank meanwhile.
+  - Unsure fields are published blank.
+- **Rules:** Luc checked all 5 instruments and rewrote 6 cells more fully. 15 supporting quotes were added for the paragraphs his wording cites, and all 90 quotes verify inside the cited paragraphs.
+- **One held correction:** Luc's Queensland PD 5 "banned or cautioned uses" text is identical to his WA PD 9.21 text and describes WA provisions. It is held in `data/review/rules_holds.json` with the draft wording kept, until he confirms.
+- **Status:** Luc (results); two choices and the Queensland cell await Luc.
+
+### D026: Most hand-collected instruments fetched by script after all (26 Oct 2026)
+- **Luc asked Claude to collect the instruments.** Each site's robots.txt was checked first. Fetched (6): FCFCOA PD-AI, ART (Use of Generative AI) Practice Direction 2026, VCAT PNVCAT11, QCAT PD 10 of 2025, the WA District Court's practice directions and practice notes, and WA SAT's practice-notes list.
+- **Left to Luc (3),** because Claude does not work around bot blocks:
+  - the Federal Court (HTTP 403, even for robots.txt);
+  - the Fair Work Commission (HTTP 403 to automated requests);
+  - the County Court of Victoria (JavaScript-built page).
+- **New rows drafted** for FCFCOA, ART, VCAT and QCAT from the full texts, with 72 supporting quotes.
+  - QCAT PD 10 is close to, but not identical with, Supreme Court PD 5: self-represented litigants "must also try to ensure" accuracy, and the consequences add doubt about the reliability of submissions. It therefore has its own row.
+- **No AI guidance found:** the WA District Court (General and Civil Practice Directions, 8 Dec 2025; Practice Notes (General)) and WA SAT (12 practice notes). These rows read "No specific guidance found as at 26 October 2026", per the brief, with the documents searched listed.
+- **Parser fix:** a paragraph number is now accepted only as a plausible next number (n to n+1 or n+2; 9 to 9A to 9B; 4.20 to 4.21 or 5.1). In QCAT, a wrapped line beginning "41 and 57 of the Barristers' Conduct Rules" had been read as paragraph 41. All 162 quotes now verify, including the earlier instruments re-checked under the stricter rule.
+- **County Court of Victoria:** its page is built with JavaScript but its robots.txt allows access, so the document link was read in a browser and the Word file fetched by script: PNCCV 1-2026, version 1.0 dated 5 June 2026. Word keeps its paragraph numbers in styles, not in the text, so `aic/docxnum.py` rebuilds them from the file's own list definition ("%1." and "%1.%2", with unnumbered Heading 2 sub-headings; switched-off numbering, `numId 0`, respected). The note closely mirrors Supreme Court of Victoria SC Gen 25, so Luc's checked wording for SC Gen 25 is reused where the text is the same. All 179 quotes verify.
+- **Left to Luc:** the Federal Court and the Fair Work Commission only.
+- **Status:** drafts await Luc's check in the Rules tab; the no-guidance rows await his confirmation.
+
+### D027: Luc's QCAT consequences note turned into cell text (26 Oct 2026)
+- **What Luc saved:** for QCAT PD 10 "consequences", a note combining an instruction with new wording: "Apply the same correction as for the Queensland Supreme Court. Replace the practitioner sentence with the following. Practitioners responsible for … may face regulatory referral, a requirement to show cause against personal costs, or both."
+- **Problem:** the build replaced the whole cell with Luc's value, which would have published the instruction itself.
+- **Applied:** `data/review/rules_overrides.json` holds the final cell text, with Luc's note kept beside it. The practitioner sentence is Luc's wording; the parties sentence is kept as drafted, because he asked to replace only the practitioner sentence. `scripts/11_build_rules.py` uses the override text in place of the raw note. The cell's existing quotes (paragraphs 14 and 17) still cover it, and all 179 quotes verify.
+- **Queensland Supreme Court PD 5:** Luc had marked its consequences cell correct and saved no correction for it, so "the same correction as for the Queensland Supreme Court" was unclear. PD 5 paragraph 14 is word for word QCAT paragraph 14, so his practitioner sentence fits it too. Asked, Luc said that where a correction is unclear or belongs elsewhere, Claude should apply it. His sentence is now used for PD 5 as well (also in `rules_overrides.json`), and PD 5's own parties sentence (paragraph 17) is kept. The District Court and P&E Court rows follow PD 5.
+- **Spelling:** "nonexistent" in Luc's sentence is spelt "non-existent", as in both instruments.
+- **Status:** Luc.
+
+### D028: Federal Court and Fair Work Commission instruments, saved by Luc (26 Oct 2026)
+- **Collected:** Luc saved both in his own browser into `rules_inbox/` (not committed). `scripts/10_fetch_rules.py --inbox` copies them to `cache/rules/` and records their SHA-256 in the manifest, with the status "saved by Luc in his browser".
+  - **Federal Court GPN-AI** (16 April 2026): the Court publishes it only as a web page, so Luc printed the page to PDF (Safari, 26 Oct 2026). The page's running header and URL footer are stripped before checking.
+  - **Fair Work Commission Guidance Note** (published 24 August 2026; commenced 20 October 2026): the final version, not the March 2026 exposure draft.
+- **Rows drafted** from the full texts, with 53 supporting quotes. Paragraph numbers were read from each document's own numbering: 1.1 to 7.2 for the FCA and 1 to 46 for the FWC. All 233 quotes in the matrix verify inside the cited paragraphs.
+- **Drafting choices:**
+  - FCA: "must not occur" (paragraph 4.15) is recorded as banned; "should" wording is recorded as cautioned.
+  - FWC: written mostly as "must" requirements, so disclosure and verification are recorded as mandatory. Its privacy and witness-statement wording is "should not", so it is recorded as cautioned, not banned.
+  - The FWC's unnumbered boxes, on false or misleading information being an offence, are not cited, because a paragraph number would misplace them.
+- **VCAT correction (Luc, Rules tab):** Luc's note asked to add "including whether the tool was open loop or closed loop" after "the GenAI tool used". This was applied through `rules_overrides.json`, with a supporting quote from paragraph 23(a). The note's last part ("Banned or cautioned uses. Fair. …") is his comment on the next cell, which he marked fair, so it is not cell text.
+- **Status:** Luc checked FCFCOA, ART, VCAT, the County Court, the FCA and the FWC (all 12 instruments in the Rules tab; FCA and FWC marked fair throughout).

@@ -1,0 +1,24 @@
+{
+  "_about": "Final cell text where Luc's rules correction contained an instruction as well as replacement wording, or where his instruction applies to another instrument. Each entry records the note it came from. Applied by scripts/11_build_rules.py in place of the drafted or saved text.",
+  "qcat_pd10_2025": {
+    "consequences": {
+      "text": "Practitioners responsible for written or oral submissions containing references to non-existent cases, legislation or other material may face regulatory referral, a requirement to show cause against personal costs, or both. Parties relying on non-existent references: possible adjournment, doubt about the reliability of their submissions, and potentially an adverse costs order.",
+      "from_note": "Apply the same correction as for the Queensland Supreme Court. Replace the practitioner sentence with the following. Practitioners responsible for written or oral submissions containing references to nonexistent cases, legislation or other material may face regulatory referral, a requirement to show cause against personal costs, or both.",
+      "applied": "26 Oct 2026: practitioner sentence replaced with Luc's wording ('nonexistent' spelt 'non-existent' as in the instrument); the parties sentence kept as drafted (Luc asked to replace only the practitioner sentence)."
+    }
+  },
+  "qld_sc_pd5_2025": {
+    "consequences": {
+      "text": "Practitioners responsible for written or oral submissions containing references to non-existent cases, legislation or other material may face regulatory referral, a requirement to show cause against personal costs, or both. Parties relying on non-existent references: possible adjournment and adverse costs order.",
+      "from_note": "Apply the same correction as for the Queensland Supreme Court. Replace the practitioner sentence with the following. Practitioners responsible for written or oral submissions containing references to nonexistent cases, legislation or other material may face regulatory referral, a requirement to show cause against personal costs, or both. [Saved on the QCAT row.]",
+      "applied": "26 Oct 2026: Luc's note names the Queensland Supreme Court, and PD 5 paragraph 14 is word for word QCAT paragraph 14, so his practitioner sentence is used here too (Luc: where a correction is unclear or belongs elsewhere, apply it). PD 5's own parties sentence (paragraph 17) is kept. The District Court and P&E Court rows follow PD 5."
+    }
+  },
+  "vcat_pnvcat11": {
+    "disclosure_duty": {
+      "text": "Parties should disclose GenAI use to the other parties and the Tribunal, for example by a statement on the front page. An expert must disclose in the report the GenAI tool used, including whether it was open-loop or closed-loop, what was uploaded to it and which portion of the report it helped prepare. A Member may request an assurance that documents have been verified.",
+      "from_note": "Paragraph 23 also requires experts to identify whether the tool was open loop or closed loop. Add “including whether the tool was open loop or closed loop” after “the GenAI tool used”.  Banned or cautioned uses. Fair. The summary preserves the distinction between prohibitions and cautions.",
+      "applied": "26 Oct 2026: Luc's addition inserted after 'the GenAI tool used' (paragraph 23(a)). The note's last part ('Banned or cautioned uses. Fair. ...') is his comment on the next cell, which he marked fair, so it is not cell text."
+    }
+  }
+}

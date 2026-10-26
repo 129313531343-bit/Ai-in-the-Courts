@@ -27,3 +27,6 @@ data/interim/pass_b/*.json
 data/interim/tracker_full.csv
 data/review/charlotin_corrections.md
 data/review/decisions/
+data/review/luc_answers.json
+rules_inbox/
+data/review/decisions_backup_*/

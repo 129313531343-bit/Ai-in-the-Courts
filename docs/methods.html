@@ -1,0 +1,103 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Tracker Methods</title>
+<style>
+@page { size: A4; margin: 13mm 15mm; }
+:root { --fg:#1b1b19; --muted:#5d5d58; --line:#d9d6cc; --accent:#2c4f7c; --bg:#fff; --warn:#8a5a00; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fg:#ecebe6; --muted:#a6a49c; --line:#3a3934; --accent:#8fb1de; --bg:#161614; --warn:#e0b45c; } }
+@media print { :root { --fg:#1b1b19; --muted:#5d5d58; --line:#d9d6cc; --accent:#2c4f7c; --bg:#fff; --warn:#8a5a00; } }
+body { margin:0 auto; max-width:800px; padding:16px; font:9.6pt/1.42 -apple-system, "Helvetica Neue", Arial, sans-serif; color:var(--fg); background:var(--bg); }
+h1 { font-size:15pt; margin:0 0 2px; } h2 { font-size:10.6pt; margin:10px 0 3px; color:var(--accent); }
+p { margin:0 0 5px; } ul { margin:2px 0 6px; padding-left:18px; } li { margin:0 0 2px; }
+.sub { color:var(--muted); margin-bottom:8px; }
+.todo { border:1px solid var(--warn); border-left:4px solid var(--warn); padding:5px 8px; margin:6px 0; }
+table { border-collapse:collapse; font-size:9pt; margin:3px 0 6px; } td, th { border-bottom:1px solid var(--line); padding:2px 8px 2px 0; text-align:left; }
+footer { color:var(--muted); font-size:8.4pt; border-top:1px solid var(--line); margin-top:8px; padding-top:5px; }
+</style></head><body>
+<h1>AI in Australian Courts: how the data were built and checked</h1>
+<p class="sub">Methods note, Release 1 (draft of 26 October 2026). Luc Taya, Economics (Honours) graduate, University of Western Australia.</p>
+
+<h2>1. What this covers</h2>
+<p>Three outputs: a tracker of Australian decisions in which AI-generated false or inaccurate material reached a court or
+tribunal; a matrix of court and tribunal rules on generative AI; and a one-page verification checklist. This note explains
+the sources, the extraction, the checks and their limits. Every figure below is computed by script from the published data.</p>
+
+<h2>2. Sources</h2>
+<ul>
+<li><strong>Cases.</strong> Damien Charlotin's AI Hallucination Cases database (CC BY 4.0), downloaded 25 October 2026:
+2,208 rows, of which 112 are Australian (decisions dated 2023-05-08 to 2026-09-15).</li>
+<li><strong>Judgments.</strong> The 105 copies the database hosts (1,906 pages), fetched at one request every five
+seconds and identified by SHA-256 hash. 94 are printouts from AustLII and 1 is a Wikisource export, so
+they are not authorised versions. 1 is a scanned image with no text. AustLII and NSW Caselaw were never accessed
+by code.</li>
+<li><strong>Court rules.</strong> 14 official practice notes, directions and guidance notes from the courts' and
+tribunals' own websites: 12 fetched by script after checking each site's robots.txt, and
+2 saved in a browser because the site refuses automated requests. For 2 more, no specific AI
+guidance was found.</li>
+</ul>
+<div class="todo"><strong>Pending question (DECISIONS.md D007):</strong> whether processing the AustLII-printed copies with an AI
+model is consistent with AustLII's terms is being put to AustLII. Until it replies, fields the model extracted from those copies are
+not published (55 rows); rows the author checked against the judgment, facts read by script and Charlotin's coding are.</div>
+
+<h2>3. Reading each judgment's basic facts (no AI)</h2>
+<p>Each judgment's text was extracted locally. Running headers, page numbers and the publisher's banners and footers were removed,
+and characters printed twice to fake bold were de-duplicated. A regular expression read the decision's own medium neutral citation
+from its first pages (103 of 105 found), which gives the court and its level. Paragraph numbers were detected by
+font size and position, keeping the longest run that counts up by one, so footnote numbers and numbered orders are excluded.</p>
+
+<h2>4. Extraction with an AI model, in two passes</h2>
+<ul>
+<li><strong>Pass A, quotes:</strong> Claude Opus 5.5 (Anthropic), through the Message Batches API, read each judgment's text with
+citations enabled. It returned tagged findings (the AI error, each impugned citation with the court's characterisation, the consequence,
+any regulator referral, any practice note cited), each tied to the exact passage it rests on.</li>
+<li><strong>Quote check:</strong> all 1,615 quotes from the 104 judgments were checked character for character
+against the text that was sent (1,615 matched exactly), then mapped to page and paragraph.</li>
+<li><strong>Pass B, fields:</strong> the model proposed the tracker's fields from the verified quotes only, as structured output. Any
+value not tied to a verified quote was discarded by code.</li>
+</ul>
+
+<h2>5. Automatic checks on every row</h2>
+<p>Each row was checked against deterministic facts:
+<ul>
+<li>every value rests on a verified quote, with a paragraph number (or the orders);</li>
+<li>the citation matches the judgment's header;</li>
+<li>titles and impugned citations appear in the judgment;</li>
+<li>each characterisation has textual support;</li>
+<li>a citation the court did not itself impugn is flagged;</li>
+<li>paragraph counts match the court's own certificate;</li>
+<li>party type and referral are compared with Charlotin's coding.</li>
+</ul>
+Result: 65 rows passed every check (<em>auto-verified</em>), 39 were flagged,
+4 could not be checked automatically and 4 have no public judgment.
+Party type agreed with Charlotin's coding in 90.7% of 97 rows (Cohen's kappa 0.743).
+These checks prove that each value rests on real text at the stated paragraph; they cannot prove the text was read correctly.</p>
+
+<h2>6. Human check</h2>
+<p>A random sample of 10 rows was drawn and committed before any extraction (seed 20261031, from
+94 eligible rows, excluding the 10 rows used to develop the prompts), so it could not be chosen to look good. The
+author checks each field against the judgment. Results (10 of 10 rows reviewed): of the fields that need judgement (party, AI use, AI tool, error types, impugned citations, consequence, referral, practice note), 72 of 79 were correct (91.1%; Wilson 95% interval 82.8–95.6%), with 1 marked unsure. 4 of 10 rows had every judgement field marked correct. The errors were omissions (a missing error type or citation) and over-calls, notably 'submissions disregarded' where the court had not disregarded them, and 'found by the court' where the court only suspected AI use. The header facts were correct in 50 of 50. Corrections are applied before publication. Rows not checked by a person publish only the facts read by script and
+Charlotin's own coding, unless they are auto-verified and were not extracted from an AustLII-printed copy.</p>
+
+<h2>7. Rules matrix</h2>
+<p>Each cell is a plain-English summary backed by short quotations with paragraph numbers. A script confirmed that all
+233 of 233 quotations appear in the official text inside the cited paragraph, reading paragraph spans
+from each instrument's own numbering. The author checks each summary for fairness against its quotations.</p>
+
+<h2>8. Privacy</h2>
+<p>The tracker records only what each judgment says. Self-represented parties can be filtered but not searched, and their case titles
+are not published; the public repository contains no self-represented party's name. Family law rows use only the court's anonymised title
+(Family Law Act 1975 (Cth) s 114Q). Judgment text and quotations are not published.</p>
+
+<h2>9. Limits</h2>
+<ul>
+<li>Coverage is only what Charlotin's database records. Labels and counts are relative to it, not to all Australian decisions.</li>
+<li>Copies are not authorised versions. Readers should check the official source.</li>
+<li>Auto-verification cannot detect a misreading; the human sample (n = 10) is small, so its interval is wide.</li>
+<li>Courts often decline to reproduce fabricated citations, so the impugned-citation lists are incomplete by design.</li>
+</ul>
+
+<h2>10. AI use and cost</h2>
+<p>The pipeline, site and first drafts of the rules summaries, the checklist and this note were written with Claude Code (Anthropic),
+an AI coding assistant. Claude models performed the extraction. The author designed the project, made and recorded the judgement calls,
+reviewed the random sample and checked the rules matrix. Total API spend: US$9.88.</p>
+<footer>Code, data and decisions log: the project repository. Not legal advice. CC BY 4.0. Luc Taya, Economics (Honours) graduate, University of Western Australia.</footer>
+</body></html>

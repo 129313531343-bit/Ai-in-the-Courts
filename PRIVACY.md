@@ -46,6 +46,6 @@
 
 ---
 Sign-off: Luc Taya. Decisions: A1, B1, C1, D approved. Date: 26 October 2026.
-- A1: the corrections email address is to be created by Luc (pending); GitHub issues are also accepted once the repo is public.
+- A1: implemented. The corrections address is ai.courts.corrections@proton.me (a dedicated Proton Mail account created by Luc on 26 Oct 2026), shown on the site's About page and in CORRECTIONS.md. GitHub issues are also accepted once the repo is public.
 - B1: implemented in `scripts/15_build_site.py` (titles not shown for self-represented parties).
 - C1: implemented. Files containing party names are gitignored (Charlotin's CSVs, the case list, the download manifest, Pass B working files, review decisions, the draft corrections). Their SHA-256 hashes are published (`raw/SHA256SUMS.txt`, `data/interim/doc_hashes.csv`). The public `data/tracker.csv` withholds case titles wherever either our extraction or Charlotin's coding shows a self-represented party. The repo history is rewritten so that no earlier version contains these files.

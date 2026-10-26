@@ -82,10 +82,10 @@ def main() -> None:
     paras = evidence_paras()
     stats = json.loads((ROOT / "data/stats.json").read_text())
     share = stats["share_misrepresentation_or_false_quote"]
-    stat_html = (f"Of the {share['denominator']} Australian decisions verified so far that record what went wrong, "
-                 f"{share['numerator']} ({share['percent']}%) involved a real authority misdescribed or a false quote, "
-                 "not only a case that does not exist. Checking that a case exists is not enough."
-                 if share["denominator"] else "[Statistic pending: computed from the tracker once rows are verified.]")
+    stat_html = (f"In Damien Charlotin's database, {share['numerator']} of the {share['denominator']} Australian decisions "
+                 f"with coded errors ({share['percent']}%) involved misrepresented authorities or false quotes, not only "
+                 "cases that do not exist. Checking that a case exists is not enough."
+                 if share["denominator"] else "[Statistic pending.]")
     items = "\n".join(f'<li><strong>{html.escape(h)}.</strong> {render(t, paras)}</li>' for h, t in ITEMS)
     page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,8 +111,8 @@ def main() -> None:
 {items}
 </ol>
 <footer>Not legal advice. Paragraph references are to the official instruments in the AI in Australian Courts
-rules matrix; check the current version before relying on them. The statistic is computed by script from the
-tracker, which builds on Damien Charlotin's AI Hallucination Cases database (CC BY 4.0).
+rules matrix; check the current version before relying on them. The statistic is computed by script from Damien
+Charlotin's coding of each decision, as recorded in the tracker (AI Hallucination Cases database, CC BY 4.0).
 Luc Taya, Economics (Honours) graduate, University of Western Australia. CC BY 4.0.</footer>
 </body></html>
 """

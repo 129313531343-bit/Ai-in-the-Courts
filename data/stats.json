@@ -1,16 +1,24 @@
 {
   "cases_in_tracker": 112,
   "by_verification_status": {
-    "auto_verified": 65,
-    "flagged_for_review": 39,
+    "auto_verified": 57,
+    "flagged_for_review": 37,
+    "luc_spot_checked": 10,
     "not_auto_verifiable": 4,
     "no_public_source": 4
   },
-  "rows_publishing_extracted_fields": 65,
+  "rows_publishing_extracted_fields": 12,
+  "rows_with_details_withheld_pending_austlii": 55,
   "share_misrepresentation_or_false_quote": {
-    "numerator": 32,
-    "denominator": 63,
-    "percent": 50.8,
-    "definition": "rows publishing extracted fields whose error types include misdescribed_authority or false_quote, over rows publishing extracted fields with any error type"
+    "numerator": 55,
+    "denominator": 108,
+    "percent": 50.9,
+    "source": "Charlotin's coding",
+    "definition": "Australian rows whose Charlotin error categories include 'Misrepresented' or 'False Quotes', over Australian rows with any coded category"
+  },
+  "share_from_published_extraction": {
+    "numerator": 6,
+    "denominator": 11,
+    "definition": "published rows whose extracted error types include misdescribed_authority or false_quote"
   }
 }

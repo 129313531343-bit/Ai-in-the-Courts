@@ -18,3 +18,4 @@ select = ["E", "F", "W", "I", "B", "UP"]
 [tool.ruff.lint.per-file-ignores]
 "scripts/14_build_checklist.py" = ["E501"]  # embedded HTML/CSS template
 "scripts/15_build_site.py" = ["E501"]  # embedded HTML/CSS/JS templates
+"scripts/17_build_docs.py" = ["E501"]  # embedded HTML template

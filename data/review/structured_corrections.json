@@ -1,0 +1,97 @@
+{
+  "_about": "Luc's spot-check notes (data/review/decisions/, local) translated into the tracker's fixed values. 'applied' entries follow an explicit instruction in his note; 'needs_luc' entries wait for his choice and are not published meanwhile. Unsure fields are published blank.",
+  "1138": {
+    "ai_use": {
+      "status": "applied",
+      "value": "suspected",
+      "from_note": "Change to suspected. Paragraph [70] accepts that AI use appears likely."
+    },
+    "impugned_citations": {
+      "status": "applied",
+      "value": [
+        {
+          "citation_verbatim": "Health Care Complaints Commission v Istephan [2012] NSWDT 1 at [8]",
+          "characterisation": "non_existent",
+          "asserted_by": "court"
+        },
+        {
+          "citation_verbatim": "HCCC v Istephan [2012] NSWDT 1 at [62]",
+          "characterisation": "non_existent",
+          "asserted_by": "court"
+        },
+        {
+          "citation_verbatim": "Health Care Complaints Commission v Mitchell [2012] NSWCATOD 151 at [98]",
+          "characterisation": "not_located",
+          "asserted_by": "court"
+        },
+        {
+          "citation_verbatim": "Mitchell",
+          "characterisation": "exists_but_misdescribed",
+          "asserted_by": "court"
+        },
+        {
+          "citation_verbatim": "Psychology Council of NSW v X [2020] NSWCATOD 156",
+          "characterisation": "non_existent",
+          "asserted_by": "court"
+        },
+        {
+          "citation_verbatim": "s 3(3)(c) of the National Law",
+          "characterisation": "exists_but_misdescribed",
+          "asserted_by": "court"
+        }
+      ],
+      "from_note": "Add the repealed s 3(3)(c) of the National Law and record the missing paragraph [98] in the actual 2015 Mitchell decision.",
+      "resolution": "26 Oct 2026, Luc accepted Claude's suggestions. Added 's 3(3)(c) of the National Law' (court, para 71: 'That provision has been repealed') as exists_but_misdescribed. The Mitchell [2012] citation is kept as not_located because the court says it 'does not appear to exist' (para 71); the missing par [98] in the real 2015 decision is captured by the row's wrong_pinpoint error type. This departs from Claude's earlier 'wrong_pinpoint' suggestion, which was made before reading para 71."
+    },
+    "consequence": {
+      "status": "applied",
+      "value": [
+        "no_consequence_stated"
+      ],
+      "from_note": "Limited utility does not mean submissions disregarded. Registration cancellation and prohibition orders addressed the underlying disciplinary complaints. Costs remained open.",
+      "resolution": "26 Oct 2026: Luc accepted 'no_consequence_stated' (no AI-specific consequence)."
+    }
+  },
+  "1406": {
+    "consequence": {
+      "status": "applied",
+      "value": [
+        "other"
+      ],
+      "from_note": "Replace both categories with other, recording refusal of the planning permit on planning grounds."
+    }
+  },
+  "1578": {
+    "error_types": {
+      "status": "applied",
+      "value": [
+        "non_existent_case",
+        "misdescribed_authority",
+        "fabricated_fact_or_evidence",
+        "other",
+        "false_quote"
+      ],
+      "from_note": "Add false_quote. Paragraph [60] identifies quoted text absent from the cited decision."
+    }
+  },
+  "241": {
+    "error_types": {
+      "status": "applied",
+      "value": [
+        "non_existent_legislation",
+        "misdescribed_authority",
+        "non_existent_case"
+      ],
+      "from_note": "Add non-existent authority: paragraphs [79]-[80] also identify unlocatable and non-existent legal authorities."
+    }
+  },
+  "637": {
+    "consequence": {
+      "status": "applied",
+      "value": [
+        "application_or_appeal_dismissed"
+      ],
+      "from_note": "Keep the dismissal category and remove submissions disregarded."
+    }
+  }
+}

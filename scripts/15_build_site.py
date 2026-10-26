@@ -98,14 +98,15 @@ def main() -> None:
         title = r.title_as_published if (SHOW_SRL_TITLES or not srl) else ""
         pub.append({k: r[k] for k in ["id", "mnc", "court", "court_level", "date", "party_type", "ai_use",
                                       "error_types", "consequence", "regulator_referred", "impugned_citations",
-                                      "pinpoints", "verification_status", "charlotin_party_type",
-                                      "charlotin_outcome", "official_url"]} | {"title": title,
+                                      "pinpoints", "verification_status", "details_withheld",
+                                      "charlotin_party_type", "charlotin_outcome", "official_url"]} | {"title": title,
                                                                               "year": r.date[:4]})
     (SITE / "downloads/tracker.json").write_text(json.dumps(pub, ensure_ascii=False))
 
     n_rows = len(tracker)
     n_pub = stats["rows_publishing_extracted_fields"]
-    n_rules = int((rules.instrument != "").sum())
+    n_held = stats.get("rows_with_details_withheld_pending_austlii", 0)
+    n_rules = int(((rules.instrument != "") & (rules.instrument != "No specific AI guidance found")).sum())
     by_status = stats["by_verification_status"]
     index = f"""
 <h1>AI in Australian Courts</h1>
@@ -116,7 +117,7 @@ citations before filing.</p>
 checked; rows not yet checked show only facts read from the judgment and Charlotin's own coding.</div>
 <div class="cards">
   <div class="card"><div class="num">{n_rows}</div><div>Australian decisions tracked</div>
-    <div class="muted">{n_pub} with fields extracted and verified against the judgment text</div><a href="/tracker.html">Open the tracker</a></div>
+    <div class="muted">{n_pub} with full details so far; details for {n_held} more are held back while a source-licensing question is resolved (<a href="/about.html#sources">why</a>)</div><a href="/tracker.html">Open the tracker</a></div>
   <div class="card"><div class="num">{n_rules}</div><div>court AI instruments in the rules matrix</div>
     <div class="muted">every cell tied to a paragraph of the official text</div><a href="/rules.html">Open the matrix</a></div>
   <div class="card"><div class="num">1</div><div>page: a verification checklist for paralegals</div>
@@ -169,7 +170,7 @@ function draw() {{
     <td>${{esc((r.party_type || "").replace("_", " ")) || `<span class="small">${{esc(r.charlotin_party_type)}} (Charlotin)</span>`}}</td>
     <td class="small">${{esc((r.error_types || "").replaceAll("_", " "))}}</td>
     <td class="small">${{esc((r.consequence || "").replaceAll("_", " ")) || (r.charlotin_outcome ? esc(r.charlotin_outcome) + " (Charlotin)" : "")}}</td>
-    <td><span class="pill">${{LABEL[r.verification_status] || esc(r.verification_status)}}</span></td></tr>`).join("");
+    <td><span class="pill">${{r.details_withheld ? "Details held back" : (LABEL[r.verification_status] || esc(r.verification_status))}}</span></td></tr>`).join("");
 }}
 </script>
 """
@@ -214,6 +215,11 @@ exactly, characterisations have textual support, paragraph counts match the cour
 Charlotin's coding. These checks prove that each value rests on real text at the stated paragraph. They cannot prove the text was
 read correctly, so rows that pass are labelled <em>auto-verified</em>. A random sample of rows, fixed before any extraction, plus every
 flagged row, is checked by hand against the official judgment and labelled <em>spot-checked</em>.</p>
+<h2 id="sources">Sources and a pending question</h2>
+<p>Most judgment copies in Charlotin's database were printed from AustLII. Our code never accessed AustLII, but the text of those copies
+(with AustLII's headers removed) was processed by the AI model. We are asking AustLII whether this use is acceptable. Until it replies,
+the details the AI extracted from those copies are held back. Rows checked by hand against the judgment, facts read by script (citation,
+court, date) and Charlotin's own coding are shown.</p>
 <h2>Contributions and AI use</h2>
 <p>This project was built with Claude Code (Anthropic), an AI coding assistant, and this is disclosed in full. Claude wrote the
 pipeline, the site and first drafts of the rules summaries and checklist, and Claude models perform the first-pass extraction. Luc
@@ -224,7 +230,7 @@ from the data.</p>
 <p>The tracker records only what each judgment says. Self-represented parties can be filtered but not searched by name, and their case
 titles are not shown on the tracker page. Family law matters use only the court's anonymised title (Family Law Act 1975 (Cth) s 114Q).</p>
 <h2 id="corrections">Corrections and takedown</h2>
-<p>[Contact method to be set before release.] Requests are answered within 7 days, and every change is logged in the changelog.</p>
+<p>Email <a href="mailto:ai.courts.corrections@proton.me">ai.courts.corrections@proton.me</a>. Requests are answered within 7 days, and every change is logged in the changelog. If you are a self-represented party named in a decision, you can ask for identifying detail to be removed even where the entry is accurate.</p>
 <h2>Licence and credits</h2>
 <p>Data CC BY 4.0. Built on Damien Charlotin's AI Hallucination Cases database (CC BY 4.0). Court instruments are linked to their
 official sources.</p>

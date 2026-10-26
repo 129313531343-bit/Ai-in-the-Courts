@@ -1,8 +1,11 @@
 """Local review page for Luc's spot-check (http://127.0.0.1:8765).
 
-Serves review/review.html and two endpoints:
+Serves review/review.html and these endpoints:
   GET  /api/queue           rows in data/review/luc_queue.csv with fields, quotes, checks and links
   POST /api/decision/<row>  saves Luc's decision to data/review/decisions/<row>.json
+  GET/POST /api/answers     Luc's answers to the open questions (data/review/luc_answers.json, local only)
+  GET  /api/rules           rules-matrix cells with their supporting quotes and paragraphs
+  POST /api/rules_decision  saves Luc's check of the rules cells (data/review/rules_decisions.json)
 
 Bound to 127.0.0.1 only: nothing is reachable from other machines. Judgment
 text never leaves this machine; the page shows only the verified quotes.
@@ -25,6 +28,9 @@ from aic.courts import courts  # noqa: E402
 
 PORT = 8765
 DECISIONS = ROOT / "data/review/decisions"
+ANSWERS = ROOT / "data/review/luc_answers.json"
+RULES_DECISIONS = ROOT / "data/review/rules_decisions.json"
+RULE_COLUMNS = ["who_is_bound", "disclosure_duty", "banned_or_cautioned_uses", "verification_duty", "consequences"]
 JUR = {"Cth": "cth", "NSW": "nsw", "Vic": "vic", "Qld": "qld", "WA": "wa", "SA": "sa", "Tas": "tas", "ACT": "act",
        "NT": "nt"}
 MNC = re.compile(r"\[(\d{4})\] (\S+) (\d+)")
@@ -38,6 +44,24 @@ def links(mnc: str) -> dict:
     year, code, num = m.groups()
     jur = JUR.get(courts()[code].jurisdiction, "")
     return {"AustLII (unconfirmed format)": f"https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/{jur}/{code}/{year}/{num}.html"}
+
+
+def rules() -> list[dict]:
+    """Each drafted instrument with its cells and the verified quotes behind them."""
+    import csv
+
+    draft = list(csv.DictReader((ROOT / "data/reference/rules_draft.csv").open()))
+    evidence = list(csv.DictReader((ROOT / "data/reference/rules_evidence.csv").open()))
+    decided = json.loads(RULES_DECISIONS.read_text()) if RULES_DECISIONS.exists() else {}
+    out = []
+    for d in draft:
+        same_as = d["evidence_from"] if d["evidence_from"] != d["source_key"] else ""
+        cells = [{"column": c, "text": d[c],
+                  "evidence": [{"paragraph": e["paragraph"], "quote": e["quote"]} for e in evidence
+                               if e["source_key"] == d["evidence_from"] and e["column"] == c]} for c in RULE_COLUMNS]
+        out.append({"key": d["key"], "court": d["court"], "instrument": d["instrument"], "url": d["url"],
+                    "issued": d["issued"], "same_as": same_as, "cells": cells, "decision": decided.get(d["key"])})
+    return out
 
 
 def queue() -> list[dict]:
@@ -93,10 +117,27 @@ class Handler(BaseHTTPRequestHandler):
             self._send(200, (ROOT / "review/review.html").read_bytes(), "text/html; charset=utf-8")
         elif self.path == "/api/queue":
             self._send(200, json.dumps(queue()).encode(), "application/json")
+        elif self.path == "/api/rules":
+            self._send(200, json.dumps(rules()).encode(), "application/json")
+        elif self.path == "/api/answers":
+            self._send(200, ANSWERS.read_bytes() if ANSWERS.exists() else b"{}", "application/json")
         else:
             self._send(404, b"not found", "text/plain")
 
     def do_POST(self) -> None:  # noqa: N802
+        if self.path == "/api/answers":
+            body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
+            body["answered_on"] = date.today().isoformat()
+            ANSWERS.parent.mkdir(parents=True, exist_ok=True)
+            ANSWERS.write_text(json.dumps(body, indent=2, ensure_ascii=False) + "\n")
+            return self._send(200, b'{"saved": true}', "application/json")
+        if self.path == "/api/rules_decision":
+            body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
+            decided = json.loads(RULES_DECISIONS.read_text()) if RULES_DECISIONS.exists() else {}
+            decided[body["key"]] = {"cells": body["cells"], "reviewed_on": date.today().isoformat()}
+            RULES_DECISIONS.parent.mkdir(parents=True, exist_ok=True)
+            RULES_DECISIONS.write_text(json.dumps(decided, indent=2, ensure_ascii=False) + "\n")
+            return self._send(200, b'{"saved": true}', "application/json")
         m = re.fullmatch(r"/api/decision/(\d+)", self.path)
         if not m:
             return self._send(404, b"not found", "text/plain")

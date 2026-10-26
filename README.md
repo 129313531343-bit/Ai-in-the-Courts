@@ -46,6 +46,7 @@ $PY scripts/12_build_tracker.py            # tracker.csv and stats.json
 $PY scripts/13_review_server.py            # local review page at http://127.0.0.1:8765
 $PY scripts/14_build_checklist.py          # checklist HTML and one-page A4 PDF
 $PY scripts/15_build_site.py               # static site in site/
+$PY scripts/17_build_docs.py               # methods paper (docs/methods.pdf) and private fact pack
 $PY -m pytest                              # unit tests
 ```
 
