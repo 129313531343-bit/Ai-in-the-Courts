@@ -142,7 +142,7 @@ Filter by court, year, party type or consequence. There is deliberately no name 
   <label>Year<select id="f-year"><option value="">All</option>{"".join(f"<option>{esc(y)}</option>" for y in years)}</select></label>
   <label>Party type<select id="f-party"><option value="">All</option><option value="lawyer">Lawyer</option><option value="self_represented">Self-represented</option><option value="expert">Expert</option><option value="other">Other</option></select></label>
   <label>Consequence<select id="f-cons"><option value="">All</option><option>personal_costs_order</option><option>adverse_costs_order</option><option>regulator_referral</option><option>submissions_disregarded</option><option>warning_or_admonishment</option><option>application_or_appeal_dismissed</option><option>leave_refused</option><option>no_consequence_stated</option></select></label>
-  <label>Checked<select id="f-status"><option value="">All</option><option value="luc_spot_checked">Spot-checked by Luc</option><option value="auto_verified">Auto-verified</option><option value="flagged_for_review">Awaiting review</option><option value="not_auto_verifiable">Not yet verified</option><option value="no_public_source">No public source</option></select></label>
+  <label>Checked<select id="f-status"><option value="">All</option><option value="luc_spot_checked">Spot-checked by Luc</option><option value="auto_verified">Auto-verified</option><option value="luc_flags_checked">Flags checked by Luc</option><option value="flagged_for_review">Awaiting review</option><option value="not_auto_verifiable">Not yet verified</option><option value="no_public_source">No public source</option></select></label>
 </div>
 <p class="muted" id="count"></p>
 <div class="tablewrap"><table><thead><tr><th>ID</th><th>Decision</th><th>Court</th><th>Date</th><th>Party</th><th>Error types</th><th>Consequence</th><th>Checked</th></tr></thead><tbody id="rows"></tbody></table></div>
@@ -151,7 +151,7 @@ it on the court's or publisher's site. "Auto-verified": every value rests on a q
 paragraph; it has not been reviewed by a person. <a href="/about.html#method">How rows are checked</a>.</p>
 <script>
 const PARTY = {{"Pro Se Litigant":"self_represented","Lawyer":"lawyer","Expert":"expert","Judge":"other"}};
-const LABEL = {{luc_spot_checked:"Spot-checked", auto_verified:"Auto-verified", flagged_for_review:"Awaiting review",
+const LABEL = {{luc_spot_checked:"Spot-checked", auto_verified:"Auto-verified", luc_flags_checked:"Flags checked by Luc", flagged_for_review:"Awaiting review",
   not_auto_verifiable:"Not yet verified", no_public_source:"No public source"}};
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}}[c]));
 let data = [];
@@ -171,7 +171,7 @@ function draw() {{
     <td>${{esc((r.party_type || "").replace("_", " ")) || `<span class="small">${{esc(r.charlotin_party_type)}} (Charlotin)</span>`}}</td>
     <td class="small">${{esc((r.error_types || "").replaceAll("_", " "))}}</td>
     <td class="small">${{esc((r.consequence || "").replaceAll("_", " ")) || (r.charlotin_outcome ? esc(r.charlotin_outcome) + " (Charlotin)" : "")}}</td>
-    <td><span class="pill">${{r.details_withheld ? (r.impugned_citations ? "Details held back; fake citations checked by Luc" : "Details held back") : (LABEL[r.verification_status] || esc(r.verification_status))}}</span></td></tr>`).join("");
+    <td><span class="pill">${{r.details_withheld ? (r.details_withheld.includes("checked by Luc") ? "Details held back; parts checked by Luc" : "Details held back") : (LABEL[r.verification_status] || esc(r.verification_status))}}</span></td></tr>`).join("");
 }}
 </script>
 """
@@ -215,8 +215,9 @@ only, and any value without a supporting quote is discarded.</p>
 exactly, characterisations have textual support, paragraph counts match the court's own certificate, and the row is compared with
 Charlotin's coding. These checks prove that each value rests on real text at the stated paragraph. They cannot prove the text was
 read correctly, so rows that pass are labelled <em>auto-verified</em>. A random sample of 10 rows, fixed before any extraction, was
-checked by hand against the official judgment and labelled <em>spot-checked</em>. Rows the checks flag are labelled <em>awaiting
-review</em> until a person has read them.</p>
+checked by hand against the official judgment and labelled <em>spot-checked</em>. Rows the checks flagged were then
+checked by hand on each flagged point and are labelled <em>flags checked by Luc</em>; any new flagged row is labelled
+<em>awaiting review</em> until a person has read it.</p>
 <h2 id="sources">Sources and a pending question</h2>
 <p>Most judgment copies in Charlotin's database were printed from AustLII. Our code never accessed AustLII, but the text of those copies
 (with AustLII's headers removed) was processed by the AI model. We are asking AustLII whether this use is acceptable. Until it replies,

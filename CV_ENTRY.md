@@ -48,8 +48,8 @@ I built AI in Australian Courts (ai-in-australian-courts.pages.dev), a public tr
 **Live since:** 26 October 2026 (site deployed on Cloudflare Pages).
 
 **Still in progress:**
-- **AustLII permission:** most judgment copies are AustLII printouts, and we have asked AustLII whether AI processing of them fits its terms. Until it replies, AI-extracted details for 55 decisions are held back. 12 decisions publish full details. Every decision shows its date, and 105 of 112 also show their citation and court (DECISIONS.md D007, D024).
-- **Rows awaiting review:** 37 rows are flagged by the automatic checks for human review.
+- **AustLII permission:** most judgment copies are AustLII printouts, and we have asked AustLII whether AI processing of them fits its terms. Until it replies, AI-extracted details for 84 decisions are held back, though 36 of them show the parts Luc checked against the judgment. 20 decisions publish full details. Every decision shows its date; 106 of 112 show their citation and 105 their court (DECISIONS.md D007, D024, D035, D042).
+- **Flagged rows:** done. Luc answered all 63 points the automatic checks raised on 37 rows (27 October 2026).
 - **Two "no guidance found" entries:** the District Court of Western Australia and the State Administrative Tribunal (WA) were searched by script, but not yet confirmed by hand.
 - **Corrections to the source database:** five court-label corrections are drafted for its maintainer, but not yet sent.
 - **Release 2:** CiteCheck AU has been online as a preview since 26 October 2026, labelled "not yet evaluated". Before its accuracy is published, the evaluation set must be completed and frozen (statute items, 30 adversarial items, inspection), then run once on the held-out split. A practice note is still to be written.

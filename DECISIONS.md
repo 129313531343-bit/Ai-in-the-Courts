@@ -438,3 +438,25 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
   - The 6 rows from non-AustLII copies then publish in full.
   - In the 31 rows from AustLII copies, the fields Luc answered are published (as in D035), and the rest stay held back until AustLII replies.
 - **Status:** Luc (review in progress).
+
+### D042: Luc's answers on the 37 flagged rows applied (27 Oct 2026)
+- **Answers:** all 63 points answered: 49 right, 12 changed, 2 unsure.
+  - Menu answers apply directly: Re Pollack; Ex parte Official Receiver (1962) 107 CLR 76 becomes not_located (AIC-0073), and AIC-0076's party type becomes other.
+  - Typed answers are fixed values in `aic/flags.py`, each with Luc's note:
+    - AIC-0019's citation is [2025] QIRC 141 (the header read had found 121);
+    - AIC-0021 is Page v Long [2025] VCC 868;
+    - three titles are as published;
+    - paragraph references are restored for AIC-0004, AIC-0021, AIC-0023 and AIC-0107.
+  - Unsure answers:
+    - AIC-0047's party type is published blank: the judgment does not say whether the appellant or the union supplied the false citations.
+    - AIC-0009 (a Wikisource copy) keeps its values, with a note that the official version could not be opened to compare. The citation, court and date agree across reproductions.
+- **Paragraph numbers in Word judgments:** `aic/docxnum.py` now follows each paragraph to its own numbering list, rather than assuming one list per document.
+  - It gives identical output on the County Court practice note, and all 233 rules quotes still verify.
+  - On Page v Long it places the quotes in [19]–[21], exactly as Luc read them. On Murray v Victoria it places them in [4], [8], [10], [14] and [15], plus the costs and leave-to-amend orders that Luc identified, so those paragraph numbers come from the documents themselves.
+- **Result:**
+  - The 37 rows become "flags checked by Luc".
+  - The 8 from non-AustLII copies publish in full, so 20 rows now have full details.
+  - The 29 from AustLII copies publish only the fields Luc read; with the 55 auto-verified rows, 84 rows are now held back.
+  - A fake-citation list Luc read only in part is not published as his reading, so it stays held back.
+  - The site label is "Details held back; parts checked by Luc", and the About page's method text is updated.
+- **Status:** Luc (answers); Claude (application).

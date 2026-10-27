@@ -16,3 +16,4 @@ All changes to published data (tracker.csv, rules.csv) and the site are logged h
 - 2026-10-26: CiteCheck AU preview added at /citecheck/ (not yet evaluated; D038). About page and README corrected: only the 10 random rows were checked by hand, not every flagged row.
 - 2026-10-27: About page: the "Contributions and AI use" section removed from the site at Luc's request; it remains in the README (D039).
 - 2026-10-27: Site: Claude no longer named on the site (method now says "a language model"; CiteCheck footers carry the author line). Stray iCloud duplicate pages removed from the build (D040).
+- 2026-10-27: Tracker: Luc answered every point the automatic checks flagged on 37 rows; his corrections applied (D042). 20 rows now publish full details (was 12); in held-back rows, the fields Luc read are shown.
