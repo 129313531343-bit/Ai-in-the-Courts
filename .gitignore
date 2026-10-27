@@ -29,6 +29,7 @@ data/review/charlotin_corrections.md
 data/review/decisions/
 data/review/luc_answers.json
 data/review/impugned_checks.json
+data/review/flag_checks.json
 rules_inbox/
 data/review/decisions_backup_*/
 

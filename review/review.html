@@ -44,19 +44,22 @@
   .qform .card label { display:block; margin:4px 0; }
   a { color:var(--accent); }
   .hidden { display:none; }
+  .small { font-size:13px; }
+  .extra select { max-width:100%; padding:6px 8px; border:1px solid var(--line); border-radius:5px; background:var(--bg); color:var(--fg); font:inherit; }
   @media (max-width: 760px) { main { grid-template-columns: 1fr; } nav { position:static; max-height:none; } }
 </style>
 </head>
 <body>
 <header>
   <h1>Tracker review</h1>
-  <div class="tabs"><button id="t-review" class="on">Spot-check</button> <button id="t-rules">Rules</button> <button id="t-questions">Questions</button> <button id="t-fakes">Fake citations</button></div>
+  <div class="tabs"><button id="t-review" class="on">Spot-check</button> <button id="t-rules">Rules</button> <button id="t-questions">Questions</button> <button id="t-fakes">Fake citations</button> <button id="t-flags">Flagged rows</button></div>
   <span id="progress" class="muted"></span>
 </header>
 <div id="v-review"><main><nav id="list"></nav><section id="detail"><p class="muted">Loading…</p></section></main></div>
 <div id="v-rules" class="hidden"><section id="rulesview"></section></div>
 <div id="v-questions" class="hidden"><section class="qform" id="qform"></section></div>
 <div id="v-fakes" class="hidden"><section id="fakesview"></section></div>
+<div id="v-flags" class="hidden"><section id="flagsview"></section></div>
 <script>
 const HEADER = ["mnc","title_as_published","court","date","family_law_matter"];
 const JUDGE = ["party_type","ai_use","ai_tool_if_stated","error_types","impugned_citations","consequence","regulator_referred","practice_note_cited"];
@@ -77,10 +80,11 @@ const val = f => Array.isArray(f) ? f.map(i => `${i.citation_verbatim}   [${i.ch
   : (!f ? "" : Array.isArray(f.values) ? f.values.join("; ") : (f.value ?? ""));
 const qids = f => Array.isArray(f) ? f.flatMap(i => i.quote_ids) : (f?.quote_ids || []);
 
-const TABS = ["review", "rules", "questions", "fakes"];
+const TABS = ["review", "rules", "questions", "fakes", "flags"];
 for (const t of TABS) document.getElementById("t-" + t).onclick = () => tab(t);
 function tab(t){
   if (t === "fakes") renderFakes();
+  if (t === "flags") renderFlags();
   for (const x of TABS) {
     document.getElementById("v-" + x).classList.toggle("hidden", t !== x);
     document.getElementById("t-" + x).classList.toggle("on", t === x);
@@ -346,9 +350,72 @@ async function renderFakes(){
     card.querySelector(".fsave").onclick = () => save(false);
   });
 }
+const CHOICE_TEXT = {
+  ...LABELS,
+  lawyer: "a lawyer", self_represented: "a self-represented party", expert: "an expert", judicial_officer: "a judge or member", other: "someone else",
+  court: "the court itself", party: "only a party", unclear: "unclear",
+  yes: "yes", no_stated: "no (none stated)",
+};
+const showValue = it => it.choices ? `${esc(it.value || "(blank)")}${CHOICE_TEXT[it.value] ? ` <span class="muted">(${esc(CHOICE_TEXT[it.value])})</span>` : ""}` : esc(it.value || "(blank)");
+async function renderFlags(){
+  const list = await (await fetch("/api/flags")).json();
+  const done = list.filter(r => r.decision).length;
+  list.sort((a, b) => !!a.decision - !!b.decision);
+  document.getElementById("flagsview").innerHTML = `<h2 style="margin-top:0">Check the flagged rows</h2>
+    <p class="muted">${done} of ${list.length} rows saved (${list.reduce((n, r) => n + r.items.length, 0)} questions).
+    Unchecked rows are at the top. Each question is one thing the automatic checks could not confirm. The grey boxes are the
+    judgment's own words, already matched exactly to its text. Answer from those words, and open the judgment when they are not
+    enough. <strong>✓ Right</strong> keeps the value shown; <strong>✗ Change</strong> lets you pick or type the right one.
+    Press <strong>Save</strong> under each row. About 2–3 hours in total; you can stop and come back.</p>` +
+    list.map(r => `<div class="card flagrow" data-row="${esc(r.row)}">
+      <h3>${esc(r.id)} · ${esc(r.mnc || "(no citation read)")} · ${esc(r.court)} · ${esc(r.date)}</h3>
+      <div class="muted">${esc(r.title || "")}${r.copy ? ` · copy: ${esc(r.copy)}` : ""}</div>
+      <p style="margin:6px 0 10px">${Object.entries(r.links).map(([k, u]) => `<a class="big" href="${esc(u)}" target="_blank" rel="noopener">Open the judgment (${esc(k)}) ↗</a>`).join(" ")}
+        ${r.decision ? '<span class="tag done">saved</span>' : ''}</p>
+      ${r.items.map(it => { const dv = r.decision?.items?.[it.key] || {};
+        const change = it.choices
+          ? `<select><option value="">choose…</option>${it.choices.map(c => `<option value="${esc(c)}" ${(dv.value ?? "") === c ? "selected" : ""}>${esc(c)}${CHOICE_TEXT[c] ? " (" + esc(CHOICE_TEXT[c]) + ")" : ""}</option>`).join("")}</select>`
+          : `<input type="text" value="${esc(dv.value ?? "")}">`;
+        return `<div class="card field" data-key="${esc(it.key)}" data-choices="${it.choices ? 1 : 0}" data-verdict="${esc(dv.verdict || "")}" style="margin-bottom:8px">
+          <h3>${esc(it.question)}</h3>
+          <div>Recorded now: <strong>${showValue(it)}</strong></div>
+          ${it.quotes.map(q => `<blockquote>${esc(q.text)}<span class="loc">page ${esc(q.page)}${q.paragraph ? ", paragraph " + esc(q.paragraph) : ""}</span></blockquote>`).join("")}
+          ${!it.quotes.length ? '<div class="muted small">No quote for this one: open the judgment.</div>' : ""}
+          <div class="btns"><button data-v="correct">✓ Right</button><button data-v="corrected">✗ Change</button><button data-v="unsure">? Unsure</button></div>
+          <div class="extra hidden" style="margin-top:8px"><span class="chg">${change}</span><input class="why" type="text" placeholder="Why unsure?" value="${esc(dv.note ?? "")}"></div></div>`; }).join("")}
+      <div class="btns"><button class="primary gall">All right, save</button> <button class="secondary gsave">Save</button> <span class="muted gsaved"></span></div>
+    </div>`).join("");
+  document.querySelectorAll(".flagrow .field").forEach(el => {
+    const mark = v => { el.dataset.verdict = v; el.querySelectorAll(".btns button").forEach(b => b.className = b.dataset.v === v ? "sel-" + v : "");
+      const ex = el.querySelector(".extra"); ex.classList.toggle("hidden", v === "correct" || !v);
+      el.querySelector(".chg").classList.toggle("hidden", v !== "corrected");
+      el.querySelector(".why").classList.toggle("hidden", v !== "unsure"); };
+    el.querySelectorAll(".btns button").forEach(b => b.onclick = () => mark(b.dataset.v));
+    if (el.dataset.verdict) mark(el.dataset.verdict);
+  });
+  document.querySelectorAll(".flagrow").forEach(card => {
+    const save = async allOk => {
+      const items = {}, missing = [];
+      card.querySelectorAll(".field").forEach((el, i) => { let v = el.dataset.verdict; if (!v && allOk) v = "correct";
+        if (!v) { missing.push(i + 1); return; }
+        const input = el.querySelector(".chg select, .chg input");
+        items[el.dataset.key] = { verdict: v, value: v === "corrected" ? (input.value.trim() || null) : null,
+                                  note: v === "unsure" ? (el.querySelector(".why").value.trim() || null) : null }; });
+      if (missing.length) { card.querySelector(".gsaved").textContent = "Not saved. Still to answer: question " + missing.join(", "); return; }
+      const bad = Object.entries(items).filter(([, x]) => x.verdict === "corrected" && !x.value);
+      if (bad.length) { card.querySelector(".gsaved").textContent = "Not saved: a ✗ Change needs the right value."; return; }
+      const res = await fetch("/api/flags_decision", { method: "POST", headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ row: card.dataset.row, items }) });
+      if (res.ok) renderFlags(); else card.querySelector(".gsaved").textContent = "Save failed.";
+    };
+    card.querySelector(".gall").onclick = () => save(true);
+    card.querySelector(".gsave").onclick = () => save(false);
+  });
+}
 load();
 if (location.hash === "#rules") tab("rules");  // http://127.0.0.1:8765/#rules opens straight on the Rules tab
 if (location.hash === "#fakes") tab("fakes");
+if (location.hash === "#flags") tab("flags");
 </script>
 </body>
 </html>

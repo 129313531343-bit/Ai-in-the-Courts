@@ -9,6 +9,8 @@ Serves review/review.html and these endpoints:
   GET  /api/impugned        the fake or wrong citations in rows whose details are held back (D024), with
                             the verified quotes behind each, for Luc's own reading (D031 E2)
   POST /api/impugned_decision  saves Luc's check of one case's citations (data/review/impugned_checks.json)
+  GET  /api/flags           the rows the automatic checks flagged, with one question per failed check (D041)
+  POST /api/flags_decision  saves Luc's answers for one row (data/review/flag_checks.json, local)
 
 Bound to 127.0.0.1 only: nothing is reachable from other machines. Judgment
 text never leaves this machine; the page shows only the verified quotes.
@@ -34,6 +36,10 @@ DECISIONS = ROOT / "data/review/decisions"
 ANSWERS = ROOT / "data/review/luc_answers.json"
 RULES_DECISIONS = ROOT / "data/review/rules_decisions.json"
 IMPUGNED = ROOT / "data/review/impugned_checks.json"  # local only: the strings may contain names
+FLAGS = ROOT / "data/review/flag_checks.json"  # local only: answers may contain titles
+LABEL_CHOICES = ["non_existent", "not_located", "exists_but_misdescribed", "false_quote", "wrong_pinpoint",
+                 "not_stated"]
+PARTY_CHOICES = ["lawyer", "self_represented", "expert", "judicial_officer", "other"]
 RULE_COLUMNS = ["who_is_bound", "disclosure_duty", "banned_or_cautioned_uses", "verification_duty", "consequences"]
 JUR = {"Cth": "cth", "NSW": "nsw", "Vic": "vic", "Qld": "qld", "WA": "wa", "SA": "sa", "Tas": "tas", "ACT": "act",
        "NT": "nt"}
@@ -85,6 +91,89 @@ def impugned() -> list[dict]:
         out.append({"row": r.charlotin_row, "id": r.id, "mnc": r.mnc, "court": r.court, "date": r.date,
                     "title": r.title_as_published, "links": links(r.mnc), "citations": cites,
                     "decision": decided.get(r.charlotin_row)})
+    return out
+
+
+def _norm(s: str) -> str:
+    return " ".join(s.split())
+
+
+def flags() -> list[dict]:
+    """One plain question per failed automatic check, for the rows still awaiting review."""
+    t = pd.read_csv(ROOT / "data/interim/tracker_full.csv", dtype=str, keep_default_na=False)
+    vc = pd.read_csv(ROOT / "data/interim/verification_checks.csv", dtype=str, keep_default_na=False)
+    qc = pd.read_csv(ROOT / "data/interim/quote_checks.csv", dtype=str, keep_default_na=False)
+    decided = json.loads(FLAGS.read_text()) if FLAGS.exists() else {}
+    out = []
+    for _, r in t[t.verification_status == "flagged_for_review"].sort_values("id").iterrows():
+        row = r.charlotin_row
+        fields = json.loads((ROOT / f"data/interim/pass_b/{row}.json").read_text())["fields"]
+        q = qc[qc.charlotin_row == row].set_index("quote_id")
+
+        def quotes(ids, q=q):
+            return [{"text": q.loc[i, "cited_text"], "page": q.loc[i, "page"], "paragraph": q.loc[i, "paragraph"]}
+                    for i in ids if i in q.index]
+
+        def cited(citation, fields=fields):
+            return next((c for c in fields.get("impugned_citations", [])
+                         if _norm(c["citation_verbatim"]) == _norm(citation)), None)
+
+        items = []
+        failed = vc[(vc.charlotin_row == row) & (vc.passed == "False")]
+        for n, (_, f) in enumerate(failed.iterrows()):
+            check, detail = f.check, f.detail
+            it = {"key": f"{check}:{n}", "check": check, "detail": detail, "choices": None, "quotes": [], "value": ""}
+            if check in ("characterisation_has_textual_cue", "impugned_by_the_court_itself"):
+                citation = detail.rsplit(": ", 1)[0]
+                c = cited(citation)
+                it["citation"] = citation
+                it["quotes"] = quotes(c["quote_ids"]) if c else []
+                if check == "characterisation_has_textual_cue":
+                    it.update(question=f"How does the court describe this citation: {citation}?",
+                              value=c["characterisation"] if c else detail.rsplit(": ", 1)[-1], choices=LABEL_CHOICES)
+                else:
+                    it.update(question=f"Who says this citation is wrong, the court itself or only a party? {citation}",
+                              value=c.get("asserted_by", "") if c else "party", choices=["court", "party", "unclear"])
+            elif check == "impugned_citation_copied_exactly":
+                c = cited(detail)
+                it.update(question="Is this citation copied exactly as the judgment writes it?", value=detail,
+                          citation=detail, quotes=quotes(c["quote_ids"]) if c else [])
+            elif check == "mnc_matches_document_header":
+                it.update(question="Is this the decision's own citation, as printed at the top of the judgment?",
+                          value=r.mnc)
+            elif check == "title_found_in_judgment":
+                v = fields.get("title_as_published", {})
+                it.update(question="Is this the case title exactly as the court published it?",
+                          value=v.get("value", ""), quotes=quotes(v.get("quote_ids", [])))
+            elif check == "party_type_agrees_with_charlotin":
+                v = fields.get("party_type", {})
+                it.update(question=f"Who put the false citations before the court? (Charlotin's database says "
+                                   f"'{r.charlotin_party_type}'.)", value=v.get("value", ""), choices=PARTY_CHOICES,
+                          quotes=quotes(v.get("quote_ids", [])))
+            elif check == "referral_agrees_with_charlotin":
+                v = fields.get("regulator_referred", {})
+                ctx = fields.get("consequence", {})
+                it.update(question="Did the court refer anyone to a regulator, such as a Legal Services Commissioner? "
+                                   "(Charlotin's database says yes.)", value=v.get("value", "") or "no_stated",
+                          choices=["yes", "no_stated"],
+                          quotes=quotes(v.get("quote_ids", []) + ctx.get("quote_ids", [])))
+            elif check == "quotes_have_paragraph_numbers":
+                it.update(question="These quotes have no paragraph number. Is that because the passage is not in a "
+                                   "numbered paragraph (for example orders or a heading)?", value="yes",
+                          quotes=quotes([x for x in detail.split(",") if x]))
+            elif check == "official_copy":
+                it.update(question="This copy is from Wikisource, not the court. Open the official version: does "
+                                   "the row's citation, court and date match it?", value="yes")
+            elif check == "paragraph_count_matches_court_certificate":
+                it.update(question="The court's certificate counts numbered paragraphs, but none were found in this "
+                                   "copy, so its quotes carry no paragraph numbers. Is that acceptable for this row?",
+                          value="yes")
+            else:
+                it.update(question=f"Check: {check}", value="")
+            items.append(it)
+        out.append({"row": row, "id": r.id, "mnc": r.mnc, "court": r.court, "date": r.date,
+                    "title": r.title_as_published, "copy": r.source_copy, "links": links(r.mnc), "items": items,
+                    "decision": decided.get(row)})
     return out
 
 
@@ -147,6 +236,8 @@ class Handler(BaseHTTPRequestHandler):
             self._send(200, ANSWERS.read_bytes() if ANSWERS.exists() else b"{}", "application/json")
         elif self.path == "/api/impugned":
             self._send(200, json.dumps(impugned()).encode(), "application/json")
+        elif self.path == "/api/flags":
+            self._send(200, json.dumps(flags()).encode(), "application/json")
         else:
             self._send(404, b"not found", "text/plain")
 
@@ -163,6 +254,12 @@ class Handler(BaseHTTPRequestHandler):
             decided[body["key"]] = {"cells": body["cells"], "reviewed_on": date.today().isoformat()}
             RULES_DECISIONS.parent.mkdir(parents=True, exist_ok=True)
             RULES_DECISIONS.write_text(json.dumps(decided, indent=2, ensure_ascii=False) + "\n")
+            return self._send(200, b'{"saved": true}', "application/json")
+        if self.path == "/api/flags_decision":
+            body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
+            decided = json.loads(FLAGS.read_text()) if FLAGS.exists() else {}
+            decided[body["row"]] = {"items": body["items"], "reviewed_on": date.today().isoformat()}
+            FLAGS.write_text(json.dumps(decided, indent=2, ensure_ascii=False) + "\n")
             return self._send(200, b'{"saved": true}', "application/json")
         if self.path == "/api/impugned_decision":
             body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
