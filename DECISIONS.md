@@ -425,3 +425,16 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
   - The next deploy replaces the whole site, so the stray pages disappear.
   - No such copy was ever committed.
 - **Status:** Luc (wording); Claude (build).
+
+### D041: Review of the 37 flagged tracker rows (27 Oct 2026)
+- **Luc's choice:** review the 37 rows the automatic checks flagged (option A had left them "awaiting review").
+- **Page:** a "Flagged rows" tab in the review page shows one plain question per failed check: 63 questions in all.
+  - Answers use fixed choices wherever the tracker has fixed values (a fake citation's label, who asserted it, the party type, a regulator referral), so they apply without interpretation.
+  - Typed values are used only for the case title, the decision's own citation and a citation's exact wording.
+  - Saved locally to `data/review/flag_checks.json` (gitignored).
+- **Plan for applying the answers, once Luc has finished:**
+  - His corrections replace the extracted values; an "unsure" answer publishes the field blank.
+  - The row's status becomes "flags checked by Luc".
+  - The 6 rows from non-AustLII copies then publish in full.
+  - In the 31 rows from AustLII copies, the fields Luc answered are published (as in D035), and the rest stay held back until AustLII replies.
+- **Status:** Luc (review in progress).
