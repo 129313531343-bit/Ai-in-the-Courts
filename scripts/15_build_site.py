@@ -13,6 +13,7 @@ decision, PRIVACY.md question 3).
 
 import html
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -206,7 +207,7 @@ note from NSW's SC Gen 23 (generative AI). <a href="/downloads/rules.csv">Downlo
 <h1>About</h1>
 <h2 id="method">How the tracker is built and checked</h2>
 <p>The starting point is the Australian rows of Damien Charlotin's AI Hallucination Cases database. Each judgment's text is
-extracted locally, with publisher headers and footers removed. Claude (Anthropic) is asked to quote the passages on the AI error,
+extracted locally, with publisher headers and footers removed. A language model is asked to quote the passages on the AI error,
 the impugned citations, consequences, referrals and practice notes cited, and every quote is then checked by script against the
 judgment text, character for character, with its paragraph number. A second step proposes field values from those verified quotes
 only, and any value without a supporting quote is discarded.</p>
@@ -241,7 +242,14 @@ official sources.</p>
                                    "/citecheck/data/*\n  X-Robots-Tag: noindex\n"
                                    "/tracker.html\n  X-Robots-Tag: noindex\n"
                                    "/tracker\n  X-Robots-Tag: noindex\n")  # Pages serves /tracker.html at /tracker
-    print(f"site built: {n_rows} tracker rows ({n_pub} with extracted fields), {n_rules} instruments")
+    # iCloud Drive (synced Desktop) leaves "name 2.ext" copies beside rewritten files: never deploy them (D040).
+    copy = re.compile(r"(.+) \d+(\.[A-Za-z0-9]+)")
+    copies = [f for f in SITE.rglob("*") if f.is_file() and (m := copy.fullmatch(f.name))
+              and (f.parent / (m.group(1) + m.group(2))).exists()]
+    for f in copies:
+        f.unlink()
+    print(f"site built: {n_rows} tracker rows ({n_pub} with extracted fields), {n_rules} instruments; "
+          f"{len(copies)} sync copies removed")
 
 
 if __name__ == "__main__":

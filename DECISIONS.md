@@ -412,3 +412,16 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
   - the About page's method section says Claude (Anthropic) does the first-pass extraction;
   - the CiteCheck footer credits Claude under Luc's direction.
 - **Status:** Luc.
+
+### D040: Claude's name removed from the site; iCloud copies kept out of deploys (27 Oct 2026)
+- **Luc's choice:** remove the remaining Claude mentions from the website.
+  - The CiteCheck footers now carry the standard author line.
+  - The About page's method says "A language model is asked to quote…" instead of naming Claude (Anthropic).
+  - Kept: the method still says that a language model does the first-pass extraction, and the Sources section still explains the AustLII question about AI processing. Deleting those would misdescribe how the data were made and leave the held-back details unexplained.
+  - The README keeps its full "Contributions and AI use" section, and the methods paper on GitHub still names the model (D039).
+- **iCloud copies:**
+  - The project sits in a Desktop folder synced by iCloud Drive, which left "index 2.html"-style copies in the CiteCheck build. They were deployed with the 26 Oct release, as stray pages.
+  - Both builds now delete a "name N.ext" file when "name.ext" sits beside it (`scripts/15_build_site.py`, `citecheck/scripts/remove_sync_copies.ts`).
+  - The next deploy replaces the whole site, so the stray pages disappear.
+  - No such copy was ever committed.
+- **Status:** Luc (wording); Claude (build).

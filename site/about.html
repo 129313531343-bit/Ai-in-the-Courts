@@ -9,7 +9,7 @@
 <h1>About</h1>
 <h2 id="method">How the tracker is built and checked</h2>
 <p>The starting point is the Australian rows of Damien Charlotin's AI Hallucination Cases database. Each judgment's text is
-extracted locally, with publisher headers and footers removed. Claude (Anthropic) is asked to quote the passages on the AI error,
+extracted locally, with publisher headers and footers removed. A language model is asked to quote the passages on the AI error,
 the impugned citations, consequences, referrals and practice notes cited, and every quote is then checked by script against the
 judgment text, character for character, with its paragraph number. A second step proposes field values from those verified quotes
 only, and any value without a supporting quote is discarded.</p>
