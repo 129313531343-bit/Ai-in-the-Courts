@@ -2,7 +2,7 @@
 
 Pages: index, tracker (filters only: court, year, party type, consequence;
 no free-text or name search), rules matrix, checklist (built by
-14_build_checklist.py), about (methods, contributions and AI use, privacy,
+14_build_checklist.py), about (methods, privacy,
 corrections). Every number shown is read from data/ at build time.
 
 Privacy (PRIVACY.md, D015): no party names in page titles, descriptions or
@@ -221,13 +221,6 @@ review</em> until a person has read them.</p>
 (with AustLII's headers removed) was processed by the AI model. We are asking AustLII whether this use is acceptable. Until it replies,
 the details the AI extracted from those copies are held back. Rows checked by hand against the judgment, facts read by script (citation,
 court, date) and Charlotin's own coding are shown, as are the fake citations Luc read against the judgment in 20 of the held-back rows.</p>
-<h2>Contributions and AI use</h2>
-<p>This project was built with Claude Code (Anthropic), an AI coding assistant, and this is disclosed in full. Claude wrote the
-pipeline, the site (including CiteCheck AU) and first drafts of the rules summaries and checklist, and Claude models perform the
-first-pass extraction. Luc Taya designed the project, made the judgement calls recorded in the repository's decisions log, checked
-the random spot-check sample and the fake citations in 20 held-back rows against the judgments, checked the rules matrix and edited
-the checklist. No figure is typed by hand: each is produced by a committed script
-from the data.</p>
 <h2>Privacy</h2>
 <p>The tracker records only what each judgment says. Self-represented parties can be filtered but not searched by name, and their case
 titles are not shown on the tracker page. Family law matters use only the court's anonymised title (Family Law Act 1975 (Cth) s 114Q).</p>

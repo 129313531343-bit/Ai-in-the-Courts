@@ -404,3 +404,11 @@ Every judgement call, with the options considered. **Status: proposed** means Cl
   - The README also listed status names the tracker no longer uses.
   - Both are corrected, and the fake citations Luc read in 20 held-back rows are now mentioned.
 - **Status:** Claude (build); Luc deploys.
+
+### D039: "Contributions and AI use" section removed from the site's About page (27 Oct 2026)
+- **Luc's choice:** remove the section from the website.
+- The README keeps its "Contributions and AI use" section, as the brief requires, so the public repository still discloses in full what Claude built and what Luc did.
+- Other mentions on the site are unchanged:
+  - the About page's method section says Claude (Anthropic) does the first-pass extraction;
+  - the CiteCheck footer credits Claude under Luc's direction.
+- **Status:** Luc.
